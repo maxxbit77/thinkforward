@@ -18,8 +18,7 @@
 									title="Te lavamos el camioncito"
 									:speed="2"
 								>
-									loremImpum loremImpum loremImpum loremImpumloremImpum loremImpum
-									loremImpumloremImpum loremImpum loremImpum loremImpum"
+									Te metemos la manguera por todos los agujeros
 								</Video2x2>
 							</div>
 							<div>
@@ -28,11 +27,11 @@
 									title="Tenemos un huevo de camioncitos"
 									:speed="2"
 								>
-									loremImpum loremImpum loremImpum loremImpumloremImpum loremImpum
-									loremImpumloremImpum loremImpum loremImpum loremImpum"
+									brum brum brum!
 								</Video2x2>
 							</div>
 						</div>
+
 						<div class="h-[600px]">
 							<VideoLandscape
 								src="https://res.cloudinary.com/dw6ikrcqm/video/upload/v1740602415/eu-map-connections_pxgils.mp4"
@@ -42,22 +41,28 @@
 							</VideoLandscape>
 						</div>
 						<div class="grid grid-cols-4 h-[500px] gap-x-4">
-							<div class="bg-orange-500 rounded-lg"></div>
-							<div class="bg-red-500 rounded-lg"></div>
-							<div class="grid grid-row-2 gap-2">
-								<div class="bg-orange-500 rounded-lg">
-									<div class="bg-purple-500"></div>
+							<div class="bg-sky-700 rounded-lg col-span-2 flex flex-col justify-center items-center">
+								<p class="text-white">titulo del grafico</p>
+								<ChartsBar class="p-8" :colors="['orange', 'red']" />
+							</div>
+
+							<div class="col-span-2 grid grid-row-2 gap-4">
+								<div class="grid grid-cols-2 gap-4">
+									<div class="bg-emerald-500 rounded-lg">
+										<AnimationsCountUp :value="1000" :speed="200" :step="5">
+											Días con nuestros clientes
+										</AnimationsCountUp>
+									</div>
+									<div class="bg-slate-500 rounded-lg">
+										<AnimationsCountUp :value="1000" :speed="500" :step="5">
+											Viajes realizados
+										</AnimationsCountUp>
+									</div>
 								</div>
 								<div class="bg-purple-500 rounded-lg">
-									<div class=""></div>
-								</div>
-							</div>
-							<div class="grid grid-row-2 gap-2">
-								<div class="bg-emerald-500 rounded-lg">
-									<div class="bg-purple-500"></div>
-								</div>
-								<div class="bg-slate-500 rounded-lg">
-									<div class=""></div>
+									<AnimationsCountUp :value="200000" :speed="10000" :step="1000">
+										Litros movidos
+									</AnimationsCountUp>
 								</div>
 							</div>
 						</div>
