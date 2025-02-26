@@ -1,7 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-
-const images = import.meta.glob('@/assets/frames/truck-going/*.webp', { eager: true })
+const images = import.meta.glob('public/frames/truck-going/*.webp', { eager: true })
 const imagePaths = Object.values(images).map((module) => module.default)
 
 const currentFrame = ref(0)
@@ -27,12 +25,10 @@ const handleScroll = () => {
 	}
 }
 
-// Agregar el evento de scroll cuando el componente se monta
 onMounted(() => {
 	window.addEventListener('scroll', handleScroll)
 })
 
-// Limpiar el evento cuando el componente se desmonta
 onUnmounted(() => {
 	window.removeEventListener('scroll', handleScroll)
 })
