@@ -7,6 +7,15 @@ const imagePaths = Object.values(images).map((module) => module.default)
 const currentFrame = ref(0)
 const currentImage = ref(imagePaths[currentFrame.value])
 const isMounted = ref(true)
+const loadedImages = ref(new Set())
+
+const preloadImages = () => {
+	imagePaths.forEach((src) => {
+		const img = new Image()
+		img.src = src
+		img.onload = () => loadedImages.value.add(src) // Marca la imagen como cargada
+	})
+}
 
 const handleScroll = () => {
 	const scrollPosition = window.scrollY
@@ -21,18 +30,19 @@ const handleScroll = () => {
 	} else {
 		isMounted.value = true
 	}
-	if (currentFrame.value !== frame) {
+
+	// Solo cambia la imagen si está precargada
+	if (currentFrame.value !== frame && loadedImages.value.has(imagePaths[frame])) {
 		currentImage.value = imagePaths[frame]
 		currentFrame.value = frame
 	}
 }
 
-// Agregar el evento de scroll cuando el componente se monta
 onMounted(() => {
+	preloadImages() // Precargar imágenes al montar el componente
 	window.addEventListener('scroll', handleScroll)
 })
 
-// Limpiar el evento cuando el componente se desmonta
 onUnmounted(() => {
 	window.removeEventListener('scroll', handleScroll)
 })
