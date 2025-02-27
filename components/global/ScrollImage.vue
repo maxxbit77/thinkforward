@@ -1,6 +1,8 @@
 <script setup>
-const images = import.meta.glob('public/frames/truck-going/*.webp', { eager: true })
-const imagePaths = Object.values(images).map((module) => module.default)
+const imagePaths = Array.from({ length: 100 }, (_, i) => {
+	const frameNumber = String(i + 1).padStart(3, '0') // Genera "001", "002", ..., "100"
+	return `/frames/truck-going/ezgif-frame-${frameNumber}.webp`
+})
 
 const currentFrame = ref(0)
 const currentImage = ref(imagePaths[currentFrame.value])
