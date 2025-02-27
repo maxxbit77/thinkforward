@@ -1,5 +1,4 @@
 <script setup>
-import { ref, computed, watch } from 'vue'
 import { useIntervalFn, useIntersectionObserver } from '@vueuse/core'
 
 const props = defineProps({
