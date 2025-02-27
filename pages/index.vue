@@ -72,11 +72,13 @@
 			<div class="relative">
 				<div class="w-full fade-mask h-[600px] absolute top-[1000px]">
 					<VideoLandscape
-						title="Trabajamos con las mejores empresas de europa"
 						src="https://res.cloudinary.com/dw6ikrcqm/video/upload/v1740603437/truck-go-back_vrowz4.mp4"
 					>
+						Las compañías confian en nosotros
 					</VideoLandscape>
+					<ImageLogoCard class="absolute z-30 top-[400px] fade-mask-top" />
 				</div>
+				<div></div>
 			</div>
 		</div>
 	</main>
