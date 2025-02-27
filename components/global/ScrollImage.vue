@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { SvgWeb, SvgCollab, SvgProcess, SvgSolutions } from '#components'
+import { SvgColorsBlack } from '#components'
 const images = import.meta.glob('@/public/frames/truck-going/*.webp', { eager: true })
 const imagePaths = Object.values(images).map((module) => module.default)
 
@@ -9,7 +10,6 @@ const currentImage = ref(imagePaths[currentFrame.value])
 const isMounted = ref(true)
 const loadedImages = ref(new Set())
 const titleOpacity = ref(1)
-const cardsOpacity = ref(0)
 
 const preloadImages = () => {
 	imagePaths.forEach((src) => {
@@ -64,42 +64,63 @@ onUnmounted(() => {
 			<p class="text-2xl">El pelado te soluciona todos tus problemas</p>
 		</div>
 
-		<div class="relative top-[1250px] z-20 w-[1200px] mx-auto">
+		<div class="relative top-[1250px] w-[1200px] mx-auto">
 			<div class="absolute top-0 left-[10%]">
-				<Card :icon="SvgWeb" iconClass="text-sky-500" customClass="border-sky-500">
+				<Card
+					:icon="SvgWeb"
+					iconClass="text-sky-500"
+					customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500"
+				>
 					<template #title> Amplia red de expertos del sector en toda Europa. </template>
-					<template #text> subtitle </template>
+					<template #text>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+						beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex quibusdam
+						sint ipsa magni non.
+					</template>
 				</Card>
 			</div>
 			<div class="absolute top-[300px] right-[10%]">
-				<Card :icon="SvgProcess" iconClass="text-green-500" customClass="border-green-500">
+				<Card
+					:icon="SvgProcess"
+					iconClass="text-green-500"
+					customClass="border-green-500 shadow-xl shadow-green-500"
+				>
 					<template #title> Procesos respetuosos con el medio ambiente.</template>
-					<template #text> Subtitle </template>
+					<template #text>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+						beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex quibusdam
+						sint ipsa magni non.
+					</template>
 				</Card>
 			</div>
 			<div class="absolute top-[600px] left-[10%]">
-				<Card :icon="SvgSolutions" iconClass="text-yellow-500" customClass="border-yellow-500">
+				<Card
+					:icon="SvgSolutions"
+					iconClass="text-yellow-500"
+					customClass="border-yellow-500 shadow-xl shadow-yellow-500"
+				>
 					<template #title> Soluciones rápidas y adaptadas a nuestros clientes. </template>
-					<template #text> subtitle </template>
+					<template #text>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+						beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex quibusdam
+						sint ipsa magni non.
+					</template>
 				</Card>
 			</div>
 			<div class="absolute top-[900px] right-[10%]">
-				<Card :icon="SvgCollab" iconClass="text-rose-500" customClass="border-rose-500">
+				<Card
+					:icon="SvgCollab"
+					iconClass="text-rose-500"
+					customClass="border-rose-500 shadow-xl shadow-rose-500"
+				>
 					<template #title> Trato personalizado con todos nuestros colaboradores. </template>
-					<template #text> subtitle </template>
+					<template #text>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+						beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex quibusdam
+						sint ipsa magni non.
+					</template>
 				</Card>
 			</div>
-		</div>
-		<div class="relative top-[1250px]">
-			<div
-				class="border-sky-500 border-r-[20px] border-t-[20px] border-dotted rounded-3xl w-[420px] h-[200px] absolute top-[140px] left-[40%]"
-			/>
-			<div
-				class="border-green-500 border-l-[20px] border-t-[20px] border-dotted rounded-3xl w-[420px] h-[200px] absolute top-[450px] right-[40%]"
-			/>
-			<div
-				class="border-yellow-500 border-r-[20px] border-t-[20px] border-dotted rounded-3xl w-[420px] h-[200px] absolute top-[730px] left-[40%]"
-			/>
 		</div>
 	</div>
 </template>
