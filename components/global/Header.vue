@@ -1,8 +1,11 @@
 <script setup></script>
 <template>
-	<header>
-		<LogoThinkforward class="w-[280px] h-auto mb-24 mx-auto" />
-	</header>
+	<div class="relative">
+		<header>
+			<LogoThinkforward class="w-[280px] h-auto mb-24 mx-auto" />
+		</header>
+		<ButtonDarkMode class="absolute top-0 right-12 z-20" />
+	</div>
 </template>
 
 <style scoped>

@@ -67,7 +67,7 @@ const selectorsBar = computed(() => (props.type === 'grouped' ? GroupedBar.selec
 </script>
 
 <template>
-	<div :class="cn('w-full h-[400px] flex flex-col items-end', $attrs.class ?? '')">
+	<div :class="cn('w-full h-full flex flex-col items-end space-y-2 text-black', $attrs.class ?? '')">
 		<ChartLegend v-if="showLegend" v-model:items="legendItems" @legend-item-click="handleLegendItemClick" />
 
 		<VisXYContainer :data="data" :style="{ height: isMounted ? '100%' : 'auto' }" :margin="margin">
@@ -101,7 +101,7 @@ const selectorsBar = computed(() => (props.type === 'grouped' ? GroupedBar.selec
 				:tick-format="xFormatter ?? ((v: number) => data[v]?.[index])"
 				:grid-line="false"
 				:tick-line="false"
-				tick-text-color="hsl(var(--vis-text-color))"
+				tick-text-color="text-slate-900 dark:text-white"
 			/>
 			<VisAxis
 				v-if="showYAxis"
@@ -112,10 +112,10 @@ const selectorsBar = computed(() => (props.type === 'grouped' ? GroupedBar.selec
 				:grid-line="showGridLine"
 				:attributes="{
 					[Axis.selectors.grid]: {
-						class: 'text-white',
+						class: 'dark:text-white text-black',
 					},
 				}"
-				tick-text-color="hsl(var(--vis-text-color))"
+				tick-text-color="text-slate-900 dark:text-white"
 			/>
 
 			<slot />

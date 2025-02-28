@@ -8,8 +8,8 @@
 
 		<div class="relative">
 			<!-- Imagen con contenido -->
-			<div class="absolute top-[-1200px] bg-white w-full px-2 fade-mask-top">
-				<div class="relative max-w-7xl mx-auto bg-white">
+			<div class="absolute top-[-1200px] bg-white dark:bg-slate-950 w-full px-2 fade-mask-top">
+				<div class="relative max-w-7xl mx-auto">
 					<div class="grid-rows-3 space-y-4 relative z-10 mt-[500px] mb-[1000px]">
 						<div class="grid grid-cols-2 h-[500px] gap-x-4">
 							<div>
@@ -40,26 +40,33 @@
 								loremImpum loremImpum loremImpum loremImpumloremImpum loremImpum
 							</VideoLandscape>
 						</div>
-						<div class="grid grid-cols-4 h-[500px] gap-x-4">
-							<div class="bg-sky-700 rounded-lg col-span-2 flex flex-col justify-center items-center">
-								<p class="text-white">titulo del grafico</p>
-								<ChartsBar class="p-8" :colors="['orange', 'red']" />
+						<div class="relative">
+							<div class="mt-24">
+								<h3 class="my-6 text-center text-4xl dark:text-white">Los datos nos avalan</h3>
+								<BackgroundsColorsBlue class="absolute -top-[150px] -left-64 h-[500px]" />
 							</div>
+							<div class="grid grid-cols-4 h-[500px] gap-x-4">
+								<div
+									class="bg-gray-300/50 dark:bg-slate-950 rounded-lg col-span-2 flex flex-col justify-center items-center border dark:border-white"
+								>
+									<p class="dark:text-white text-2xl py-2">Movements Last 6 Months</p>
+									<ChartsBar class="p-8" :colors="['orange', 'red']" />
+								</div>
 
-							<div class="col-span-2 grid grid-row-2 gap-4">
-								<div class="grid grid-cols-2 gap-4">
-									<div class="bg-emerald-500 rounded-lg">
-										<AnimationsCountUp :value="1000" :speed="200" :step="5">
-											Días con nuestros clientes
-										</AnimationsCountUp>
-									</div>
-									<div class="bg-slate-500 rounded-lg">
+								<div class="col-span-2 grid grid-row-2 gap-4">
+									<div class="relative grid grid-cols-2 gap-4">
+										<BackgroundsColorsBlue class="absolute -top-[80px] left-0 rotate-90" />
+										<div>
+											<AnimationsCountUp :value="1000" :speed="200" :step="5">
+												Días con nuestros clientes
+											</AnimationsCountUp>
+										</div>
+
 										<AnimationsCountUp :value="1000" :speed="500" :step="5">
 											Viajes realizados
 										</AnimationsCountUp>
 									</div>
-								</div>
-								<div class="bg-purple-500 rounded-lg">
+
 									<AnimationsCountUp :value="200000" :speed="10000" :step="1000">
 										Litros movidos
 									</AnimationsCountUp>
@@ -70,7 +77,7 @@
 				</div>
 			</div>
 			<div class="relative">
-				<div class="w-full fade-mask h-[600px] absolute top-[1000px]">
+				<div class="w-full fade-mask h-[600px] absolute top-[1200px]">
 					<VideoLandscape
 						src="https://res.cloudinary.com/dw6ikrcqm/video/upload/v1740603437/truck-go-back_vrowz4.mp4"
 					>
@@ -78,7 +85,49 @@
 					</VideoLandscape>
 					<ImageLogoCard class="absolute z-30 top-[400px] fade-mask-top" />
 				</div>
-				<div></div>
+			</div>
+			<div
+				class="pt-[100px] relative top-[1800px] h-[800px] text-center bg-white dark:bg-slate-950 max-w-7xl mx-auto"
+			>
+				<h3 class="mb-12 text-slate-950 dark:text-white text-4xl">Nuestros Servicios</h3>
+				<div class="grid grid-cols-3 gap-4">
+					<Card
+						imageSrc="/images/wine.png"
+						imageAlt="wine"
+						customClass="border-rose-500 shadow-xl shadow-rose-500"
+					>
+						<template #title> Vinos y licores </template>
+						<template #text>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
+							quibusdam sint ipsa magni non.
+						</template>
+					</Card>
+					<Card
+						imageSrc="/images/juice.png"
+						imageAlt="wine"
+						customClass="border-orange-500 shadow-xl shadow-orange-500"
+					>
+						<template #title> Zumos de frutas </template>
+						<template #text>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
+							quibusdam sint ipsa magni non.
+						</template>
+					</Card>
+					<Card
+						imageSrc="/images/oil.png"
+						imageAlt="wine"
+						customClass="border-green-500 shadow-xl shadow-green-500"
+					>
+						<template #title> Aceites vegetales </template>
+						<template #text>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
+							quibusdam sint ipsa magni non.
+						</template>
+					</Card>
+				</div>
 			</div>
 		</div>
 	</main>

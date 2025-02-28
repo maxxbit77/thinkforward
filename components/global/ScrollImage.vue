@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { SvgWeb, SvgCollab, SvgProcess, SvgSolutions } from '#components'
-import { SvgColorsBlack } from '#components'
+
 const images = import.meta.glob('@/public/frames/truck-going/*.webp', { eager: true })
 const imagePaths = Object.values(images).map((module) => module.default)
 
@@ -57,7 +57,7 @@ onUnmounted(() => {
 		<!-- Título con opacidad dinámica -->
 		<div
 			:style="{ opacity: titleOpacity }"
-			class="absolute top-[400px] left-1/2 -translate-x-1/2 text-center transition-opacity duration-300"
+			class="absolute top-[400px] text-gray-500 left-1/2 -translate-x-1/2 text-center transition-opacity duration-200"
 		>
 			<h1 class="text-6xl">Con Thinkforward olvidate...</h1>
 			<p class="text-2xl">El pelado te soluciona todos tus problemas</p>
@@ -68,7 +68,7 @@ onUnmounted(() => {
 				<Card
 					:icon="SvgWeb"
 					iconClass="text-sky-500"
-					customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500"
+					customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500 w-[400px]"
 				>
 					<template #title> Amplia red de expertos del sector en toda Europa. </template>
 					<template #text>
@@ -82,7 +82,7 @@ onUnmounted(() => {
 				<Card
 					:icon="SvgProcess"
 					iconClass="text-green-500"
-					customClass="border-green-500 shadow-xl shadow-green-500"
+					customClass="border-green-500 shadow-xl shadow-green-500 w-[400px]"
 				>
 					<template #title> Procesos respetuosos con el medio ambiente.</template>
 					<template #text>
@@ -96,7 +96,7 @@ onUnmounted(() => {
 				<Card
 					:icon="SvgSolutions"
 					iconClass="text-yellow-500"
-					customClass="border-yellow-500 shadow-xl shadow-yellow-500"
+					customClass="border-yellow-500 shadow-xl shadow-yellow-500 w-[400px]"
 				>
 					<template #title> Soluciones rápidas y adaptadas a nuestros clientes. </template>
 					<template #text>
@@ -110,7 +110,7 @@ onUnmounted(() => {
 				<Card
 					:icon="SvgCollab"
 					iconClass="text-rose-500"
-					customClass="border-rose-500 shadow-xl shadow-rose-500"
+					customClass="border-rose-500 shadow-xl shadow-rose-500 w-[400px]"
 				>
 					<template #title> Trato personalizado con todos nuestros colaboradores. </template>
 					<template #text>
