@@ -19,7 +19,13 @@ const toggleDarkMode = () => {
 </script>
 
 <template>
-	<button @click="toggleDarkMode">
-		{{ isDark ? 'Modo Claro' : 'Modo Oscuro' }}
-	</button>
+	<div class="">
+		<button
+			@click="toggleDarkMode"
+			class="cursor-pointer duration-500 ease-in-out inline-flex items-center justify-center whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-transparent hover:bg-card/60 hover:text-accent-foreground/80 size-10 outline-none"
+		>
+			<SvgDarkButton v-if="!isDark" class="" />
+			<SvgLightButton v-else class="mt-1" />
+		</button>
+	</div>
 </template>
