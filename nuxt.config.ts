@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	compatibilityDate: '2024-11-01',
-	modules: ['@nuxtjs/tailwindcss', '@vueuse/motion/nuxt'],
+				compatibilityDate: '2024-11-01',
+				modules: [
+				 '@nuxtjs/tailwindcss',
+				 '@vueuse/motion/nuxt',
+				 '@nuxt/icon',
+				],
 
-	devtools: { enabled: true },
+				devtools: { enabled: true },
 })

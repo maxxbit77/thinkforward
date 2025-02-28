@@ -21,7 +21,7 @@ watch(() => props.speed, setPlaybackRate)
 </script>
 
 <template>
-	<div class="relative h-full w-full rounded-lg overflow-hidden">
+	<div class="relative h-full w-full rounded-lg overflow-hidden bg-white dark:bg-slate-950">
 		<div class="absolute inset-0">
 			<video ref="videoRef" class="w-full h-full object-cover" autoplay muted loop playsinline>
 				<source :src="src" :type="type" />
