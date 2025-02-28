@@ -1,13 +1,12 @@
 <template>
 	<main>
-		<!-- Encabezado con logo -->
+		<NavBar />
 		<Header />
-
-		<!-- Componente que maneja el scroll -->
+		<!--  scroll component -->
 		<ScrollImage />
 
-		<div class="relative">
-			<!-- Imagen con contenido -->
+		<!-- grid videos/charts -->
+		<section class="relative">
 			<div class="absolute top-[-1200px] bg-white dark:bg-slate-950 w-full px-2 fade-mask-top">
 				<div class="relative max-w-7xl mx-auto">
 					<div class="grid-rows-3 space-y-4 relative z-10 mt-[500px] mb-[1000px]">
@@ -76,27 +75,40 @@
 					</div>
 				</div>
 			</div>
-			<div class="relative">
-				<div class="w-full fade-mask h-[600px] absolute top-[1200px]">
-					<VideoLandscape
-						src="https://res.cloudinary.com/dw6ikrcqm/video/upload/v1740603437/truck-go-back_vrowz4.mp4"
-					>
-						Las compañías confian en nosotros
-					</VideoLandscape>
-					<ImageLogoCard class="absolute z-30 top-[400px] fade-mask-top" />
-				</div>
-			</div>
-			<div
+
+			<!-- Companies -->
+			<section class="relative">
+				<ClientOnly>
+					<div class="w-full fade-mask h-[600px] absolute top-[1200px]">
+						<VideoLandscape
+							src="https://res.cloudinary.com/dw6ikrcqm/video/upload/v1740603437/truck-go-back_vrowz4.mp4"
+						>
+							<div
+								class="fade-mask-top bg-gray-300/50 w-full h-[200px] rounded-lg flex items-center justify-center absolute -top-20 text-slate-950 dark:text-white text-5xl"
+							>
+								Las mayores compañías confían en nosotros
+							</div>
+						</VideoLandscape>
+						<ImageLogoCard class="absolute z-30 top-[400px] fade-mask-top" />
+					</div>
+				</ClientOnly>
+			</section>
+
+			<!-- Services -->
+
+			<section
 				class="pt-[100px] relative top-[1800px] h-[800px] text-center bg-white dark:bg-slate-950 max-w-7xl mx-auto"
 			>
 				<h3 class="mb-12 text-slate-950 dark:text-white text-4xl">Nuestros Servicios</h3>
-				<div class="grid grid-cols-3 gap-4">
+				<div class="grid grid-cols-3 gap-8">
 					<Card
 						imageSrc="/images/wine.png"
 						imageAlt="wine"
 						customClass="border-rose-500 shadow-xl shadow-rose-500"
 					>
-						<template #title> Vinos y licores </template>
+						<template #title>
+							<span class="text-rose-500"> Vinos y licores </span>
+						</template>
 						<template #text>
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
 							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
@@ -108,7 +120,9 @@
 						imageAlt="wine"
 						customClass="border-orange-500 shadow-xl shadow-orange-500"
 					>
-						<template #title> Zumos de frutas </template>
+						<template #title>
+							<span class="text-orange-500"> Zumos de frutas </span>
+						</template>
 						<template #text>
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
 							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
@@ -120,7 +134,9 @@
 						imageAlt="wine"
 						customClass="border-green-500 shadow-xl shadow-green-500"
 					>
-						<template #title> Aceites vegetales </template>
+						<template #title>
+							<span class="text-green-500"> Aceites vegetales </span>
+						</template>
 						<template #text>
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
 							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
@@ -128,8 +144,10 @@
 						</template>
 					</Card>
 				</div>
-			</div>
-		</div>
+			</section>
+
+			<div></div>
+		</section>
 	</main>
 </template>
 
