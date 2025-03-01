@@ -10,21 +10,28 @@ const emailStructure = {
 	subject: 'Want contact',
 	body: 'Hello there!, I came across your portfolio and I am very interested in your work. Let’s connect!',
 }
-const textToCopy = ref(company.email)
+const emailToCopy = ref(company.email)
 const emailCopied = ref(false)
+
+const phoneToCopy = ref(company.phone)
+const phoneCopied = ref(false)
 
 const openWhatsApp = () => {
 	window.open(`https://wa.me/${company.phone}`, '_blank')
 }
 
-const copyText = () => {
-	navigator.clipboard.writeText(textToCopy.value)
+const copyEmailToClipBoard = () => {
+	navigator.clipboard.writeText(emailToCopy.value)
 	emailCopied.value === false ? (emailCopied.value = true) : (emailCopied.value = false)
+}
+const copyPhoneToClipBoard = () => {
+	navigator.clipboard.writeText(phoneToCopy.value)
+	phoneCopied.value === false ? (phoneCopied.value = true) : (phoneCopied.value = false)
 }
 </script>
 
 <template>
-	<div class="relative backdrop-blur-2xl bg-slate-950/10">
+	<div class="relative backdrop-blur-2xl bg-gray-500/10 dark:bg-slate-800/10">
 		<div class="absolute z-1 -right-72">
 			<BackgroundsColorsBlue />
 		</div>
@@ -38,21 +45,25 @@ const copyText = () => {
 			<div class="mt-4 flex justify-center items-center space-x-6">
 				<div class="text-center group cursor-pointer">
 					<button
-						@click="copyText"
+						@click="copyEmailToClipBoard"
 						class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
 					>
 						<Icon
 							v-if="!emailCopied"
 							name="lucide:copy"
-							class="size-6 text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
 						/>
 						<Icon
 							v-else
-							name="lucide:copy-check"
-							class="size-6 text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+							name="material-symbols:library-add-check-rounded"
+							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
 						/>
 					</button>
-					<p class="mt-1 group-hover:text-white text-gray-500 text-xs transition-colors">Copy email</p>
+					<p
+						class="mt-1 dark:group-hover:text-white group-hover:text-slate-950 text-gray-500 text-xs transition-colors"
+					>
+						Copy email
+					</p>
 				</div>
 
 				<div class="text-center group cursor-pointer">
@@ -67,11 +78,15 @@ const copyText = () => {
 						>
 							<Icon
 								name="lucide:mail-plus"
-								class="size-6 text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+								class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
 							/>
 						</a>
 					</button>
-					<p class="mt-1 group-hover:text-white text-gray-500 text-xs transition-colors">Send email</p>
+					<p
+						class="mt-1 dark:group-hover:text-white group-hover:text-slate-950 text-gray-500 text-xs transition-colors"
+					>
+						Send email
+					</p>
 				</div>
 
 				<div class="text-center group cursor-pointer">
@@ -81,23 +96,36 @@ const copyText = () => {
 					>
 						<Icon
 							name="garden:whatsapp-stroke-16"
-							class="size-6 text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
 						/>
 					</button>
-					<p class="mt-1 group-hover:text-white text-gray-500 text-xs transition-colors">Whatsapp</p>
+					<p
+						class="mt-1 dark:group-hover:text-white group-hover:text-slate-950 text-gray-500 text-xs transition-colors"
+					>
+						Whatsapp
+					</p>
 				</div>
 				<div class="text-center group cursor-pointer">
 					<button
-						@click="openWhatsApp"
+						@click="copyPhoneToClipBoard"
 						class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
-						@mouseenter="phoneMessage"
 					>
 						<Icon
+							v-if="!phoneCopied"
 							name="material-symbols:call-sharp"
-							class="size-6 text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+						/>
+						<Icon
+							v-else
+							name="material-symbols:library-add-check-rounded"
+							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
 						/>
 					</button>
-					<p class="mt-1 group-hover:text-white text-gray-500 text-xs transition-colors">Copy Number</p>
+					<p
+						class="mt-1 dark:group-hover:text-white group-hover:text-slate-950 text-gray-500 text-xs transition-colors"
+					>
+						Copy number
+					</p>
 				</div>
 			</div>
 			<!-- Separator -->

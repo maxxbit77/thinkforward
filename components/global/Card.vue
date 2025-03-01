@@ -1,4 +1,7 @@
 <script setup>
+import { background } from '@unovis/ts/components/timeline/style'
+import { resolveComponent } from 'vue'
+
 const props = defineProps({
 	icon: Object,
 	background: Object,
@@ -9,21 +12,26 @@ const props = defineProps({
 })
 
 const defaultClass = [
-	'  text-white bg-slate-900/50 p-8 text-slate-900 rounded-3xl  border-4 border-gray-300 text-center flex flex-col justify-center items-center',
+	' relative bg-slate-800/10 backdrop-blur-xl bg-gray-500/10 dark:bg-slate-800/10 p-8  rounded-2xl  border-2  text-center  overflow-hidden',
 ]
 </script>
 
 <template>
 	<div :class="[defaultClass, customClass]">
-		<div>
-			<component v-if="icon" class="size-20" :class="[iconClass]" :is="icon" />
-			<img v-if="imageSrc" :src="imageSrc" :alt="imageAlt" class="h-24 my-4" />
+		<div class="flex flex-col justify-center items-center">
+			<div>
+				<component v-if="icon" class="size-20" :class="[iconClass]" :is="icon" />
+				<img v-if="imageSrc" :src="imageSrc" :alt="imageAlt" class="h-24 my-4" />
+			</div>
+			<p class="text-4xl text-gray-200 font-bold">
+				<slot name="title" />
+			</p>
+			<p class="text-xl text-gray-300">
+				<slot name="text" />
+			</p>
 		</div>
-		<p class="text-4xl text-gray-200 font-bold">
-			<slot name="title" />
-		</p>
-		<p class="text-xl text-gray-300">
-			<slot name="text" />
-		</p>
+		<div class="absolute z-0 -top-96 -left-48">
+			<component v-if="background" :is="background" />
+		</div>
 	</div>
 </template>

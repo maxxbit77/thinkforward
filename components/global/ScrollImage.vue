@@ -71,11 +71,15 @@ onUnmounted(() => {
 					iconClass="text-sky-500"
 					customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500 w-[400px]"
 				>
-					<template #title> Amplia red de expertos del sector en toda Europa. </template>
+					<template #title>
+						<h3 class="text-slate-900">Amplia red de expertos del sector en toda Europa</h3>
+					</template>
 					<template #text>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
-						beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex quibusdam
-						sint ipsa magni non.
+						<p class="text-slate-900">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
+							quibusdam sint ipsa magni non.
+						</p>
 					</template>
 				</Card>
 			</div>
@@ -85,11 +89,15 @@ onUnmounted(() => {
 					iconClass="text-green-500"
 					customClass="border-green-500 shadow-xl shadow-green-500 w-[400px]"
 				>
-					<template #title> Procesos respetuosos con el medio ambiente.</template>
+					<template #title>
+						<h3 class="text-slate-900">Procesos respetuosos con el medio ambiente</h3>
+					</template>
 					<template #text>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
-						beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex quibusdam
-						sint ipsa magni non.
+						<p class="text-slate-900">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
+							quibusdam sint ipsa magni non.
+						</p>
 					</template>
 				</Card>
 			</div>
@@ -99,11 +107,15 @@ onUnmounted(() => {
 					iconClass="text-yellow-500"
 					customClass="border-yellow-500 shadow-xl shadow-yellow-500 w-[400px]"
 				>
-					<template #title> Soluciones rápidas y adaptadas a nuestros clientes. </template>
+					<template #title>
+						<h3 class="text-slate-900">Soluciones rápidas y adaptadas a nuestros clientes.</h3>
+					</template>
 					<template #text>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
-						beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex quibusdam
-						sint ipsa magni non.
+						<p class="text-slate-900">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
+							quibusdam sint ipsa magni non.
+						</p>
 					</template>
 				</Card>
 			</div>
@@ -113,11 +125,15 @@ onUnmounted(() => {
 					iconClass="text-rose-500"
 					customClass="border-rose-500 shadow-xl shadow-rose-500 w-[400px]"
 				>
-					<template #title> Trato personalizado con todos nuestros colaboradores. </template>
+					<template #title>
+						<h3 class="text-slate-900">Trato personalizado con todos nuestros colaboradores.</h3>
+					</template>
 					<template #text>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
-						beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex quibusdam
-						sint ipsa magni non.
+						<p class="text-slate-900">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus labore
+							beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt, ex
+							quibusdam sint ipsa magni non.
+						</p>
 					</template>
 				</Card>
 			</div>
