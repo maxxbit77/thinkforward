@@ -51,13 +51,18 @@ watch(
 </script>
 
 <template>
-	<div
-		ref="counterRef"
-		class="h-full bg-gray-300/50 backdrop-blur dark:bg-slate-950/50 border-2 border-slate-900 dark:border-white rounded-2xl flex flex-col justify-center text-center items-center"
-	>
-		<div class="text-3xl text-slate-900 dark:text-white">
-			<slot />
+	<div class="relative overflow-hidden">
+		<div
+			ref="counterRef"
+			class="h-full bg-gray-500/10 backdrop-blur-xl dark:bg-slate-800/10 border-2 border-slate-900 dark:border-gray-500 rounded-2xl flex flex-col justify-center text-center items-center"
+		>
+			<div class="relative text-3xl text-slate-900 dark:text-white z-20">
+				<slot />
+				<p class="text-6xl font-bold">+{{ number }}</p>
+			</div>
 		</div>
-		<p class="text-6xl font-bold">+{{ number }}</p>
+		<div class="absolute -top-20 z-1">
+			<BackgroundsColorsBlue />
+		</div>
 	</div>
 </template>

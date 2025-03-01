@@ -18,8 +18,10 @@
 				gradientUnits="userSpaceOnUse"
 				gradientTransform="rotate(90 -77 317) scale(189.054)"
 			>
-				<stop stop-color="#FFA500"></stop>
-				<stop offset="1" stop-color="#FF4500" stop-opacity=".01"></stop>
+				<stop stop-color="#22c55e"></stop>
+				<!-- green-500 -->
+				<stop offset="1" stop-color="#14532d" stop-opacity=".01"></stop>
+				<!-- green-900 -->
 			</radialGradient>
 			<radialGradient
 				id="gradient2"
@@ -29,8 +31,10 @@
 				gradientUnits="userSpaceOnUse"
 				gradientTransform="rotate(90 99 339) scale(189.054)"
 			>
-				<stop stop-color="#FFCC66"></stop>
-				<stop offset="1" stop-color="#FF9933" stop-opacity=".01"></stop>
+				<stop stop-color="#bbf7d0"></stop>
+				<!-- green-300 -->
+				<stop offset="1" stop-color="#4ade80" stop-opacity=".01"></stop>
+				<!-- green-400 -->
 			</radialGradient>
 		</defs>
 	</svg>

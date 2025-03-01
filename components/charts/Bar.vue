@@ -77,7 +77,7 @@ onMounted(() => {
 
 <template>
 	<BarChart
-		class="bg-gray-200/20 dark:bg-slate-900/50 h-full backdrop-blur-sm"
+		class="bg-gray-300/10 dark:bg-slate-800/10 h-full backdrop-blur-sm"
 		:data="data"
 		index="name"
 		:categories="['Shipments', 'Volume']"

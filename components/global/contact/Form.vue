@@ -28,13 +28,13 @@ const sendEmail = () => {
 					:id="key"
 					v-model="form[key]"
 					:type="key === 'email' ? 'email' : 'text'"
-					placeholder=" "
+					placeholder="."
 					required
-					class="peer p-2 w-full border border-gray-400 rounded-md outline-none focus:border-blue-500"
+					class="peer p-2 w-full border border-gray-400 rounded-md outline-none focus:border-blue-500 text-slate-950 placeholder-transparent"
 				/>
 				<label
 					:for="key"
-					class="absolute left-3 top-2 px-1 bg-white text-gray-500 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:left-3 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:px-1 peer-focus:text-xs peer-focus:text-blue-500 peer-focus:bg-white peer-focus:left-3 z-10"
+					class="absolute left-3 top-1/2 -translate-y-1/2 px-1 bg-white text-gray-500 transition-all duration-200 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:px-1 peer-focus:text-xs peer-focus:text-blue-500 peer-focus:bg-white peer-focus:left-3 z-10"
 				>
 					{{ label }}
 				</label>
