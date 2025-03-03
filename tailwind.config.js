@@ -4,6 +4,10 @@ export default {
 	content: [],
 	theme: {
 		extend: {
+			backgroundBlur: {
+				'custom-blur': 'rgba(107, 114, 128, 0.1)', // bg-gray-500/10
+				'custom-blur-dark': 'rgba(30, 41, 59, 0.1)', // dark:bg-slate-800/10
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -54,7 +58,7 @@ export default {
 				customSecondary: '#4f46e5',
 				customDark: '#020617',
 				customLight: '#e5e7eb',
-				customAccent: '#10b981',
+				customAccent: 'oklch(0.968 0.007 247.896)',
 			},
 		},
 	},
