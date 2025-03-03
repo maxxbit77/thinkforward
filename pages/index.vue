@@ -1,14 +1,18 @@
 <script setup></script>
 <template>
 	<main>
-		<NavBar />
-		<Header />
+		<nav>
+			<NavBar />
+		</nav>
+
 		<!--  scroll component -->
-		<ScrollImage />
+		<header>
+			<Hero />
+		</header>
 
 		<!-- grid videos/charts -->
-		<section class="relative">
-			<div class="absolute top-[-1000px] bg-white dark:bg-slate-950 w-full px-2 fade-mask-top">
+		<div class="relative bg-customLight dark:bg-customDark">
+			<section class="absolute top-[-1000px] bg-customLight dark:bg-customDark w-full px-2 fade-mask-top">
 				<div class="relative max-w-7xl mx-auto">
 					<div class="grid-rows-3 space-y-4 relative z-10 mt-[800px] mb-[1000px]">
 						<div class="grid grid-cols-2 h-[500px] gap-x-4">
@@ -42,16 +46,16 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 
-			<section class="relative top-[1200px] bg-white dark:bg-slate-950 h-[800px] items-center">
+			<section class="relative top-[1100px] bg-customLight dark:bg-customDark h-[800px] items-center">
 				<div class="max-w-7xl mx-auto">
 					<div>
 						<h3 class="my-6 text-center text-4xl dark:text-white">Los datos nos avalan</h3>
 					</div>
 					<div class="grid grid-cols-4 h-[500px] gap-x-4">
 						<div
-							class="relative bg-gray-500/10 dark:bg-slate-950/20 rounded-lg col-span-2 flex flex-col justify-center backdrop-blur-xl items-center border-2 border-black dark:border-gray-500"
+							class="relative bg-gray-500/10 dark:bg-customDark/20 rounded-lg col-span-2 flex flex-col justify-center backdrop-blur-xl items-center border-2 border-customDark dark:border-gray-500"
 						>
 							<p class="absolute top-0 text-2xl z-10">Movements last months</p>
 							<ChartsBar class="p-8" :colors="['orange', 'red']" />
@@ -77,35 +81,30 @@
 			</section>
 
 			<!-- Companies -->
-			<section class="relative">
-				<ClientOnly>
-					<div class="w-full h-[600px] absolute top-[1200px] bg-white dark:bg-slate-950">
-						<h3 class="mb-24 text-4xl text-center text-slate-950 dark:text-gray-200">
-							Compañias que confian en nosotros
-						</h3>
-						<ImageBrandBanner />
-					</div>
-				</ClientOnly>
+			<section class="relative w-full top-[1000px]">
+				<SectionCompanies />
 			</section>
 
 			<!-- Services -->
-
-			<section class="relative top-[1800px] h-[800px] text-center bg-white dark:bg-slate-950">
+			<section class="relative top-[1200px] h-[800px] text-center bg-customLight dark:bg-customDark">
 				<SectionServices id="services" />
 			</section>
+
 			<!-- Contact -->
-			<section class="mb-24 relative top-[1800px] z-1 bg-white dark:bg-slate-950 h-[600px]">
+			<section class="relative top-[1100px] z-1 bg-customLight dark:bg-customDark h-[600px] w-full mx-auto">
 				<SectionContact id="contact" />
 			</section>
-			<footer
-				class="relative top-[1600px] z-1 bg-white dark:bg-slate-950 flex flex-col justify-center items-center space-y-4"
-			>
-				<div class="w-[400px] text-center">
-					<LogoThinkforward class="text-slate-950 dark:text-white" />
+
+			<!-- Footer -->
+			<footer class="absolute bottom-[-1300px] w-full z-1 bg-customLight dark:bg-slate-900/80 h-[200px]">
+				<div class="flex flex-col justify-center items-center space-y-4 h-full">
+					<div class="w-[400px]">
+						<LogoThinkforward class="text-customDark dark:text-customLight" />
+					</div>
+					<div class="flex justify-center">All rights reserved ThinkForward S.L.</div>
 				</div>
-				<div class="h-24 flex justify-center">All rights reserved ThinkForward S.L.</div>
 			</footer>
-		</section>
+		</div>
 	</main>
 </template>
 
