@@ -23,10 +23,10 @@ const defaultClass = [
 				<component v-if="icon" class="size-20" :class="[iconClass]" :is="icon" />
 				<img v-if="imageSrc" :src="imageSrc" :alt="imageAlt" class="h-24 my-4" />
 			</div>
-			<p class="text-4xl text-gray-200 font-bold">
+			<p class="text-4xl font-bold">
 				<slot name="title" />
 			</p>
-			<p class="text-xl text-gray-300">
+			<p class="text-xl text-customDark dark:text-customLight">
 				<slot name="text" />
 			</p>
 		</div>

@@ -1,4 +1,6 @@
 <script setup>
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+
 const company = {
 	email: 'info@thinkforward.es',
 	whatsapp: '34673184294',
@@ -7,8 +9,8 @@ const company = {
 
 const emailStructure = {
 	myEmail: company.email,
-	subject: 'Want contact',
-	body: 'Hello there!, I came across your portfolio and I am very interested in your work. Let’s connect!',
+	subject: 'Consulting',
+	body: 'Hello there!',
 }
 const emailToCopy = ref(company.email)
 const emailCopied = ref(false)
@@ -37,95 +39,121 @@ const copyPhoneToClipBoard = () => {
 		</div>
 		<div class="absolute z-10 w-full flex flex-col space-y-10">
 			<!-- title -->
-			<div class="mt-4 text-center">
+			<div class="text-center">
 				<h4 class="text-4xl">Want to chat?</h4>
 			</div>
 
 			<!-- contact -->
-			<div class="mt-4 flex justify-center items-center space-x-6">
-				<div class="text-center group cursor-pointer">
-					<button
-						@click="copyEmailToClipBoard"
-						class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
-					>
-						<Icon
-							v-if="!emailCopied"
-							name="lucide:copy"
-							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-						/>
-						<Icon
-							v-else
-							name="material-symbols:library-add-check-rounded"
-							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-						/>
-					</button>
-					<p
-						class="mt-1 dark:group-hover:text-white group-hover:text-slate-950 text-gray-500 text-xs transition-colors"
-					>
-						Copy email
-					</p>
+			<div class="flex justify-center items-center space-x-14">
+				<div class="text-center flex flex-col justify-center items-center space-y-2">
+					<TooltipProvider :delayDuration="50">
+						<Tooltip>
+							<TooltipTrigger as-child>
+								<button
+									@click="copyEmailToClipBoard"
+									class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
+								>
+									<Icon
+										v-if="!emailCopied"
+										name="lucide:copy"
+										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+									/>
+									<Icon
+										v-else
+										name="material-symbols:library-add-check-rounded"
+										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+									/>
+								</button>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p v-if="emailCopied">Copied!</p>
+								<p v-else>Copy Email</p>
+							</TooltipContent>
+						</Tooltip>
+						<p class="text-xs">{{ company.email }}</p>
+					</TooltipProvider>
 				</div>
 
-				<div class="text-center group cursor-pointer">
-					<button
-						class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
-					>
-						<a
-							:href="`mailto:${company.email}?subject=${encodeURIComponent(
-								emailStructure.subject
-							)}&body=${encodeURIComponent(emailStructure.body)}`"
-							aria-label="Send email"
-						>
-							<Icon
-								name="lucide:mail-plus"
-								class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-							/>
-						</a>
-					</button>
-					<p
-						class="mt-1 dark:group-hover:text-white group-hover:text-slate-950 text-gray-500 text-xs transition-colors"
-					>
-						Send email
-					</p>
+				<!-- Send Email -->
+				<div class="text-center flex flex-col justify-center items-center space-y-2">
+					<TooltipProvider :delayDuration="50">
+						<Tooltip>
+							<TooltipTrigger as-child>
+								<button
+									class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
+								>
+									<a
+										:href="`mailto:${company.email}?subject=${encodeURIComponent(
+											emailStructure.subject
+										)}&body=${encodeURIComponent(emailStructure.body)}`"
+										aria-label="Send email"
+									>
+										<Icon
+											name="lucide:mail-plus"
+											class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+										/>
+									</a>
+								</button>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Send Email</p>
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<p class="text-xs">Send email</p>
 				</div>
 
-				<div class="text-center group cursor-pointer">
-					<button
-						@click="openWhatsApp"
-						class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
-					>
-						<Icon
-							name="garden:whatsapp-stroke-16"
-							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-						/>
-					</button>
-					<p
-						class="mt-1 dark:group-hover:text-white group-hover:text-slate-950 text-gray-500 text-xs transition-colors"
-					>
-						Whatsapp
-					</p>
+				<!-- WhatsApp -->
+				<div class="text-center flex flex-col justify-center items-center space-y-2">
+					<TooltipProvider :delayDuration="50">
+						<Tooltip>
+							<TooltipTrigger as-child>
+								<button
+									@click="openWhatsApp"
+									class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
+								>
+									<Icon
+										name="garden:whatsapp-stroke-16"
+										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+									/>
+								</button>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Send WhatsApp</p>
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<p class="text-xs">+{{ company.whatsapp }}</p>
 				</div>
-				<div class="text-center group cursor-pointer">
-					<button
-						@click="copyPhoneToClipBoard"
-						class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
-					>
-						<Icon
-							v-if="!phoneCopied"
-							name="material-symbols:call-sharp"
-							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-						/>
-						<Icon
-							v-else
-							name="material-symbols:library-add-check-rounded"
-							class="size-6 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-						/>
-					</button>
-					<p
-						class="mt-1 dark:group-hover:text-white group-hover:text-slate-950 text-gray-500 text-xs transition-colors"
-					>
-						Copy number
-					</p>
+
+				<!-- Copy Phone -->
+				<div class="text-center flex flex-col justify-center items-center space-y-2">
+					<TooltipProvider :delayDuration="50">
+						<Tooltip>
+							<TooltipTrigger as-child>
+								<button
+									@click="copyPhoneToClipBoard"
+									class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
+								>
+									<Icon
+										v-if="!phoneCopied"
+										name="material-symbols:call-sharp"
+										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+									/>
+									<Icon
+										v-else
+										name="material-symbols:library-add-check-rounded"
+										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
+									/>
+								</button>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p v-if="phoneCopied">Copied!</p>
+								<p v-else>Copy Number</p>
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<p class="text-xs">+{{ company.phone }}</p>
 				</div>
 			</div>
 			<!-- Separator -->
@@ -135,15 +163,29 @@ const copyPhoneToClipBoard = () => {
 			<!-- Socials -->
 			<h4 class="text-4xl text-center">Visit Us</h4>
 			<div class="flex justify-center items-center space-x-4">
-				<a
-					href="https://www.linkedin.com/in/juan-jos%C3%A9-cas%C3%A1is-borrell-69863211a/"
-					class="cursor-pointer"
-					target="_blank"
-				>
-					<Icon name="skill-icons:linkedin" class="size-8" />
+				<a href="https://www.linkedin.com/company/thinkforward.es/" class="cursor-pointer" target="_blank">
+					<TooltipProvider :delayDuration="50">
+						<Tooltip>
+							<TooltipTrigger as-child>
+								<button>
+									<Icon name="skill-icons:linkedin" class="size-8" />
+								</button>
+							</TooltipTrigger>
+							<TooltipContent> Linkedin </TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
 				</a>
-				<a href="#" class="cursor-pointer">
-					<Icon name="skill-icons:twitter" class="size-8" />
+				<a href="#" class="cursor-pointer" target="_blank">
+					<TooltipProvider :delayDuration="50">
+						<Tooltip>
+							<TooltipTrigger as-child>
+								<button>
+									<Icon name="skill-icons:twitter" class="size-8" />
+								</button>
+							</TooltipTrigger>
+							<TooltipContent> X </TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
 				</a>
 			</div>
 		</div>

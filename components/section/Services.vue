@@ -43,7 +43,7 @@ const data = [
 </script>
 <template>
 	<div>
-		<h3 class="mb-12 dark:text-white text-4xl">Nuestros Servicios</h3>
+		<h3 class="mb-12 text-customDark dark:text-customLight text-4xl">Nuestros Servicios</h3>
 		<div class="grid grid-cols-3 gap-8 max-w-7xl mx-auto">
 			<Card
 				v-for="(item, index) in data"
