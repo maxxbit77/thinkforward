@@ -58,7 +58,7 @@ export default {
 				customSecondary: '#4f46e5',
 				customDark: '#020617',
 				customLight: '#e5e7eb',
-				customAccent: 'oklch(0.968 0.007 247.896)',
+				customAccent: '#00d492',
 			},
 		},
 	},

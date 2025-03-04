@@ -11,9 +11,11 @@
 		</header>
 
 		<div class="relative top-0 bg-customLight dark:bg-customDark">
-			<div class="h-[400px] w-full bg-customLight dark:bg-customDark absolute top-[-300px] z-10 fade-mask"></div>
+			<div
+				class="h-[400px] w-full bg-customLight dark:bg-customDark absolute top-[-300px] z-10 fade-mask-top"
+			></div>
 			<!-- Services -->
-			<section class="pt-44">
+			<section class="pt-24">
 				<SectionServices id="services" />
 			</section>
 
@@ -37,6 +39,11 @@
 				<SectionContact id="contact" />
 			</section>
 
+			<!-- Contact -->
+			<section class="mt-44">
+				<SectionNewsletter id="suscribe" />
+			</section>
+
 			<!-- Footer -->
 			<footer class="mt-44 pb-24">
 				<SectionFooter />
@@ -47,8 +54,8 @@
 
 <style scoped>
 .fade-mask-top {
-	-webkit-mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent);
-	mask-image: linear-gradient(to bottom, transparent, white 20%, white 100%, transparent);
+	-webkit-mask-image: linear-gradient(to bottom, transparent, white 40%, white 80%, transparent);
+	mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent);
 }
 
 .fade-mask {

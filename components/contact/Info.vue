@@ -3,8 +3,8 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 
 const company = {
 	email: 'info@thinkforward.es',
-	whatsapp: '34673184294',
-	phone: '34935159643',
+	whatsapp: '+34673184294',
+	phone: '+34935159643',
 }
 
 const emailStructure = {
@@ -49,28 +49,15 @@ const copyPhoneToClipBoard = () => {
 					<TooltipProvider :delayDuration="50">
 						<Tooltip>
 							<TooltipTrigger as-child>
-								<button
-									@click="copyEmailToClipBoard"
-									class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
-								>
-									<Icon
-										v-if="!emailCopied"
-										name="lucide:copy"
-										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-									/>
-									<Icon
-										v-else
-										name="material-symbols:library-add-check-rounded"
-										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-									/>
-								</button>
+								<div @click="copyEmailToClipBoard">
+									<ButtonIcon icon="lucide:copy" />
+								</div>
 							</TooltipTrigger>
 							<TooltipContent>
-								<p v-if="emailCopied">Copied!</p>
-								<p v-else>Copy Email</p>
+								<p>Copy Email</p>
 							</TooltipContent>
 						</Tooltip>
-						<p class="text-xs">{{ company.email }}</p>
+						<p class="text-md font-bold text-gray-500 dark:text-customLight">{{ company.email }}</p>
 					</TooltipProvider>
 				</div>
 
@@ -79,28 +66,21 @@ const copyPhoneToClipBoard = () => {
 					<TooltipProvider :delayDuration="50">
 						<Tooltip>
 							<TooltipTrigger as-child>
-								<button
-									class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
+								<a
+									:href="`mailto:${company.email}?subject=${encodeURIComponent(
+										emailStructure.subject
+									)}&body=${encodeURIComponent(emailStructure.body)}`"
+									aria-label="Send email"
 								>
-									<a
-										:href="`mailto:${company.email}?subject=${encodeURIComponent(
-											emailStructure.subject
-										)}&body=${encodeURIComponent(emailStructure.body)}`"
-										aria-label="Send email"
-									>
-										<Icon
-											name="lucide:mail-plus"
-											class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-										/>
-									</a>
-								</button>
+									<ButtonIcon icon="lucide:mail-plus" />
+								</a>
 							</TooltipTrigger>
 							<TooltipContent>
 								<p>Send Email</p>
 							</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>
-					<p class="text-xs">Send email</p>
+					<p class="text-md font-bold text-gray-500 dark:text-customLight">Send email</p>
 				</div>
 
 				<!-- WhatsApp -->
@@ -108,22 +88,18 @@ const copyPhoneToClipBoard = () => {
 					<TooltipProvider :delayDuration="50">
 						<Tooltip>
 							<TooltipTrigger as-child>
-								<button
-									@click="openWhatsApp"
-									class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
-								>
-									<Icon
-										name="garden:whatsapp-stroke-16"
-										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-									/>
-								</button>
+								<div @click="openWhatsApp">
+									<ButtonIcon icon="garden:whatsapp-stroke-16" />
+								</div>
 							</TooltipTrigger>
 							<TooltipContent>
 								<p>Send WhatsApp</p>
 							</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>
-					<p class="text-xs">+{{ company.whatsapp }}</p>
+					<p class="text-md font-bold text-gray-500 dark:text-customLight">
+						{{ company.whatsapp }}
+					</p>
 				</div>
 
 				<!-- Copy Phone -->
@@ -131,21 +107,9 @@ const copyPhoneToClipBoard = () => {
 					<TooltipProvider :delayDuration="50">
 						<Tooltip>
 							<TooltipTrigger as-child>
-								<button
-									@click="copyPhoneToClipBoard"
-									class="relative transition-all duration-300 ease-in border border-gray-600 group-hover:border-white group-hover:bg-slate-800 rounded-xl px-3 pt-3 pb-2"
-								>
-									<Icon
-										v-if="!phoneCopied"
-										name="material-symbols:call-sharp"
-										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-									/>
-									<Icon
-										v-else
-										name="material-symbols:library-add-check-rounded"
-										class="size-8 text-Slate-950 dark:text-white transition-colors duration-300 ease-in group-hover:text-gray-200"
-									/>
-								</button>
+								<div @click="copyPhoneToClipBoard">
+									<ButtonIcon icon="material-symbols:call-sharp" />
+								</div>
 							</TooltipTrigger>
 							<TooltipContent>
 								<p v-if="phoneCopied">Copied!</p>
@@ -153,7 +117,9 @@ const copyPhoneToClipBoard = () => {
 							</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>
-					<p class="text-xs">+{{ company.phone }}</p>
+					<p class="text-md font-bold text-gray-500 dark:text-customLight">
+						{{ company.phone }}
+					</p>
 				</div>
 			</div>
 			<!-- Separator -->
