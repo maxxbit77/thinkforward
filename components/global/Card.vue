@@ -1,19 +1,16 @@
 <script setup>
 import { background } from '@unovis/ts/components/timeline/style'
-import { resolveComponent } from 'vue'
 
 const props = defineProps({
 	icon: Object,
-	background: Object,
 	iconClass: String,
 	customClass: String,
 	imageSrc: String,
 	imageAlt: String,
+	background: Object,
 })
 
-const defaultClass = [
-	' relative bg-slate-800/10 backdrop-blur-xl bg-gray-500/10 dark:bg-slate-800/10 p-8  rounded-2xl  border-2  text-center  overflow-hidden',
-]
+const defaultClass = [' custom-blur p-8  rounded-2xl  border-2  text-center  overflow-hidden']
 </script>
 
 <template>

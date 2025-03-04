@@ -52,7 +52,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-	<div class="h-[300vh]">
+	<div class="h-[250vh]">
 		<img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" />
 		<!-- Título con opacidad dinámica -->
 		<div

@@ -7,30 +7,30 @@
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
 	>
-		<circle cx="240" cy="394" r="240" fill="url(#gradient1)" fill-opacity=".4"></circle>
-		<circle cx="438" cy="240" r="240" fill="url(#gradient2)" fill-opacity=".6"></circle>
+		<circle cx="240" cy="394" r="240" fill="url(#orange_gradient_0)" fill-opacity=".4"></circle>
+		<circle cx="438" cy="240" r="240" fill="url(#orange_gradient_1)" fill-opacity=".6"></circle>
 		<defs>
 			<radialGradient
-				id="gradient1"
+				id="orange_gradient_0"
 				cx="0"
 				cy="0"
 				r="1"
 				gradientUnits="userSpaceOnUse"
 				gradientTransform="rotate(90 -77 317) scale(189.054)"
 			>
-				<stop stop-color="#FFA500"></stop>
-				<stop offset="1" stop-color="#FF4500" stop-opacity=".01"></stop>
+				<stop stop-color="#FF9900"></stop>
+				<stop offset="1" stop-color="#CC5500" stop-opacity=".01"></stop>
 			</radialGradient>
 			<radialGradient
-				id="gradient2"
+				id="orange_gradient_1"
 				cx="0"
 				cy="0"
 				r="1"
 				gradientUnits="userSpaceOnUse"
 				gradientTransform="rotate(90 99 339) scale(189.054)"
 			>
-				<stop stop-color="#FFCC66"></stop>
-				<stop offset="1" stop-color="#FF9933" stop-opacity=".01"></stop>
+				<stop stop-color="#FFB347"></stop>
+				<stop offset="1" stop-color="#FF6600" stop-opacity=".01"></stop>
 			</radialGradient>
 		</defs>
 	</svg>

@@ -75,6 +75,11 @@
 		@apply bg-background text-foreground;
 	}
 }
+
 html {
 	scroll-behavior: smooth;
+}
+
+.custom-blur {
+	@apply backdrop-blur-2xl bg-gray-500/10 dark:bg-slate-800/10;
 }

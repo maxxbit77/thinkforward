@@ -1,0 +1,79 @@
+<script setup>
+const emailSuscriber = ref('')
+
+const clearForm = () => {
+	emailSuscriber.value = ''
+}
+
+const subscribe = () => {
+	clearForm()
+}
+</script>
+
+<template>
+	<div class="h-auto">
+		<div class="w-1/3 mx-auto">
+			<h2 class="text-customDark text-4xl mb-4 text-center dark:text-customLight">Subscribe to our Newsletter</h2>
+			<p class="text-gray-600 text-center text-sm mb-6 dark:text-gray-300">
+				Stay updated with the latest news and exclusive offers.
+			</p>
+			<form @submit.prevent="subscribe">
+				<div class="relative mb-4">
+					<input
+						id="emailSuscriber"
+						v-model="emailSuscriber"
+						type="email"
+						required
+						placeholder=" "
+						class="peer p-2 text-xs w-full border border-gray-400 rounded-md outline-none focus:border-customPrimary text-customDark dark:bg-customDark dark:text-gray-200"
+					/>
+					<label for="emailSuscriber">Enter your email</label>
+				</div>
+
+				<button
+					type="submit"
+					class="w-full bg-customPrimary text-customLight p-2 rounded-md hover:bg-customSecondary transition-all"
+				>
+					Subscribe
+				</button>
+			</form>
+		</div>
+	</div>
+</template>
+
+<style scoped>
+label {
+	position: absolute;
+	left: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 0.2s ease-in-out;
+	color: gray;
+	font-size: 14px;
+	background-color: transparent;
+	padding: 0 4px;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+	top: -8px;
+	left: -2px;
+	font-size: 12px;
+	color: #0ea5e9;
+	background-color: transparent;
+	padding-left: 4px;
+	padding-right: 4px;
+	border-radius: 5px;
+	z-index: 10;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+	-webkit-text-fill-color: white !important;
+	transition: background-color 5000s ease-in-out 0s !important;
+	background-color: transparent !important;
+	appearance: none !important;
+}
+</style>
