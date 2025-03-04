@@ -1,5 +1,11 @@
 <script setup>
-import { reactive } from 'vue'
+import { useToast } from '@/components/ui/toast/use-toast'
+import { Button } from '@/components/ui/button'
+import { Loader2 } from 'lucide-vue-next'
+import { ref, reactive } from 'vue'
+
+const { toast } = useToast()
+const isLoading = ref(false)
 
 const form = reactive({
 	name: '',
@@ -15,9 +21,30 @@ const clearForm = () => {
 	form.subject = ''
 }
 
-const sendEmail = () => {
-	clearForm()
-	console.log('form1', form)
+const handleSubmit = async () => {
+	isLoading.value = true
+
+	try {
+		const formData = new FormData()
+		formData.append('name', form.name)
+		formData.append('email', form.email)
+		formData.append('company', form.company)
+		formData.append('message', form.subject)
+		formData.append('_captcha', 'false') // Desactiva el captcha
+		formData.append('_template', 'table') // Opcional: Formato del email
+
+		await fetch('https://formsubmit.co/thinkforward.dev.services@gmail.com', {
+			method: 'POST',
+			body: formData,
+		})
+
+		toast({ description: '✅✅ Your message has been sent.' })
+		clearForm()
+	} catch (error) {
+		toast({ description: '❌ Error sending message. Please try again.' })
+	} finally {
+		isLoading.value = false
+	}
 }
 </script>
 
@@ -26,12 +53,14 @@ const sendEmail = () => {
 		class="w-[400px] p-12 shadow-md rounded-lg border border-gray-500 h-[500px] absolute -top-[50px] custom-blur flex flex-col justify-center"
 	>
 		<h2 class="text-customDark text-4xl mb-8 text-center dark:text-customLight">Send us a message</h2>
-		<form @submit.prevent="sendEmail">
+
+		<form @submit.prevent="handleSubmit">
 			<!-- Nombre -->
 			<div class="relative mb-6">
 				<input
 					id="name"
 					v-model="form.name"
+					name="name"
 					type="text"
 					required
 					placeholder=" "
@@ -45,6 +74,7 @@ const sendEmail = () => {
 				<input
 					id="email"
 					v-model="form.email"
+					name="email"
 					type="email"
 					required
 					placeholder=" "
@@ -58,6 +88,7 @@ const sendEmail = () => {
 				<input
 					id="company"
 					v-model="form.company"
+					name="company"
 					type="text"
 					placeholder=" "
 					class="peer p-2 text-xs w-full border border-gray-400 rounded-md outline-none focus:border-customPrimary text-customDark dark:bg-customDark dark:text-gray-200"
@@ -70,6 +101,7 @@ const sendEmail = () => {
 				<textarea
 					id="subject"
 					v-model="form.subject"
+					name="message"
 					required
 					placeholder=" "
 					class="peer p-2 text-xs w-full border border-gray-400 rounded-md outline-none focus:border-customPrimary text-customDark dark:bg-customDark dark:text-gray-200"
@@ -78,12 +110,14 @@ const sendEmail = () => {
 			</div>
 
 			<!-- Botón de envío -->
-			<button
+			<Button
 				type="submit"
+				:disabled="isLoading"
 				class="w-full bg-customPrimary text-customLight p-2 rounded-md hover:bg-customSecondary transition-all"
 			>
-				Send
-			</button>
+				<Loader2 v-if="isLoading" class="size-6 mr-2 animate-spin" />
+				{{ isLoading ? 'Sending...' : 'Send Message' }}
+			</Button>
 		</form>
 	</div>
 </template>

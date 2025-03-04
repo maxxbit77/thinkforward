@@ -1,5 +1,7 @@
 <script setup>
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import { useToast } from '@/components/ui/toast/use-toast'
+const { toast } = useToast()
 
 const company = {
 	email: 'info@thinkforward.es',
@@ -21,14 +23,26 @@ const phoneCopied = ref(false)
 const openWhatsApp = () => {
 	window.open(`https://wa.me/${company.phone}`, '_blank')
 }
+function openToast() {
+	toast({
+		description: '✅✅ Copied to Clipboard',
+	})
+}
 
 const copyEmailToClipBoard = () => {
 	navigator.clipboard.writeText(emailToCopy.value)
 	emailCopied.value === false ? (emailCopied.value = true) : (emailCopied.value = false)
+	if (emailCopied) {
+		openToast()
+	}
 }
 const copyPhoneToClipBoard = () => {
 	navigator.clipboard.writeText(phoneToCopy.value)
 	phoneCopied.value === false ? (phoneCopied.value = true) : (phoneCopied.value = false)
+
+	if (phoneCopied) {
+		openToast()
+	}
 }
 </script>
 
@@ -112,8 +126,7 @@ const copyPhoneToClipBoard = () => {
 								</div>
 							</TooltipTrigger>
 							<TooltipContent>
-								<p v-if="phoneCopied">Copied!</p>
-								<p v-else>Copy Number</p>
+								<p>Copy Number</p>
 							</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>

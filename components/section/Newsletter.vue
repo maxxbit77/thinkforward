@@ -1,12 +1,26 @@
 <script setup>
-const emailSuscriber = ref('')
+import { useToast } from '@/components/ui/toast/use-toast'
+import { Button } from '@/components/ui/button'
+import { Loader2 } from 'lucide-vue-next'
 
+const { toast } = useToast()
+
+const emailSuscriber = ref('')
+const isLoading = ref(false)
 const clearForm = () => {
 	emailSuscriber.value = ''
 }
 
 const subscribe = () => {
-	clearForm()
+	isLoading.value = true
+
+	setTimeout(() => {
+		isLoading.value = false
+		toast({
+			description: '✅ Your email has been added to our newsletter',
+		})
+		clearForm()
+	}, 2000)
 }
 </script>
 
@@ -30,12 +44,14 @@ const subscribe = () => {
 					<label for="emailSuscriber">Enter your email</label>
 				</div>
 
-				<button
+				<Button
 					type="submit"
+					:disabled="isLoading"
 					class="w-full bg-customPrimary text-customLight p-2 rounded-md hover:bg-customSecondary transition-all"
 				>
+					<Loader2 v-if="isLoading" class="size-6 mr-2 animate-spin text-white" />
 					Subscribe
-				</button>
+				</Button>
 			</form>
 		</div>
 	</div>
