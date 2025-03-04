@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { SvgWeb, SvgCollab, SvgProcess, SvgSolutions } from '#components'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const images = import.meta.glob('@/public/frames/truck-going/*.webp', { eager: true })
 const imagePaths = Object.values(images).map((module) => module.default)
@@ -59,8 +62,10 @@ onUnmounted(() => {
 			:style="{ opacity: titleOpacity }"
 			class="absolute top-[400px] text-gray-500 left-1/2 -translate-x-1/2 text-center transition-opacity duration-200"
 		>
-			<h1 class="text-6xl">Con Thinkforward olvidate...</h1>
-			<p class="text-2xl">El pelado te soluciona todos tus problemas</p>
+			<div>
+				<p>{{ $t('hello') }}</p>
+				<p>{{ $t('welcome') }}</p>
+			</div>
 		</div>
 
 		<ClientOnly>

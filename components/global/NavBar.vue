@@ -5,19 +5,15 @@
 			<div class="max-w-7xl grid grid-cols-3 items-center mx-auto">
 				<div class="flex justify-between items-center h-full">
 					<div class="flex space-x-6">
-						<a href="/">Home</a>
-						<a href="/#services">Services</a>
-						<a href="/#contact">Contact</a>
+						<NuxtLink to="/">Home</NuxtLink>
+						<NuxtLink to="/#services">Services</NuxtLink>
+						<NuxtLink to="/#contact">Contact</NuxtLink>
 					</div>
 				</div>
 				<div />
 				<div class="flex justify-end items-center h-full space-x-6">
 					<span>FAQ'S</span>
-					<div class="flex">
-						<p>ES/</p>
-						<p>EN/</p>
-						<p>HL</p>
-					</div>
+					<ButtonLang />
 					<ButtonToggleDarkMode />
 				</div>
 			</div>
