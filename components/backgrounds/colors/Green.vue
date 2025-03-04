@@ -7,34 +7,30 @@
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
 	>
-		<circle cx="240" cy="394" r="240" fill="url(#gradient1)" fill-opacity=".4"></circle>
-		<circle cx="438" cy="240" r="240" fill="url(#gradient2)" fill-opacity=".6"></circle>
+		<circle cx="240" cy="394" r="240" fill="url(#green_gradient_0)" fill-opacity=".4"></circle>
+		<circle cx="438" cy="240" r="240" fill="url(#green_gradient_1)" fill-opacity=".6"></circle>
 		<defs>
 			<radialGradient
-				id="gradient1"
+				id="green_gradient_0"
 				cx="0"
 				cy="0"
 				r="1"
 				gradientUnits="userSpaceOnUse"
 				gradientTransform="rotate(90 -77 317) scale(189.054)"
 			>
-				<stop stop-color="#22c55e"></stop>
-				<!-- green-500 -->
-				<stop offset="1" stop-color="#14532d" stop-opacity=".01"></stop>
-				<!-- green-900 -->
+				<stop stop-color="#66CC66"></stop>
+				<stop offset="1" stop-color="#228B22" stop-opacity=".01"></stop>
 			</radialGradient>
 			<radialGradient
-				id="gradient2"
+				id="green_gradient_1"
 				cx="0"
 				cy="0"
 				r="1"
 				gradientUnits="userSpaceOnUse"
 				gradientTransform="rotate(90 99 339) scale(189.054)"
 			>
-				<stop stop-color="#bbf7d0"></stop>
-				<!-- green-300 -->
-				<stop offset="1" stop-color="#4ade80" stop-opacity=".01"></stop>
-				<!-- green-400 -->
+				<stop stop-color="#99FF99"></stop>
+				<stop offset="1" stop-color="#006400" stop-opacity=".01"></stop>
 			</radialGradient>
 		</defs>
 	</svg>

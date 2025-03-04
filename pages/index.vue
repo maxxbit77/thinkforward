@@ -45,7 +45,7 @@
 			</section>
 
 			<!-- Footer -->
-			<footer class="mt-44 pb-24">
+			<footer class="mt-44">
 				<SectionFooter />
 			</footer>
 		</div>
