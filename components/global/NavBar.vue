@@ -1,3 +1,8 @@
+<script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+</script>
+
 <template>
 	<div>
 		<Header />
@@ -5,14 +10,17 @@
 			<div class="max-w-7xl grid grid-cols-3 items-center mx-auto">
 				<div class="flex justify-between items-center h-full">
 					<div class="flex space-x-6">
-						<NuxtLink to="/">Home</NuxtLink>
-						<NuxtLink to="/#services">Services</NuxtLink>
-						<NuxtLink to="/#contact">Contact</NuxtLink>
+						<NuxtLink to="#home">
+							{{ t('menu.home') }}
+						</NuxtLink>
+						<NuxtLink to="#services">{{ t('menu.services') }}</NuxtLink>
+						<NuxtLink to="#products">{{ t('menu.products') }}</NuxtLink>
 					</div>
 				</div>
 				<div />
 				<div class="flex justify-end items-center h-full space-x-6">
-					<span>FAQ'S</span>
+					<NuxtLink to="#contact">{{ t('menu.contact') }}</NuxtLink>
+					<NuxtLink to="#home">{{ t('menu.about') }}</NuxtLink>
 					<ButtonLang />
 					<ButtonToggleDarkMode />
 				</div>

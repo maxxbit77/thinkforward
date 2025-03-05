@@ -10,12 +10,12 @@ const props = defineProps({
 	background: Object,
 })
 
-const defaultClass = [' custom-blur p-8  rounded-2xl  border-2  text-center  overflow-hidden']
+const defaultClass = [' custom-blur p-8  rounded-2xl  border-2  text-center  overflow-hidden ']
 </script>
 
 <template>
 	<div :class="[defaultClass, customClass]">
-		<div class="flex flex-col justify-center items-center">
+		<div class="flex flex-col justify-center items-center h-full">
 			<div>
 				<component v-if="icon" class="size-20" :class="[iconClass]" :is="icon" />
 				<img v-if="imageSrc" :src="imageSrc" :alt="imageAlt" class="h-24 my-4" />

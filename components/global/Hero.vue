@@ -55,35 +55,42 @@ onUnmounted(() => {
 </script>
 
 <template>
-	<div class="h-[250vh]">
-		<img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" />
-		<!-- Título con opacidad dinámica -->
-		<div
-			:style="{ opacity: titleOpacity }"
-			class="absolute top-[400px] text-gray-500 left-1/2 -translate-x-1/2 text-center transition-opacity duration-200"
-		>
-			<div>
-				<p>{{ $t('hello') }}</p>
-				<p>{{ $t('welcome') }}</p>
-			</div>
-		</div>
+	<ClientOnly>
+		<div class="h-[250vh]">
+			<img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" />
 
-		<ClientOnly>
+			<header>
+				<div :style="{ opacity: titleOpacity }">
+					<div
+						class="z-1 w-full h-[1800px] absolute top-[-300px] text-gray-500 left-1/2 -translate-x-1/2 text-center transition-opacity duration-200 custom-blur overflow-hidden fade-mask-top"
+					>
+						<BackgroundsColorsBlueTest
+							class="animate-[spin_30s_linear_infinite] size-[2000px] absolute top-[-200px] left-[-100px]"
+						/>
+					</div>
+					<div
+						class="absolute top-[500px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
+					>
+						<h1 class="text-6xl text-customDark">{{ $t('hero.title') }}</h1>
+						<h2 class="text-2xl">{{ $t('hero.subtitle') }}</h2>
+						<p class="text-gray-300">{{ $t('hero.description') }}</p>
+					</div>
+				</div>
+			</header>
+
 			<div class="relative top-[1250px] w-[1200px] mx-auto">
 				<div class="absolute top-0 left-[10%]">
 					<Card
 						:icon="SvgWeb"
 						iconClass="text-sky-500"
-						customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500 w-[400px]"
+						customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500 size-[400px]"
 					>
 						<template #title>
-							<h3 class="text-slate-900">Amplia red de expertos del sector en toda Europa</h3>
+							<h3 class="text-slate-900">{{ $t('presentation.card-1.title') }}</h3>
 						</template>
 						<template #text>
 							<p class="text-slate-900">
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus
-								labore beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt,
-								ex quibusdam sint ipsa magni non.
+								{{ $t('presentation.card-1.description') }}
 							</p>
 						</template>
 					</Card>
@@ -92,16 +99,14 @@ onUnmounted(() => {
 					<Card
 						:icon="SvgProcess"
 						iconClass="text-green-500"
-						customClass="border-green-500 shadow-xl shadow-green-500 w-[400px]"
+						customClass="border-green-500 shadow-xl shadow-green-500 size-[400px]"
 					>
 						<template #title>
-							<h3 class="text-slate-900">Procesos respetuosos con el medio ambiente</h3>
+							<h3 class="text-slate-900">{{ $t('presentation.card-2.title') }}</h3>
 						</template>
 						<template #text>
 							<p class="text-slate-900">
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus
-								labore beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt,
-								ex quibusdam sint ipsa magni non.
+								{{ $t('presentation.card-2.description') }}
 							</p>
 						</template>
 					</Card>
@@ -110,16 +115,14 @@ onUnmounted(() => {
 					<Card
 						:icon="SvgSolutions"
 						iconClass="text-yellow-500"
-						customClass="border-yellow-500 shadow-xl shadow-yellow-500 w-[400px]"
+						customClass="border-yellow-500 shadow-xl shadow-yellow-500 size-[400px]"
 					>
 						<template #title>
-							<h3 class="text-slate-900">Soluciones rápidas y adaptadas a nuestros clientes.</h3>
+							<h3 class="text-slate-900">{{ $t('presentation.card-3.title') }}</h3>
 						</template>
 						<template #text>
 							<p class="text-slate-900">
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus
-								labore beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt,
-								ex quibusdam sint ipsa magni non.
+								{{ $t('presentation.card-3.description') }}
 							</p>
 						</template>
 					</Card>
@@ -128,23 +131,36 @@ onUnmounted(() => {
 					<Card
 						:icon="SvgCollab"
 						iconClass="text-rose-500"
-						customClass="border-rose-500 shadow-xl shadow-rose-500 w-[400px]"
+						customClass="border-rose-500 shadow-xl shadow-rose-500 size-[400px]"
 					>
 						<template #title>
-							<h3 class="text-slate-900">Trato personalizado con todos nuestros colaboradores.</h3>
+							<h3 class="text-slate-900">{{ $t('presentation.card-4.title') }}</h3>
 						</template>
 						<template #text>
 							<p class="text-slate-900">
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis minus
-								labore beatae fuga iste sequi non laborum corporis culpa hic, tenetur minima. Nesciunt,
-								ex quibusdam sint ipsa magni non.
+								{{ $t('presentation.card-4.description') }}
 							</p>
 						</template>
 					</Card>
 				</div>
 			</div>
-		</ClientOnly>
-	</div>
+		</div>
+	</ClientOnly>
 </template>
 
-<style scoped></style>
+<style scoped>
+.fade-mask {
+	-webkit-mask-image: radial-gradient(ellipse at center, white 50%, transparent 100%);
+	mask-image: radial-gradient(ellipse at center, white 50%, transparent 100%);
+}
+
+.fade-mask-top {
+	-webkit-mask-image: linear-gradient(to bottom, transparent, white 40%, white 80%, transparent);
+	mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent);
+}
+
+.fade-mask-sides {
+	-webkit-mask-image: linear-gradient(to right, transparent, white 30%, white 70%, transparent);
+	mask-image: linear-gradient(to right, transparent, white 30%, white 70%, transparent);
+}
+</style>

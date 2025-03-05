@@ -1,4 +1,146 @@
 {
-	"hello": "Hola",
-	"welcome": "Bienvenido a nuestro sitio web"
+	"menu": {
+		"home": "Inicio",
+		"services": "Servicios",
+		"contact": "Contacto",
+		"products": "Productos",
+		"about": "Conócenos"
+	},
+
+	"hero": {
+		"title": "Transporte y logística nacional e internacional",
+		"subtitle": "Con nosotros podrás alcanzar esos destinos deseados",
+		"description": "Te acompañamos en todo el viaje para que tus productos lleguen a su destino sin contratiempos."
+	},
+
+	"presentation": {
+		"card-1": {
+			"title": "Contamos con una amplia red en toda Europa",
+			"description": "Nuestra red de transporte nos permite operar en múltiples países, garantizando entregas seguras y eficientes."
+		},
+		"card-2": {
+			"title": "Procesos respetuosos con el medio ambiente",
+			"description": "Nos comprometemos con la sostenibilidad mediante prácticas ecológicas y reduciendo nuestra huella de carbono."
+		},
+		"card-3": {
+			"title": "Soluciones rápidas y adaptadas a nuestros clientes",
+			"description": "Ofrecemos soluciones flexibles y eficientes para cubrir las necesidades específicas de cada cliente."
+		},
+		"card-4": {
+			"title": "Nos destaca nuestro trato personalizado",
+			"description": "Brindamos una atención cercana y personalizada para garantizar la mejor experiencia en logística y transporte."
+		}
+	},
+
+	"services": {
+		"title": "Nuestros servicios",
+		"description": "Diseñamos procesos logísticos eficientes y personalizados para cada uno de nuestros clientes.",
+		"services": {
+			"service-1": {
+				"title": "Transporte terrestre",
+				"description": "Ofrecemos soluciones de transporte por carretera adaptadas a diferentes tipos de mercancía."
+			},
+			"service-2": {
+				"title": "Logística y distribución",
+				"description": "Gestionamos la distribución y almacenamiento de productos para optimizar tiempos y costos."
+			},
+			"service-3": {
+				"title": "Transporte internacional",
+				"description": "Facilitamos el comercio global con soluciones logísticas eficientes para envíos internacionales."
+			}
+		}
+	},
+
+	"products": {
+		"title": "Nuestros productos",
+		"description": "Trabajamos con una amplia gama de productos y sus derivados, garantizando su transporte en óptimas condiciones.",
+		"product-1": {
+			"title": "Vinos y licores",
+			"description": "Transporte especializado para vinos y licores, manteniendo su calidad y características originales."
+		},
+		"product-2": {
+			"title": "Zumos de frutas",
+			"description": "Garantizamos el traslado de zumos de frutas con estrictos controles de temperatura y seguridad."
+		},
+		"product-3": {
+			"title": "Aceites vegetales",
+			"description": "Soluciones de transporte para aceites vegetales, asegurando su integridad y calidad."
+		}
+	},
+
+	"data": {
+		"title": "Los datos nos avalan",
+		"description": "Nuestra experiencia y volumen de operaciones reflejan la confianza que nuestros clientes depositan en nosotros.",
+		"charts": {
+			"chart-1": {
+				"title": "Movimientos del último mes"
+			},
+			"box-1": {
+				"title": "Transportes realizados"
+			},
+			"box-2": {
+				"title": "Total volumen transportado"
+			},
+			"box-3": {
+				"title": "Kilómetros recorridos"
+			}
+		}
+	},
+
+	"companies": {
+		"title": "Compañías que confían en nosotros",
+		"description": "Trabajamos con importantes empresas que confían en nuestra capacidad y compromiso."
+	},
+
+	"contact": {
+		"info": {
+			"title": "Ponte en contacto con nosotros",
+			"schedule": "Nuestro horario es: Lunes - Sábados de 8:00 a 18:00 (CET)",
+			"visitUs": "Visítanos en redes sociales",
+			"icons": {
+				"sendEmail": "Enviar correo electrónico"
+			},
+			"tooltip": {
+				"copyEmail": "Copiar correo electrónico",
+				"sendEmail": "Enviar correo electrónico",
+				"whatsApp": "Abrir WhatsApp",
+				"copyPhone": "Copiar número"
+			},
+			"separator": "O"
+		},
+		"message": {
+			"title": "Envíanos un mensaje",
+			"button": {
+				"default": "Enviar mensaje",
+				"loading": "Enviando..."
+			},
+			"inputs": {
+				"name": "Nombre",
+				"email": "Correo electrónico",
+				"company": "Compañía",
+				"subject": "Mensaje"
+			}
+		},
+		"emailStructure": {
+			"subject": "Consulta",
+			"body": "Hola, me gustaría hacer una consulta sobre sus servicios."
+		}
+	},
+
+	"newsLetter": {
+		"title": "Suscríbete a nuestro boletín",
+		"description": "Mantente informado acerca de nuestras novedades y ofertas exclusivas.",
+		"email": "Ingresa tu correo electrónico",
+		"button": "Suscribirme"
+	},
+
+	"footer": {
+		"text": "Todos los derechos reservados ThinkForward S.L."
+	},
+
+	"toast": {
+		"copiedClipBoard": "✅ Copiado al portapapeles",
+		"messageSent": "✅ Mensaje enviado",
+		"error": "❌ Algo ha fallado, inténtalo de nuevo más tarde."
+	}
 }

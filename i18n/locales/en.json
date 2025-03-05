@@ -1,4 +1,146 @@
 {
-	"hello": "Hello",
-	"welcome": "Welcome to our website"
+	"menu": {
+		"home": "Home",
+		"services": "Services",
+		"contact": "Contact",
+		"products": "Products",
+		"about": "About Us"
+	},
+
+	"hero": {
+		"title": "National and international transport and logistics",
+		"subtitle": "With us, you can reach your desired destinations",
+		"description": "We accompany you throughout the journey to ensure your products arrive at their destination without setbacks."
+	},
+
+	"presentation": {
+		"card-1": {
+			"title": "We have an extensive network across Europe",
+			"description": "Our transport network allows us to operate in multiple countries, ensuring safe and efficient deliveries."
+		},
+		"card-2": {
+			"title": "Environmentally friendly processes",
+			"description": "We are committed to sustainability through eco-friendly practices and reducing our carbon footprint."
+		},
+		"card-3": {
+			"title": "Fast and customized solutions for our clients",
+			"description": "We offer flexible and efficient solutions to meet each client's specific needs."
+		},
+		"card-4": {
+			"title": "We stand out for our personalized service",
+			"description": "We provide close and personalized attention to ensure the best logistics and transport experience."
+		}
+	},
+
+	"services": {
+		"title": "Our Services",
+		"description": "We design efficient and customized logistics processes for each of our clients.",
+		"services": {
+			"service-1": {
+				"title": "Land Transport",
+				"description": "We offer road transport solutions adapted to different types of goods."
+			},
+			"service-2": {
+				"title": "Logistics and Distribution",
+				"description": "We manage product distribution and storage to optimize time and costs."
+			},
+			"service-3": {
+				"title": "International Transport",
+				"description": "We facilitate global trade with efficient logistics solutions for international shipments."
+			}
+		}
+	},
+
+	"products": {
+		"title": "Our Products",
+		"description": "We work with a wide range of products and their derivatives, ensuring their transportation under optimal conditions.",
+		"product-1": {
+			"title": "Wines and Spirits",
+			"description": "Specialized transport for wines and spirits, maintaining their quality and original characteristics."
+		},
+		"product-2": {
+			"title": "Fruit Juices",
+			"description": "We guarantee the transportation of fruit juices with strict temperature and safety controls."
+		},
+		"product-3": {
+			"title": "Vegetable Oils",
+			"description": "Transportation solutions for vegetable oils, ensuring their integrity and quality."
+		}
+	},
+
+	"data": {
+		"title": "Our data speaks for us",
+		"description": "Our experience and operational volume reflect the trust our clients place in us.",
+		"charts": {
+			"chart-1": {
+				"title": "Movements in the last month"
+			},
+			"box-1": {
+				"title": "Completed Transports"
+			},
+			"box-2": {
+				"title": "Total Transported Volume"
+			},
+			"box-3": {
+				"title": "Kilometers Traveled"
+			}
+		}
+	},
+
+	"companies": {
+		"title": "Companies that trust us",
+		"description": "We work with major companies that rely on our capability and commitment."
+	},
+
+	"contact": {
+		"info": {
+			"title": "Get in touch with us",
+			"schedule": "Our working hours: Monday - Saturday from 8:00 AM to 6:00 PM (CET)",
+			"visitUs": "Visit us on social media",
+			"icons": {
+				"sendEmail": "Send Email"
+			},
+			"tooltip": {
+				"copyEmail": "Copy Email",
+				"sendEmail": "Send Email",
+				"whatsApp": "Open WhatsApp",
+				"copyPhone": "Copy Phone Number"
+			},
+			"separator": "Or"
+		},
+		"message": {
+			"title": "Send us a message",
+			"button": {
+				"default": "Send Message",
+				"loading": "Sending..."
+			},
+			"inputs": {
+				"name": "Name",
+				"email": "Email",
+				"company": "Company",
+				"subject": "Message"
+			}
+		},
+		"emailStructure": {
+			"subject": "Inquiry",
+			"body": "Hello, I would like to inquire about your services."
+		}
+	},
+
+	"newsLetter": {
+		"title": "Subscribe to our newsletter",
+		"description": "Stay informed about our news and exclusive offers.",
+		"email": "Enter your email address",
+		"button": "Subscribe"
+	},
+
+	"footer": {
+		"text": "All rights reserved ThinkForward S.L."
+	},
+
+	"toast": {
+		"copiedClipBoard": "✅ Copied to clipboard",
+		"messageSent": "✅ Message sent",
+		"error": "❌ Something went wrong, please try again later."
+	}
 }

@@ -1,10 +1,18 @@
+<script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+</script>
+
 <template>
-	<div>
-		<ClientOnly>
+	<ClientOnly>
+		<div>
 			<div class="bg-customLight dark:bg-customDark">
-				<h3 class="mb-12 text-customDark dark:text-customLight text-4xl text-center">Companies</h3>
+				<div class="mb-12 text-center text-customDark dark:text-customLight">
+					<h3 class="text-4xl">{{ t('companies.title') }}</h3>
+					<p class="text-white">{{ t('companies.description') }}</p>
+				</div>
 				<ImageBrandBanner />
 			</div>
-		</ClientOnly>
-	</div>
+		</div>
+	</ClientOnly>
 </template>

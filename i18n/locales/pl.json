@@ -1,4 +1,146 @@
 {
-	"hello": "Cześć",
-	"welcome": "Witamy na naszej stronie internetowej"
+	"menu": {
+		"home": "Strona główna",
+		"services": "Usługi",
+		"contact": "Kontakt",
+		"products": "Produkty",
+		"about": "O nas"
+	},
+
+	"hero": {
+		"title": "Krajowy i międzynarodowy transport oraz logistyka",
+		"subtitle": "Z nami dotrzesz do wymarzonych celów",
+		"description": "Towarzyszymy Ci na całej trasie, aby Twoje produkty dotarły do celu bez przeszkód."
+	},
+
+	"presentation": {
+		"card-1": {
+			"title": "Posiadamy rozbudowaną sieć w całej Europie",
+			"description": "Nasza sieć transportowa pozwala nam działać w wielu krajach, zapewniając bezpieczne i skuteczne dostawy."
+		},
+		"card-2": {
+			"title": "Procesy przyjazne dla środowiska",
+			"description": "Stawiamy na zrównoważone praktyki i redukcję śladu węglowego."
+		},
+		"card-3": {
+			"title": "Szybkie i dostosowane rozwiązania dla naszych klientów",
+			"description": "Oferujemy elastyczne i efektywne rozwiązania dostosowane do indywidualnych potrzeb klientów."
+		},
+		"card-4": {
+			"title": "Indywidualne podejście wyróżnia nas na rynku",
+			"description": "Zapewniamy spersonalizowaną obsługę, aby zagwarantować najlepsze doświadczenia związane z transportem i logistyką."
+		}
+	},
+
+	"services": {
+		"title": "Nasze usługi",
+		"description": "Tworzymy skuteczne i dostosowane procesy logistyczne dla każdego z naszych klientów.",
+		"services": {
+			"service-1": {
+				"title": "Transport lądowy",
+				"description": "Oferujemy transport drogowy dostosowany do różnych rodzajów ładunków."
+			},
+			"service-2": {
+				"title": "Logistyka i dystrybucja",
+				"description": "Zarządzamy dystrybucją i magazynowaniem produktów, optymalizując czas i koszty."
+			},
+			"service-3": {
+				"title": "Transport międzynarodowy",
+				"description": "Ułatwiamy handel globalny dzięki skutecznym rozwiązaniom logistycznym dla przesyłek międzynarodowych."
+			}
+		}
+	},
+
+	"products": {
+		"title": "Nasze produkty",
+		"description": "Transportujemy szeroką gamę produktów i ich pochodnych w optymalnych warunkach.",
+		"product-1": {
+			"title": "Wina i alkohole",
+			"description": "Specjalistyczny transport win i alkoholi, aby zachować ich jakość i właściwości."
+		},
+		"product-2": {
+			"title": "Soki owocowe",
+			"description": "Zapewniamy transport soków owocowych z rygorystycznymi kontrolami temperatury i bezpieczeństwa."
+		},
+		"product-3": {
+			"title": "Olej roślinny",
+			"description": "Rozwiązania transportowe dla olejów roślinnych, aby zapewnić ich integralność i jakość."
+		}
+	},
+
+	"data": {
+		"title": "Nasze wyniki mówią same za siebie",
+		"description": "Nasze doświadczenie i ilość przewożonych ładunków odzwierciedlają zaufanie, jakim obdarzają nas nasi klienci.",
+		"charts": {
+			"chart-1": {
+				"title": "Przesyłki w ostatnim miesiącu"
+			},
+			"box-1": {
+				"title": "Zrealizowane transporty"
+			},
+			"box-2": {
+				"title": "Całkowita objętość przewozu"
+			},
+			"box-3": {
+				"title": "Przejechane kilometry"
+			}
+		}
+	},
+
+	"companies": {
+		"title": "Firmy, które nam zaufały",
+		"description": "Współpracujemy z czołowymi firmami, które cenią nasze doświadczenie i zaangażowanie."
+	},
+
+	"contact": {
+		"info": {
+			"title": "Skontaktuj się z nami",
+			"schedule": "Nasze godziny pracy: Poniedziałek - Sobota, 08:00 - 18:00 (CET)",
+			"visitUs": "Odwiedź nas w mediach społecznościowych",
+			"icons": {
+				"sendEmail": "Wyślij e-mail"
+			},
+			"tooltip": {
+				"copyEmail": "Skopiuj e-mail",
+				"sendEmail": "Wyślij e-mail",
+				"whatsApp": "Otwórz WhatsApp",
+				"copyPhone": "Skopiuj numer telefonu"
+			},
+			"separator": "Lub"
+		},
+		"message": {
+			"title": "Wyślij nam wiadomość",
+			"button": {
+				"default": "Wyślij wiadomość",
+				"loading": "Wysyłanie..."
+			},
+			"inputs": {
+				"name": "Imię",
+				"email": "E-mail",
+				"company": "Firma",
+				"subject": "Wiadomość"
+			}
+		},
+		"emailStructure": {
+			"subject": "Zapytanie",
+			"body": "Dzień dobry, chciałbym zadać pytanie."
+		}
+	},
+
+	"newsLetter": {
+		"title": "Zapisz się do naszego newslettera",
+		"description": "Bądź na bieżąco z naszymi nowościami i ekskluzywnymi ofertami.",
+		"email": "Wpisz swój adres e-mail",
+		"button": "Zapisz się"
+	},
+
+	"footer": {
+		"text": "Wszystkie prawa zastrzeżone ThinkForward S.L."
+	},
+
+	"toast": {
+		"copiedClipBoard": "✅ Skopiowano do schowka",
+		"messageSent": "✅ Wiadomość wysłana",
+		"error": "❌ Coś poszło nie tak, spróbuj ponownie później."
+	}
 }
