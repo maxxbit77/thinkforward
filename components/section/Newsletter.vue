@@ -32,7 +32,7 @@ const subscribe = () => {
 				<h3 class="text-4xl">{{ t('newsLetter.title') }}</h3>
 				<p class="text-white">{{ t('newsLetter.description') }}</p>
 			</div>
-			<form @submit.prevent="subscribe" class="w-2/3 mx-auto">
+			<form @submit.prevent="subscribe" class="w-[400px] mx-auto">
 				<div class="relative mb-4">
 					<input
 						id="emailSuscriber"
