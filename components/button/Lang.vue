@@ -1,5 +1,4 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
 import { useI18n, useSwitchLocalePath, useRouter } from '#imports'
 
 const { locale, locales, setLocale } = useI18n()
@@ -7,7 +6,7 @@ const switchLocalePath = useSwitchLocalePath()
 const router = useRouter()
 
 const availableLocales = computed(() => locales.value)
-const selectedLocale = ref(locale.value) // Estado reactivo para mantener la selección
+const selectedLocale = ref(locale.value)
 
 const flags = {
 	en: '🇬🇧',
@@ -21,7 +20,7 @@ const changeLanguage = (event) => {
 	if (newLocale === locale.value) return
 
 	localStorage.setItem('selectedLocale', newLocale)
-	selectedLocale.value = newLocale // Actualiza el select visualmente
+	selectedLocale.value = newLocale
 
 	const newPath = switchLocalePath(newLocale)
 	if (newPath) {
@@ -32,8 +31,8 @@ const changeLanguage = (event) => {
 onMounted(() => {
 	const savedLocale = localStorage.getItem('selectedLocale') || 'en'
 	if (savedLocale !== locale.value) {
-		setLocale(savedLocale) // Cambia el idioma en i18n
-		selectedLocale.value = savedLocale // Actualiza el select visualmente
+		setLocale(savedLocale)
+		selectedLocale.value = savedLocale
 
 		const newPath = switchLocalePath(savedLocale)
 		if (newPath) {
