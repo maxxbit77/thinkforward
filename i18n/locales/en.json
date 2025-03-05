@@ -142,5 +142,8 @@
 		"copiedClipBoard": "✅ Copied to clipboard",
 		"messageSent": "✅ Message sent",
 		"error": "❌ Something went wrong, please try again later."
+	},
+	"cta": {
+		"text": "Book a call"
 	}
 }

@@ -142,5 +142,8 @@
 		"copiedClipBoard": "✅ In die Zwischenablage kopiert",
 		"messageSent": "✅ Nachricht gesendet",
 		"error": "❌ Etwas ist schiefgelaufen, bitte versuchen Sie es später erneut."
+	},
+	"cta": {
+		"text": "Kontakt"
 	}
 }

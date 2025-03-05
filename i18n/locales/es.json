@@ -142,5 +142,8 @@
 		"copiedClipBoard": "✅ Copiado al portapapeles",
 		"messageSent": "✅ Mensaje enviado",
 		"error": "❌ Algo ha fallado, inténtalo de nuevo más tarde."
+	},
+	"cta": {
+		"text": "Agendar una llamada"
 	}
 }

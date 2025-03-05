@@ -69,11 +69,12 @@ onUnmounted(() => {
 						/>
 					</div>
 					<div
-						class="absolute top-[500px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
+						class="absolute top-[400px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
 					>
-						<h1 class="text-6xl text-customDark">{{ $t('hero.title') }}</h1>
+						<h1 class="text-7xl text-customDark">{{ $t('hero.title') }}</h1>
 						<h2 class="text-2xl">{{ $t('hero.subtitle') }}</h2>
 						<p class="text-gray-300">{{ $t('hero.description') }}</p>
+						<Cta />
 					</div>
 				</div>
 			</header>
