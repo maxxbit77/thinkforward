@@ -142,5 +142,8 @@
 		"copiedClipBoard": "✅ Skopiowano do schowka",
 		"messageSent": "✅ Wiadomość wysłana",
 		"error": "❌ Coś poszło nie tak, spróbuj ponownie później."
+	},
+	"cta": {
+		"text": "Kontakt"
 	}
 }
