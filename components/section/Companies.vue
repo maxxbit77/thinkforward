@@ -9,7 +9,7 @@ const { t } = useI18n()
 			<div class="bg-customLight dark:bg-customDark">
 				<div class="mb-12 text-center text-customDark dark:text-customLight">
 					<h3 class="text-4xl">{{ t('companies.title') }}</h3>
-					<p class="text-white">{{ t('companies.description') }}</p>
+					<p>{{ t('companies.description') }}</p>
 				</div>
 				<ImageBrandBanner />
 			</div>

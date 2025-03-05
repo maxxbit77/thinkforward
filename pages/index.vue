@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-	<main>
+	<div>
 		<nav id="home">
 			<NavBar />
 		</nav>
@@ -10,7 +10,7 @@
 			<Hero />
 		</header>
 
-		<div class="relative top-0 bg-customLight dark:bg-customDark">
+		<main class="relative top-0 bg-customLight dark:bg-customDark">
 			<div
 				class="h-[400px] w-full bg-customLight dark:bg-customDark absolute top-[-300px] z-10 fade-mask-top"
 			></div>
@@ -48,8 +48,8 @@
 			<footer class="mt-44">
 				<SectionFooter />
 			</footer>
-		</div>
-	</main>
+		</main>
+	</div>
 </template>
 
 <style scoped>

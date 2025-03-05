@@ -8,7 +8,7 @@ const { t } = useI18n()
 		<div class="max-w-7xl mx-auto">
 			<div class="mb-12 text-center text-customDark dark:text-customLight">
 				<h3 class="text-4xl">{{ t('data.title') }}</h3>
-				<p class="text-white">{{ t('data.description') }}</p>
+				<p>{{ t('data.description') }}</p>
 			</div>
 			<div class="grid grid-cols-4 gap-x-4">
 				<div

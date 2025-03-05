@@ -16,8 +16,7 @@ const emailCopied = ref(false)
 const phoneToCopy = ref(company.phone)
 const phoneCopied = ref(false)
 
-
-const emailStructure = computed (()=> ({
+const emailStructure = computed(() => ({
 	myEmail: company.email,
 	subject: t('contact.emailStructure.subject'),
 	body: t('contact.emailStructure.body'),
@@ -102,7 +101,7 @@ const copyPhoneToClipBoard = () => {
 							</Tooltip>
 						</TooltipProvider>
 						<p class="text-md font-bold text-gray-500 dark:text-customLight">
-							<p>{{ t('contact.info.icons.sendEmail') }}</p>
+							{{ t('contact.info.icons.sendEmail') }}
 						</p>
 					</div>
 
