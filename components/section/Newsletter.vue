@@ -1,23 +1,38 @@
 <script setup>
-const emailSuscriber = ref('')
+import { useToast } from '@/components/ui/toast/use-toast'
+import { Button } from '@/components/ui/button'
+import { Loader2 } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+const { toast } = useToast()
 
+const emailSuscriber = ref('')
+const isLoading = ref(false)
 const clearForm = () => {
 	emailSuscriber.value = ''
 }
 
 const subscribe = () => {
-	clearForm()
+	isLoading.value = true
+
+	setTimeout(() => {
+		isLoading.value = false
+		toast({
+			description: '✅ Your email has been added to our newsletter',
+		})
+		clearForm()
+	}, 2000)
 }
 </script>
 
 <template>
-	<div class="h-auto">
-		<div class="w-1/3 mx-auto">
-			<h2 class="text-customDark text-4xl mb-4 text-center dark:text-customLight">Subscribe to our Newsletter</h2>
-			<p class="text-gray-600 text-center text-sm mb-6 dark:text-gray-300">
-				Stay updated with the latest news and exclusive offers.
-			</p>
-			<form @submit.prevent="subscribe">
+	<ClientOnly>
+		<div class="w-2/3 mx-auto">
+			<div class="mb-4 text-center text-customDark dark:text-customLight">
+				<h3 class="text-4xl">{{ t('newsLetter.title') }}</h3>
+				<p class="text-white">{{ t('newsLetter.description') }}</p>
+			</div>
+			<form @submit.prevent="subscribe" class="w-2/3 mx-auto">
 				<div class="relative mb-4">
 					<input
 						id="emailSuscriber"
@@ -27,18 +42,20 @@ const subscribe = () => {
 						placeholder=" "
 						class="peer p-2 text-xs w-full border border-gray-400 rounded-md outline-none focus:border-customPrimary text-customDark dark:bg-customDark dark:text-gray-200"
 					/>
-					<label for="emailSuscriber">Enter your email</label>
+					<label for="emailSuscriber">{{ t('newsLetter.email') }}</label>
 				</div>
 
-				<button
+				<Button
 					type="submit"
+					:disabled="isLoading"
 					class="w-full bg-customPrimary text-customLight p-2 rounded-md hover:bg-customSecondary transition-all"
 				>
-					Subscribe
-				</button>
+					<Loader2 v-if="isLoading" class="size-6 mr-2 animate-spin text-white" />
+					{{ t('newsLetter.button') }}
+				</Button>
 			</form>
 		</div>
-	</div>
+	</ClientOnly>
 </template>
 
 <style scoped>

@@ -32,9 +32,12 @@ watch(() => props.speed, setPlaybackRate)
 
 		<!-- Contenido encima del video -->
 		<div class="absolute z-10 h-full text-white top-4 left-4 flex flex-col w-2/3">
-			<p class="text-3xl font-bold">{{ title }}</p>
+			<h3 class="text-3xl font-bold">
+				<slot name="title" />
+			</h3>
+
 			<p class="text-md text-gray-300 font-bold">
-				<slot />
+				<slot name="description" />
 			</p>
 		</div>
 

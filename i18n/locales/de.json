@@ -1,0 +1,146 @@
+{
+	"menu": {
+		"home": "Startseite",
+		"services": "Dienstleistungen",
+		"contact": "Kontakt",
+		"products": "Produkte",
+		"about": "Über uns"
+	},
+
+	"hero": {
+		"title": "Nationale und internationale Transport- und Logistiklösungen",
+		"subtitle": "Mit uns erreichen Sie Ihre gewünschten Ziele",
+		"description": "Wir begleiten Sie auf dem gesamten Weg, damit Ihre Produkte ohne Probleme am Ziel ankommen."
+	},
+
+	"presentation": {
+		"card-1": {
+			"title": "Wir verfügen über ein weitreichendes Netzwerk in ganz Europa",
+			"description": "Unser Transportnetzwerk ermöglicht uns den Betrieb in mehreren Ländern und gewährleistet sichere und effiziente Lieferungen."
+		},
+		"card-2": {
+			"title": "Umweltfreundliche Prozesse",
+			"description": "Wir setzen auf nachhaltige Praktiken und reduzieren unseren CO₂-Fußabdruck."
+		},
+		"card-3": {
+			"title": "Schnelle und maßgeschneiderte Lösungen für unsere Kunden",
+			"description": "Wir bieten flexible und effiziente Lösungen, die den spezifischen Bedürfnissen jedes Kunden entsprechen."
+		},
+		"card-4": {
+			"title": "Unser persönlicher Service zeichnet uns aus",
+			"description": "Wir bieten eine enge und individuelle Betreuung, um das beste Transport- und Logistikerlebnis zu gewährleisten."
+		}
+	},
+
+	"services": {
+		"title": "Unsere Dienstleistungen",
+		"description": "Wir entwickeln effiziente und maßgeschneiderte Logistikprozesse für jeden unserer Kunden.",
+		"services": {
+			"service-1": {
+				"title": "Landtransport",
+				"description": "Wir bieten Straßentransportlösungen, die an verschiedene Arten von Gütern angepasst sind."
+			},
+			"service-2": {
+				"title": "Logistik und Vertrieb",
+				"description": "Wir verwalten die Produktverteilung und Lagerung, um Zeit und Kosten zu optimieren."
+			},
+			"service-3": {
+				"title": "Internationaler Transport",
+				"description": "Wir erleichtern den globalen Handel mit effizienten Logistiklösungen für internationale Sendungen."
+			}
+		}
+	},
+
+	"products": {
+		"title": "Unsere Produkte",
+		"description": "Wir transportieren eine breite Palette von Produkten und deren Derivaten unter optimalen Bedingungen.",
+		"product-1": {
+			"title": "Weine und Spirituosen",
+			"description": "Spezialisierter Transport für Weine und Spirituosen, um ihre Qualität und ursprünglichen Eigenschaften zu bewahren."
+		},
+		"product-2": {
+			"title": "Fruchtsäfte",
+			"description": "Wir garantieren den Transport von Fruchtsäften mit strengen Temperatur- und Sicherheitskontrollen."
+		},
+		"product-3": {
+			"title": "Pflanzenöle",
+			"description": "Transportlösungen für Pflanzenöle, um ihre Integrität und Qualität zu gewährleisten."
+		}
+	},
+
+	"data": {
+		"title": "Unsere Zahlen sprechen für sich",
+		"description": "Unsere Erfahrung und unser Transportvolumen spiegeln das Vertrauen wider, das unsere Kunden in uns setzen.",
+		"charts": {
+			"chart-1": {
+				"title": "Bewegungen im letzten Monat"
+			},
+			"box-1": {
+				"title": "Durchgeführte Transporte"
+			},
+			"box-2": {
+				"title": "Gesamt transportiertes Volumen"
+			},
+			"box-3": {
+				"title": "Zurückgelegte Kilometer"
+			}
+		}
+	},
+
+	"companies": {
+		"title": "Unternehmen, die uns vertrauen",
+		"description": "Wir arbeiten mit führenden Unternehmen zusammen, die auf unsere Kompetenz und unser Engagement setzen."
+	},
+
+	"contact": {
+		"info": {
+			"title": "Kontaktieren Sie uns",
+			"schedule": "Unsere Geschäftszeiten: Montag - Samstag von 08:00 bis 18:00 Uhr (CET)",
+			"visitUs": "Besuchen Sie uns in den sozialen Medien",
+			"icons": {
+				"sendEmail": "E-Mail senden"
+			},
+			"tooltip": {
+				"copyEmail": "E-Mail kopieren",
+				"sendEmail": "E-Mail senden",
+				"whatsApp": "WhatsApp öffnen",
+				"copyPhone": "Telefonnummer kopieren"
+			},
+			"separator": "Oder"
+		},
+		"message": {
+			"title": "Schreiben Sie uns eine Nachricht",
+			"button": {
+				"default": "Nachricht senden",
+				"loading": "Senden..."
+			},
+			"inputs": {
+				"name": "Name",
+				"email": "E-Mail",
+				"company": "Unternehmen",
+				"subject": "Nachricht"
+			}
+		},
+		"emailStructure": {
+			"subject": "Anfrage",
+			"body": "Hallo, ich würde gerne eine Anfrage stellen."
+		}
+	},
+
+	"newsLetter": {
+		"title": "Abonnieren Sie unseren Newsletter",
+		"description": "Bleiben Sie über unsere Neuigkeiten und exklusiven Angebote informiert.",
+		"email": "Geben Sie Ihre E-Mail-Adresse ein",
+		"button": "Abonnieren"
+	},
+
+	"footer": {
+		"text": "Alle Rechte vorbehalten ThinkForward S.L."
+	},
+
+	"toast": {
+		"copiedClipBoard": "✅ In die Zwischenablage kopiert",
+		"messageSent": "✅ Nachricht gesendet",
+		"error": "❌ Etwas ist schiefgelaufen, bitte versuchen Sie es später erneut."
+	}
+}
