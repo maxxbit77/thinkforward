@@ -1,6 +1,11 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
 import { SvgWeb, SvgCollab, SvgProcess, SvgSolutions } from '#components'
+import {
+	BackgroundsColorsBlue,
+	BackgroundsColorsGreen,
+	BackgroundsColorsRose,
+	BackgroundsColorsYellow,
+} from '#components'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -62,10 +67,10 @@ onUnmounted(() => {
 			<header>
 				<div :style="{ opacity: titleOpacity }">
 					<div
-						class="z-1 w-full h-[1800px] absolute top-[-300px] text-gray-500 left-1/2 -translate-x-1/2 text-center transition-opacity duration-200 custom-blur overflow-hidden fade-mask-top"
+						class="w-full h-[1800px] absolute top-[-300px] left-1/2 -translate-x-1/2 text-center transition-opacity duration-200 custom-blur overflow-hidden fade-mask-top"
 					>
-						<BackgroundsColorsBlueTest
-							class="animate-[spin_30s_linear_infinite] size-[2000px] absolute top-[-200px] left-[-100px]"
+						<BackgroundsColorsBlueHero
+							class="animate-[spin_20s_linear_infinite] size-[2000px] absolute top-[-200px] left-[-100px]"
 						/>
 					</div>
 					<div
@@ -82,15 +87,16 @@ onUnmounted(() => {
 			<div class="relative top-[1250px] w-[1200px] mx-auto">
 				<div class="absolute top-0 left-[10%]">
 					<Card
+						:background="BackgroundsColorsBlue"
 						:icon="SvgWeb"
 						iconClass="text-sky-500"
 						customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500 size-[400px]"
 					>
 						<template #title>
-							<h3 class="text-slate-900">{{ $t('presentation.card-1.title') }}</h3>
+							<h3>{{ $t('presentation.card-1.title') }}</h3>
 						</template>
 						<template #text>
-							<p class="text-slate-900">
+							<p>
 								{{ $t('presentation.card-1.description') }}
 							</p>
 						</template>
@@ -98,15 +104,16 @@ onUnmounted(() => {
 				</div>
 				<div class="absolute top-[300px] right-[10%]">
 					<Card
+						:background="BackgroundsColorsGreen"
 						:icon="SvgProcess"
 						iconClass="text-green-500"
 						customClass="border-green-500 shadow-xl shadow-green-500 size-[400px]"
 					>
 						<template #title>
-							<h3 class="text-slate-900">{{ $t('presentation.card-2.title') }}</h3>
+							<h3>{{ $t('presentation.card-2.title') }}</h3>
 						</template>
 						<template #text>
-							<p class="text-slate-900">
+							<p>
 								{{ $t('presentation.card-2.description') }}
 							</p>
 						</template>
@@ -114,15 +121,16 @@ onUnmounted(() => {
 				</div>
 				<div class="absolute top-[600px] left-[10%]">
 					<Card
+						:background="BackgroundsColorsYellow"
 						:icon="SvgSolutions"
 						iconClass="text-yellow-500"
 						customClass="border-yellow-500 shadow-xl shadow-yellow-500 size-[400px]"
 					>
 						<template #title>
-							<h3 class="text-slate-900">{{ $t('presentation.card-3.title') }}</h3>
+							<h3>{{ $t('presentation.card-3.title') }}</h3>
 						</template>
 						<template #text>
-							<p class="text-slate-900">
+							<p>
 								{{ $t('presentation.card-3.description') }}
 							</p>
 						</template>
@@ -130,15 +138,16 @@ onUnmounted(() => {
 				</div>
 				<div class="absolute top-[900px] right-[10%]">
 					<Card
+						:background="BackgroundsColorsRose"
 						:icon="SvgCollab"
 						iconClass="text-rose-500"
 						customClass="border-rose-500 shadow-xl shadow-rose-500 size-[400px]"
 					>
 						<template #title>
-							<h3 class="text-slate-900">{{ $t('presentation.card-4.title') }}</h3>
+							<h3>{{ $t('presentation.card-4.title') }}</h3>
 						</template>
 						<template #text>
-							<p class="text-slate-900">
+							<p>
 								{{ $t('presentation.card-4.description') }}
 							</p>
 						</template>

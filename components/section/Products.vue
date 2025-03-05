@@ -27,7 +27,7 @@ const oil = computed(() => ({
 		<div class="max-w-7xl mx-auto">
 			<div class="mb-12 text-center text-customDark dark:text-customLight">
 				<h3 class="text-4xl">{{ t('products.title') }}</h3>
-				<p class="text-white">{{ t('products.description') }}</p>
+				<p>{{ t('products.description') }}</p>
 			</div>
 			<div class="grid grid-cols-3 gap-24">
 				<!-- wine -->
