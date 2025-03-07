@@ -34,19 +34,31 @@
 
 	"services": {
 		"title": "Nasze usługi",
-		"description": "Tworzymy skuteczne i dostosowane procesy logistyczne dla każdego z naszych klientów.",
-		"services": {
-			"service-1": {
-				"title": "Transport lądowy",
-				"description": "Oferujemy transport drogowy dostosowany do różnych rodzajów ładunków."
+		"description": "Tworzymy rozwiązania logistyczne dostosowane do indywidualnych potrzeb każdego klienta, optymalizując każdy proces, aby osiągnąć maksymalną efektywność i niezawodność.",
+		"service": {
+			"coverage": {
+				"title": "Międzynarodowy zasięg",
+				"description": "Dzięki naszemu doświadczeniu w transporcie płynów działamy na terenie całej Europy, bezpiecznie łącząc Hiszpanię, Portugalię oraz inne kraje, takie jak Francja, Niemcy, Włochy, Holandia i inne. Przestrzegamy wszystkich przepisów, aby zapewnić niezawodną usługę."
 			},
-			"service-2": {
-				"title": "Logistyka i dystrybucja",
-				"description": "Zarządzamy dystrybucją i magazynowaniem produktów, optymalizując czas i koszty."
+			"wash": {
+				"title": "Certyfikowane mycie",
+				"description": "Stosujemy rygorystyczne procedury czyszczenia, aby zagwarantować pełną higienę naszych cystern i kontenerów. W razie potrzeby przeprowadzamy specjalistyczne mycie, zapewniając naszym klientom maksymalne bezpieczeństwo w transporcie ich produktów."
 			},
-			"service-3": {
-				"title": "Transport międzynarodowy",
-				"description": "Ułatwiamy handel globalny dzięki skutecznym rozwiązaniom logistycznym dla przesyłek międzynarodowych."
+			"equipment": {
+				"title": "Specjalistyczny sprzęt",
+				"description": "Nasze nowoczesne cysterny są wyposażone w zaawansowaną technologię: systemy śledzenia GPS, pompy i sprężarki do załadunku i rozładunku, zintegrowane ogrzewanie oraz przystosowanie do pracy pod ciśnieniem i parą."
+			},
+			"optimization": {
+				"title": "Optymalizacja zasobów",
+				"description": "Wykorzystujemy najnowocześniejsze narzędzia technologiczne, aby maksymalnie zwiększyć efektywność wykorzystania zasobów i oferować naszym klientom wysokiej jakości i wydajne usługi."
+			},
+			"solutions": {
+				"title": "Zarządzanie incydentami",
+				"description": "Nasz wysoko wykwalifikowany zespół szybko i skutecznie rozwiązuje wszelkie nieprzewidziane sytuacje, zapewniając ciągłość naszych operacji bez wpływu na terminy dostaw."
+			},
+			"eco": {
+				"title": "Zaangażowanie w przyszłość",
+				"description": "Stawiamy na innowacje i wdrażanie zrównoważonych technologii, które pozwalają nam poprawić efektywność logistyczną i zmniejszyć wpływ na środowisko, przyczyniając się do bardziej zrównoważonej przyszłości."
 			}
 		}
 	},
@@ -56,15 +68,27 @@
 		"description": "Transportujemy szeroką gamę produktów i ich pochodnych w optymalnych warunkach.",
 		"product-1": {
 			"title": "Wina i alkohole",
-			"description": "Specjalistyczny transport win i alkoholi, aby zachować ich jakość i właściwości."
+			"description": "Specjalizujemy się w transporcie win i alkoholi w Europie, używając wzmacnianych cystern izotermicznych, które utrzymują odpowiednią temperaturę i zachowują jakość. Nasze lekkie cysterny maksymalizują ładowność, a wszystkie są wyposażone w systemy asekuracyjne dla bezpieczeństwa personelu."
 		},
 		"product-2": {
 			"title": "Soki owocowe",
-			"description": "Zapewniamy transport soków owocowych z rygorystycznymi kontrolami temperatury i bezpieczeństwa."
+			"description": "Zapewniamy transport soków owocowych w Europie przy użyciu cystern izotermicznych zaprojektowanych w celu zachowania ich właściwości. Cysterny nowej generacji optymalizują ładowność, a systemy asekuracyjne gwarantują bezpieczeństwo pracy."
 		},
 		"product-3": {
 			"title": "Olej roślinny",
-			"description": "Rozwiązania transportowe dla olejów roślinnych, aby zapewnić ich integralność i jakość."
+			"description": "Transportujemy oleje roślinne w cysternach wyposażonych w systemy ogrzewania i pary, które utrzymują odpowiednią temperaturę. Ponadto nasze ciężarówki są wyposażone w sprężarki ułatwiające rozładunek, a systemy asekuracyjne zapewniają bezpieczne środowisko pracy."
+		},
+		"product-4": {
+			"title": "Czekolady",
+			"description": "Transportujemy czekolady w cysternach z systemami ogrzewania, które utrzymują idealną temperaturę. Wyposażone w pompy łopatkowe zapewniające efektywny rozładunek oraz systemy asekuracyjne dla bezpieczeństwa personelu."
+		},
+		"product-5": {
+			"title": "Glukoza",
+			"description": "Zapewniamy transport glukozy w podgrzewanych cysternach, aby zachować jej jakość. Posiadają one pompy łopatkowe do efektywnego rozładunku oraz filtry bakteryjne zapewniające maksymalną higienę."
+		},
+		"product-6": {
+			"title": "Produkty mleczne",
+			"description": "Specjalizujemy się w transporcie produktów mlecznych i napojów roślinnych, używając cystern izotermicznych, które utrzymują temperaturę i świeżość. Posiadają one systemy samooczyszczania dla higieny i systemy asekuracyjne dla bezpieczeństwa personelu."
 		}
 	},
 

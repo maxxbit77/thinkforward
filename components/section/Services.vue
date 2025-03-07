@@ -1,59 +1,123 @@
+<script setup>
+import {
+	BackgroundsColorsBlue,
+	BackgroundsColorsGreen,
+	BackgroundsColorsRose,
+	BackgroundsColorsYellow,
+} from '#components'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
 <template>
 	<ClientOnly>
 		<div class="bg-customLight dark:bg-customDark">
 			<div class="relative max-w-7xl mx-auto">
-				<h3 class="mb-12 text-customDark dark:text-customLight text-4xl text-center">
-					{{ $t('services.title') }}
-				</h3>
-				<div class="grid-rows-3 space-y-4 relative z-10">
-					<div class="grid grid-cols-2 h-[500px] gap-x-4">
-						<div>
-							<VideoBase
-								src="https://res.cloudinary.com/dw6ikrcqm/video/upload/v1740602300/camion-lavado_iuqluj.mp4"
-								title="Te lavamos el camioncito"
-								:speed="2"
-							>
-								<template #title>
-									{{ $t('services.services.service-1.title') }}
-								</template>
-								<template #description>
-									{{ $t('services.services.service-1.description') }}
-								</template>
-							</VideoBase>
-						</div>
-						<div>
-							<VideoBase
-								src="https://res.cloudinary.com/dw6ikrcqm/video/upload/v1740602351/trucks-standby_hiam3k.mp4"
-								title="Tenemos un huevo de camioncitos"
-								:speed="2"
-							>
-								<template #title>
-									{{ $t('services.services.service-2.title') }}
-								</template>
-								<template #description>
-									{{ $t('services.services.service-2.description') }}
-								</template>
-							</VideoBase>
-						</div>
+				<div class="mb-12 text-center text-customDark dark:text-customLight">
+					<h3 class="text-4xl">{{ $t('services.title') }}</h3>
+					<p>{{ $t('services.description') }}</p>
+				</div>
+				<div class="space-y-8">
+					<!-- top section -->
+					<div class="grid grid-cols-12 gap-4">
+						<CardBorderImage
+							src="/images/services/logistic-1200x600.png"
+							alt="imagen-map"
+							class="h-[430px] col-span-9"
+						>
+						</CardBorderImage>
+						<CardDescriptor class="col-span-3" :background="BackgroundsColorsBlue">
+							<template #title> {{ $t('services.service.coverage.title') }} </template>
+							<template #description> {{ $t('services.service.coverage.description') }} </template>
+						</CardDescriptor>
 					</div>
 
-					<div class="h-[600px]">
-						<VideoBase
-							src="https://res.cloudinary.com/dw6ikrcqm/video/upload/v1740602415/eu-map-connections_pxgils.mp4"
-							title="Conexiones en todos lados!"
+					<!-- middle section -->
+					<div class="grid grid-cols-3 gap-4">
+						<CardBorderImage
+							src="/images/services/wash-400x600.png"
+							alt="imagen-map"
+							class="h-[630px] col-span-1"
+							titlePosition="top"
 						>
-							<template #title>
-								{{ $t('services.services.service-3.title') }}
-							</template>
-							<template #description>
-								{{ $t('services.services.service-3.description') }}
-							</template>
-						</VideoBase>
+						</CardBorderImage>
+						<div class="grid row-2 gap-4">
+							<div class="">
+								<CardDescriptor :background="BackgroundsColorsBlue">
+									<template #title>{{ $t('services.service.wash.title') }} </template>
+									<template #description>{{ $t('services.service.wash.description') }}</template>
+								</CardDescriptor>
+							</div>
+							<div>
+								<CardDescriptor :background="BackgroundsColorsRose">
+									<template #title>
+										{{ $t('services.service.equipment.title') }}
+									</template>
+									<template #description>
+										{{ $t('services.service.equipment.description') }}
+									</template>
+								</CardDescriptor>
+							</div>
+						</div>
+						<CardBorderImage
+							src="/images/services/equipment.png"
+							alt="imagen-map"
+							class="h-[630px] col-span-1"
+						>
+						</CardBorderImage>
+					</div>
+
+					<!-- bottom section -->
+					<div class="grid row-2">
+						<div class="grid grid-cols-12 gap-4">
+							<CardBorderImage
+								src="/images/services/optimization-600x400.png"
+								alt="imagen-map"
+								class="h-[350px] col-span-4"
+							>
+							</CardBorderImage>
+							<CardBorderImage
+								src="/images/services/solutions-600x400.png"
+								alt="imagen-map"
+								class="h-[350px] col-span-4"
+							>
+							</CardBorderImage>
+							<CardBorderImage
+								src="/images/services/eco-600x400.png"
+								alt="imagen-map"
+								class="h-[350px] col-span-4"
+							>
+							</CardBorderImage>
+						</div>
+						<div class="grid grid-cols-12 gap-4 h-[250px] mt-4">
+							<CardDescriptor :background="BackgroundsColorsYellow" class="col-span-4">
+								<template #title>
+									{{ $t('services.service.optimization.title') }}
+								</template>
+								<template #description>
+									{{ $t('services.service.optimization.description') }}
+								</template>
+							</CardDescriptor>
+							<CardDescriptor :background="BackgroundsColorsBlue" class="col-span-4">
+								<template #title>
+									{{ $t('services.service.solutions.title') }}
+								</template>
+								<template #description>
+									{{ $t('services.service.solutions.description') }}
+								</template>
+							</CardDescriptor>
+							<CardDescriptor :background="BackgroundsColorsGreen" class="col-span-4">
+								<template #title>
+									{{ $t('services.service.eco.title') }}
+								</template>
+								<template #description>
+									{{ $t('services.service.eco.description') }}
+								</template>
+							</CardDescriptor>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</ClientOnly>
 </template>
-
-<style scoped></style>

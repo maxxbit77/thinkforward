@@ -34,37 +34,61 @@
 
 	"services": {
 		"title": "Unsere Dienstleistungen",
-		"description": "Wir entwickeln effiziente und maßgeschneiderte Logistikprozesse für jeden unserer Kunden.",
-		"services": {
-			"service-1": {
-				"title": "Landtransport",
-				"description": "Wir bieten Straßentransportlösungen, die an verschiedene Arten von Gütern angepasst sind."
+		"description": "Wir entwickeln maßgeschneiderte Logistiklösungen für die spezifischen Bedürfnisse jedes Kunden und optimieren jeden Prozess für maximale Effizienz und Zuverlässigkeit.",
+		"service": {
+			"coverage": {
+				"title": "Internationale Abdeckung",
+				"description": "Dank unserer Erfahrung im Flüssigkeitstransport sind wir in ganz Europa tätig und verbinden sicher Spanien, Portugal und andere Länder wie Frankreich, Deutschland, Italien, die Niederlande und mehr. Wir erfüllen alle Vorschriften, um einen zuverlässigen Service zu gewährleisten."
 			},
-			"service-2": {
-				"title": "Logistik und Vertrieb",
-				"description": "Wir verwalten die Produktverteilung und Lagerung, um Zeit und Kosten zu optimieren."
+			"wash": {
+				"title": "Zertifizierte Reinigung",
+				"description": "Wir wenden ein strenges Reinigungsprotokoll an, um die vollständige Hygiene unserer Tankwagen und Container sicherzustellen. Falls erforderlich, führen wir spezielle Reinigungen durch, um unseren Kunden maximale Sicherheit beim Transport ihrer Produkte zu bieten."
 			},
-			"service-3": {
-				"title": "Internationaler Transport",
-				"description": "Wir erleichtern den globalen Handel mit effizienten Logistiklösungen für internationale Sendungen."
+			"equipment": {
+				"title": "Spezialisierte Ausrüstung",
+				"description": "Unsere modernen Tankwagen sind mit fortschrittlicher Technologie ausgestattet: GPS-Ortungssysteme, Pumpen und Kompressoren für Be- und Entladung, integrierte Heizung und Anpassungen für Druck- und Dampfbetrieb."
+			},
+			"optimization": {
+				"title": "Ressourcenoptimierung",
+				"description": "Wir setzen modernste Technologien ein, um Ressourcen maximal zu nutzen und unseren Kunden einen effizienten und hochwertigen Service zu bieten."
+			},
+			"solutions": {
+				"title": "Vorfallmanagement",
+				"description": "Unser hochqualifiziertes Team löst unvorhergesehene Probleme schnell und effizient, um den kontinuierlichen Betrieb ohne Beeinträchtigung der Lieferzeiten zu gewährleisten."
+			},
+			"eco": {
+				"title": "Engagement für die Zukunft",
+				"description": "Wir setzen auf Innovation und die Einführung nachhaltiger Technologien, um die Logistikeffizienz zu verbessern und die Umweltbelastung zu reduzieren – für eine nachhaltigere Zukunft."
 			}
 		}
 	},
 
 	"products": {
 		"title": "Unsere Produkte",
-		"description": "Wir transportieren eine breite Palette von Produkten und deren Derivaten unter optimalen Bedingungen.",
+		"description": "Wir transportieren eine Vielzahl von Produkten und deren Derivate unter optimalen Bedingungen.",
 		"product-1": {
 			"title": "Weine und Spirituosen",
-			"description": "Spezialisierter Transport für Weine und Spirituosen, um ihre Qualität und ursprünglichen Eigenschaften zu bewahren."
+			"description": "Wir sind auf den Transport von Weinen und Spirituosen in Europa spezialisiert und verwenden verstärkte isolierte Tankwagen, um die richtige Temperatur zu halten und die Qualität zu bewahren. Unsere leichten Tankwagen maximieren die Ladekapazität, und alle sind mit Sicherheitsleinen für das Personal ausgestattet."
 		},
 		"product-2": {
 			"title": "Fruchtsäfte",
-			"description": "Wir garantieren den Transport von Fruchtsäften mit strengen Temperatur- und Sicherheitskontrollen."
+			"description": "Wir gewährleisten den Transport von Fruchtsäften in Europa mit isolierten Tankwagen, die ihre Eigenschaften bewahren. Neue Tankwagen-Generationen optimieren die Ladekapazität, und Sicherheitsleinen sorgen für ein sicheres Arbeitsumfeld."
 		},
 		"product-3": {
 			"title": "Pflanzenöle",
-			"description": "Transportlösungen für Pflanzenöle, um ihre Integrität und Qualität zu gewährleisten."
+			"description": "Wir transportieren Pflanzenöle in Tankwagen mit Heiz- und Dampfsystemen, um die richtige Temperatur zu halten. Zusätzlich verfügen unsere Lastwagen über Kompressoren für eine einfache Entladung, und Sicherheitsleinen sorgen für eine sichere Umgebung."
+		},
+		"product-4": {
+			"title": "Schokolade",
+			"description": "Wir transportieren Schokolade in Tankwagen mit Heizsystemen, um die ideale Temperatur zu halten. Ausgestattet mit Drehkolbenpumpen für eine effiziente Entladung und Sicherheitsleinen für das Personal."
+		},
+		"product-5": {
+			"title": "Glukose",
+			"description": "Wir gewährleisten den Transport von Glukose mit beheizten Tankwagen zur Erhaltung der Qualität. Sie enthalten Drehkolbenpumpen für eine effiziente Entladung und bakterielle Filter für maximale Hygiene."
+		},
+		"product-6": {
+			"title": "Milchprodukte",
+			"description": "Wir sind auf Milchprodukte und pflanzliche Getränke spezialisiert und verwenden isolierte Tankwagen, die Temperatur und Frische bewahren. Sie verfügen über ein Selbstreinigungssystem für Hygiene und Sicherheitsleinen für das Personal."
 		}
 	},
 

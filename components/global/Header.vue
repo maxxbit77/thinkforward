@@ -26,7 +26,7 @@ onUnmounted(() => {
 			<div ref="logoRef"></div>
 		</header>
 		<LogoThinkforward
-			class="logo-slide"
+			class="logo-slide dark:text-customLight text-customDark"
 			:class="{
 				'text-white transition-colors ': !changeLogoColor,
 				'text-slate-950 transition-colors ': changeLogoColor,

@@ -83,3 +83,12 @@ html {
 .custom-blur {
 	@apply backdrop-blur-2xl bg-gray-500/10 dark:bg-slate-800/10;
 }
+
+.fade-mask {
+	-webkit-mask-image: radial-gradient(ellipse at center, white 50%, transparent 100%);
+	mask-image: radial-gradient(ellipse at center, white 50%, transparent 100%);
+}
+.fade-mask-top {
+	-webkit-mask-image: linear-gradient(to bottom, transparent, white 40%, white 80%, transparent);
+	mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent);
+}

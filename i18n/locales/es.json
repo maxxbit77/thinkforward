@@ -34,37 +34,61 @@
 
 	"services": {
 		"title": "Nuestros servicios",
-		"description": "Diseñamos procesos logísticos eficientes y personalizados para cada uno de nuestros clientes.",
-		"services": {
-			"service-1": {
-				"title": "Transporte terrestre",
-				"description": "Ofrecemos soluciones de transporte por carretera adaptadas a diferentes tipos de mercancía."
+		"description": "Creamos soluciones logísticas adaptadas a las necesidades específicas de cada cliente, optimizando cada proceso para lograr eficiencia y fiabilidad.",
+		"service": {
+			"coverage": {
+				"title": "Cobertura internacional",
+				"description": "Nuestra experiencia en el transporte de líquidos nos permite operar en toda Europa, conectando de forma segura España, Portugal y otros países como Francia, Alemania, Italia, Países Bajos y más. Cumplimos con todas las normativas para garantizar un servicio confiable."
 			},
-			"service-2": {
-				"title": "Logística y distribución",
-				"description": "Gestionamos la distribución y almacenamiento de productos para optimizar tiempos y costos."
+			"wash": {
+				"title": "Lavados homologados",
+				"description": "Aplicamos un protocolo de limpieza riguroso para asegurar la higiene total de nuestras cisternas y contenedores. Cuando la carga lo exige, realizamos lavados específicos para proporcionar a nuestros clientes la máxima confianza en el transporte de sus productos."
 			},
-			"service-3": {
-				"title": "Transporte internacional",
-				"description": "Facilitamos el comercio global con soluciones logísticas eficientes para envíos internacionales."
+			"equipment": {
+				"title": "Equipamiento especializado",
+				"description": "Contamos con cisternas modernas y equipadas con tecnología avanzada: sistemas de localización GPS, bombas y compresores para carga y descarga, calefacción integrada, y adaptación para trabajar con presión y vapor."
+			},
+			"optimization": {
+				"title": "Optimización de recursos",
+				"description": "Incorporamos herramientas tecnológicas de vanguardia para maximizar el aprovechamiento de recursos y ofrecer un servicio eficiente y de alta calidad a nuestros clientes."
+			},
+			"solutions": {
+				"title": "Gestión de incidencias",
+				"description": "Disponemos de un equipo altamente capacitado para resolver cualquier imprevisto con rapidez y eficacia, asegurando la continuidad de nuestras operaciones sin afectar los tiempos de entrega."
+			},
+			"eco": {
+				"title": "Compromiso con el futuro",
+				"description": "Apostamos por la innovación y la implementación de tecnologías sostenibles que nos permitan mejorar la eficiencia logística y reducir el impacto ambiental, contribuyendo a un futuro más sostenible."
 			}
 		}
 	},
 
 	"products": {
 		"title": "Nuestros productos",
-		"description": "Trabajamos con una amplia gama de productos y sus derivados, garantizando su transporte en óptimas condiciones.",
+		"description": "Transportamos una amplia variedad de productos y sus derivados en condiciones óptimas.",
 		"product-1": {
 			"title": "Vinos y licores",
-			"description": "Transporte especializado para vinos y licores, manteniendo su calidad y características originales."
+			"description": "Especializados en el transporte de vinos y licores en Europa, utilizamos cisternas isotérmicas reforzadas para mantener la temperatura adecuada y preservar la calidad. Nuestras cisternas ligeras maximizan la carga, y todas cuentan con líneas de vida para garantizar la seguridad del personal."
 		},
 		"product-2": {
 			"title": "Zumos de frutas",
-			"description": "Garantizamos el traslado de zumos de frutas con estrictos controles de temperatura y seguridad."
+			"description": "Garantizamos el transporte de zumos de fruta en Europa con cisternas isotérmicas diseñadas para preservar sus propiedades. Las cisternas de nueva generación optimizan la carga, y las líneas de vida aseguran la seguridad del equipo."
 		},
 		"product-3": {
 			"title": "Aceites vegetales",
-			"description": "Soluciones de transporte para aceites vegetales, asegurando su integridad y calidad."
+			"description": "Transportamos aceites vegetales con cisternas equipadas con sistemas de calefacción y vapor para mantener la temperatura adecuada. Además, nuestros camiones cuentan con compresores para facilitar la descarga, y las líneas de vida garantizan un entorno seguro."
+		},
+		"product-4": {
+			"title": "Chocolates",
+			"description": "Transportamos chocolates en cisternas con sistemas de calefacción para mantener la temperatura ideal. Equipadas con bombas lobulares para una descarga eficiente y líneas de vida para la seguridad del personal."
+		},
+		"product-5": {
+			"title": "Glucosas",
+			"description": "Garantizamos el transporte de glucosas con cisternas calefactadas para conservar su calidad. Incluyen bombas lobulares para descarga eficiente y filtros bacteriológicos para máxima higiene."
+		},
+		"product-6": {
+			"title": "Lácteos",
+			"description": "Especializados en lácteos y bebidas vegetales, usamos cisternas isotérmicas que preservan la temperatura y frescura. Incorporan autolavado para higiene y líneas de vida para seguridad."
 		}
 	},
 
