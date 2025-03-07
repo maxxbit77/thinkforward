@@ -86,7 +86,7 @@ onUnmounted(() => {
 
 			<div class="relative top-[1250px] w-[1200px] mx-auto">
 				<div class="absolute top-0 left-[10%]">
-					<Card
+					<CardBasic
 						:background="BackgroundsColorsBlue"
 						:icon="SvgWeb"
 						iconClass="text-sky-500"
@@ -100,10 +100,10 @@ onUnmounted(() => {
 								{{ $t('presentation.card-1.description') }}
 							</p>
 						</template>
-					</Card>
+					</CardBasic>
 				</div>
 				<div class="absolute top-[300px] right-[10%]">
-					<Card
+					<CardBasic
 						:background="BackgroundsColorsGreen"
 						:icon="SvgProcess"
 						iconClass="text-green-500"
@@ -117,10 +117,10 @@ onUnmounted(() => {
 								{{ $t('presentation.card-2.description') }}
 							</p>
 						</template>
-					</Card>
+					</CardBasic>
 				</div>
 				<div class="absolute top-[600px] left-[10%]">
-					<Card
+					<CardBasic
 						:background="BackgroundsColorsYellow"
 						:icon="SvgSolutions"
 						iconClass="text-yellow-500"
@@ -134,10 +134,10 @@ onUnmounted(() => {
 								{{ $t('presentation.card-3.description') }}
 							</p>
 						</template>
-					</Card>
+					</CardBasic>
 				</div>
 				<div class="absolute top-[900px] right-[10%]">
-					<Card
+					<CardBasic
 						:background="BackgroundsColorsRose"
 						:icon="SvgCollab"
 						iconClass="text-rose-500"
@@ -151,7 +151,7 @@ onUnmounted(() => {
 								{{ $t('presentation.card-4.description') }}
 							</p>
 						</template>
-					</Card>
+					</CardBasic>
 				</div>
 			</div>
 		</div>
