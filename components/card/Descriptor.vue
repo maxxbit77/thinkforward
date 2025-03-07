@@ -7,13 +7,13 @@ defineProps({
 </script>
 <template>
 	<div
-		class="w-full h-full custom-blur border border-gray-500 relative rounded-lg text-center flex flex-col justify-center items-center space-y-4 p-4 overflow-hidden"
+		class="w-full h-full custom-blur border border-gray-500 relative rounded-lg text-center flex flex-col justify-start items-center space-y-4 p-4 overflow-hidden"
 	>
-		<div class="z-10">
-			<div class="text-3xl">
+		<div class="absolute z-10 text-left px-4">
+			<div class="text-3xl mb-2">
 				<slot name="title" />
 			</div>
-			<div class="text-gray-400 text-lg">
+			<div class="dark:text-gray-300/80 text-customDark text-lg">
 				<slot name="description" />
 			</div>
 		</div>

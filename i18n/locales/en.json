@@ -34,37 +34,61 @@
 
 	"services": {
 		"title": "Our Services",
-		"description": "We design efficient and customized logistics processes for each of our clients.",
-		"services": {
-			"service-1": {
-				"title": "Land Transport",
-				"description": "We offer road transport solutions adapted to different types of goods."
+		"description": "We create logistics solutions tailored to the specific needs of each client, optimizing every process to achieve efficiency and reliability.",
+		"service": {
+			"coverage": {
+				"title": "International Coverage",
+				"description": "Our experience in liquid transport allows us to operate across Europe, safely connecting Spain, Portugal, and other countries such as France, Germany, Italy, the Netherlands, and more. We comply with all regulations to ensure a reliable service."
 			},
-			"service-2": {
-				"title": "Logistics and Distribution",
-				"description": "We manage product distribution and storage to optimize time and costs."
+			"wash": {
+				"title": "Certified Cleaning",
+				"description": "We apply a rigorous cleaning protocol to ensure the complete hygiene of our tanks and containers. When required, we carry out specific washes to provide our clients with maximum confidence in the transportation of their products."
 			},
-			"service-3": {
-				"title": "International Transport",
-				"description": "We facilitate global trade with efficient logistics solutions for international shipments."
+			"equipment": {
+				"title": "Specialized Equipment",
+				"description": "We have modern tankers equipped with advanced technology: GPS tracking systems, pumps and compressors for loading and unloading, integrated heating, and adaptations for pressure and steam operations."
+			},
+			"optimization": {
+				"title": "Resource Optimization",
+				"description": "We incorporate cutting-edge technological tools to maximize resource efficiency and provide a high-quality and efficient service to our clients."
+			},
+			"solutions": {
+				"title": "Incident Management",
+				"description": "We have a highly trained team to quickly and effectively resolve any unforeseen issues, ensuring the continuity of our operations without affecting delivery times."
+			},
+			"eco": {
+				"title": "Commitment to the Future",
+				"description": "We are committed to innovation and the implementation of sustainable technologies that improve logistics efficiency and reduce environmental impact, contributing to a more sustainable future."
 			}
 		}
 	},
 
 	"products": {
 		"title": "Our Products",
-		"description": "We work with a wide range of products and their derivatives, ensuring their transportation under optimal conditions.",
+		"description": "We transport a wide variety of products and their derivatives under optimal conditions.",
 		"product-1": {
 			"title": "Wines and Spirits",
-			"description": "Specialized transport for wines and spirits, maintaining their quality and original characteristics."
+			"description": "Specializing in the transport of wines and spirits across Europe, we use reinforced insulated tankers to maintain the proper temperature and preserve quality. Our lightweight tankers maximize load capacity, and all are equipped with safety lines for personnel protection."
 		},
 		"product-2": {
 			"title": "Fruit Juices",
-			"description": "We guarantee the transportation of fruit juices with strict temperature and safety controls."
+			"description": "We guarantee the transportation of fruit juices across Europe using insulated tankers designed to preserve their properties. New-generation tankers optimize load capacity, and safety lines ensure a secure working environment."
 		},
 		"product-3": {
 			"title": "Vegetable Oils",
-			"description": "Transportation solutions for vegetable oils, ensuring their integrity and quality."
+			"description": "We transport vegetable oils in tankers equipped with heating and steam systems to maintain the proper temperature. Additionally, our trucks have compressors for easy unloading, and safety lines ensure a secure environment."
+		},
+		"product-4": {
+			"title": "Chocolates",
+			"description": "We transport chocolates in tankers with heating systems to maintain the ideal temperature. Equipped with lobe pumps for efficient unloading and safety lines for personnel security."
+		},
+		"product-5": {
+			"title": "Glucose",
+			"description": "We ensure the transport of glucose using heated tankers to maintain its quality. They include lobe pumps for efficient unloading and bacteriological filters for maximum hygiene."
+		},
+		"product-6": {
+			"title": "Dairy Products",
+			"description": "Specializing in dairy and plant-based beverages, we use insulated tankers that maintain temperature and freshness. They feature self-cleaning systems for hygiene and safety lines for personnel protection."
 		}
 	},
 

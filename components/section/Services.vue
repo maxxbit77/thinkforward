@@ -5,6 +5,9 @@ import {
 	BackgroundsColorsRose,
 	BackgroundsColorsYellow,
 } from '#components'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 <template>
 	<ClientOnly>
@@ -14,7 +17,8 @@ import {
 					<h3 class="text-4xl">{{ $t('services.title') }}</h3>
 					<p>{{ $t('services.description') }}</p>
 				</div>
-				<div class="space-y-12">
+				<div class="space-y-8">
+					<!-- top section -->
 					<div class="grid grid-cols-12 gap-4">
 						<CardBorderImage
 							src="/images/services/logistic-1200x600.png"
@@ -22,11 +26,13 @@ import {
 							class="h-[430px] col-span-9"
 						>
 						</CardBorderImage>
-						<CardSideImage class="col-span-3" :background="BackgroundsColorsBlue">
-							<template #title> Cobertura internacional </template>
-							<template #description> Esto es la descripcion de la covertura internacional </template>
-						</CardSideImage>
+						<CardDescriptor class="col-span-3" :background="BackgroundsColorsBlue">
+							<template #title> {{ $t('services.service.coverage.title') }} </template>
+							<template #description> {{ $t('services.service.coverage.description') }} </template>
+						</CardDescriptor>
 					</div>
+
+					<!-- middle section -->
 					<div class="grid grid-cols-3 gap-4">
 						<CardBorderImage
 							src="/images/services/wash-400x600.png"
@@ -34,22 +40,23 @@ import {
 							class="h-[630px] col-span-1"
 							titlePosition="top"
 						>
-							<template #title>
-								<h3>Lavados</h3>
-							</template>
 						</CardBorderImage>
 						<div class="grid row-2 gap-4">
 							<div class="">
-								<CardSideImage :background="BackgroundsColorsBlue">
-									<template #title> title lavadooooooooo </template>
-									<template #description> descripcion lavadooooooooo </template>
-								</CardSideImage>
+								<CardDescriptor :background="BackgroundsColorsBlue">
+									<template #title>{{ $t('services.service.wash.title') }} </template>
+									<template #description>{{ $t('services.service.wash.description') }}</template>
+								</CardDescriptor>
 							</div>
 							<div>
-								<CardSideImage :background="BackgroundsColorsRose">
-									<template #title> title equipment </template>
-									<template #description> descripcion equipment </template>
-								</CardSideImage>
+								<CardDescriptor :background="BackgroundsColorsRose">
+									<template #title>
+										{{ $t('services.service.equipment.title') }}
+									</template>
+									<template #description>
+										{{ $t('services.service.equipment.description') }}
+									</template>
+								</CardDescriptor>
 							</div>
 						</div>
 						<CardBorderImage
@@ -57,55 +64,57 @@ import {
 							alt="imagen-map"
 							class="h-[630px] col-span-1"
 						>
-							<template #title>
-								<div>titulo</div>
-							</template>
 						</CardBorderImage>
 					</div>
-					<div class="grid grid-cols-12 gap-4">
-						<CardBorderImage
-							src="/images/services/optimization-600x400.png"
-							alt="imagen-map"
-							class="h-[350px] col-span-6"
-						>
-							<template #title>
-								<div>titulo</div>
-							</template>
-						</CardBorderImage>
-						<CardSideImage :background="BackgroundsColorsYellow" class="col-span-6">
-							<template #title> title equipment </template>
-							<template #description> descripcion equipment </template>
-						</CardSideImage>
-					</div>
-					<div class="grid grid-cols-12 gap-4">
-						<CardSideImage :background="BackgroundsColorsBlue" class="col-span-5">
-							<template #title> title equipment </template>
-							<template #description> descripcion equipment </template>
-						</CardSideImage>
-						<CardBorderImage
-							src="/images/services/solutions-600x400.png"
-							alt="imagen-map"
-							class="h-[350px] col-span-7"
-						>
-							<template #title>
-								<div>titulo</div>
-							</template>
-						</CardBorderImage>
-					</div>
-					<div class="grid grid-cols-12 gap-4">
-						<CardBorderImage
-							src="/images/services/eco-600x400.png"
-							alt="imagen-map"
-							class="h-[350px] col-span-8"
-						>
-							<template #title>
-								<div>titulo</div>
-							</template>
-						</CardBorderImage>
-						<CardSideImage :background="BackgroundsColorsGreen" class="col-span-4">
-							<template #title> title equipment </template>
-							<template #description> descripcion equipment </template>
-						</CardSideImage>
+
+					<!-- bottom section -->
+					<div class="grid row-2">
+						<div class="grid grid-cols-12 gap-4">
+							<CardBorderImage
+								src="/images/services/optimization-600x400.png"
+								alt="imagen-map"
+								class="h-[350px] col-span-4"
+							>
+							</CardBorderImage>
+							<CardBorderImage
+								src="/images/services/solutions-600x400.png"
+								alt="imagen-map"
+								class="h-[350px] col-span-4"
+							>
+							</CardBorderImage>
+							<CardBorderImage
+								src="/images/services/eco-600x400.png"
+								alt="imagen-map"
+								class="h-[350px] col-span-4"
+							>
+							</CardBorderImage>
+						</div>
+						<div class="grid grid-cols-12 gap-4 h-[250px] mt-4">
+							<CardDescriptor :background="BackgroundsColorsYellow" class="col-span-4">
+								<template #title>
+									{{ $t('services.service.optimization.title') }}
+								</template>
+								<template #description>
+									{{ $t('services.service.optimization.description') }}
+								</template>
+							</CardDescriptor>
+							<CardDescriptor :background="BackgroundsColorsBlue" class="col-span-4">
+								<template #title>
+									{{ $t('services.service.solutions.title') }}
+								</template>
+								<template #description>
+									{{ $t('services.service.solutions.description') }}
+								</template>
+							</CardDescriptor>
+							<CardDescriptor :background="BackgroundsColorsGreen" class="col-span-4">
+								<template #title>
+									{{ $t('services.service.eco.title') }}
+								</template>
+								<template #description>
+									{{ $t('services.service.eco.description') }}
+								</template>
+							</CardDescriptor>
+						</div>
 					</div>
 				</div>
 			</div>

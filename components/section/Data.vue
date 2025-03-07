@@ -15,7 +15,7 @@ const { t } = useI18n()
 					class="relative bg-gray-500/10 dark:bg-customDark/20 rounded-lg col-span-2 flex flex-col justify-center backdrop-blur-xl items-center border-2 border-customDark dark:border-gray-500"
 				>
 					<p class="absolute top-0 text-2xl z-10">{{ t('data.charts.chart-1.title') }}</p>
-					<ChartsBar class="p-8" :colors="['orange', 'red']" />
+					<ChartsBar class="p-8" :colors="['blue', 'gray']" />
 				</div>
 
 				<div class="col-span-2 grid grid-row-2 gap-4">
