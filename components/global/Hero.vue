@@ -1,11 +1,4 @@
 <script setup>
-import { SvgWeb, SvgCollab, SvgProcess, SvgSolutions } from '#components'
-import {
-	BackgroundsColorsBlue,
-	BackgroundsColorsGreen,
-	BackgroundsColorsRose,
-	BackgroundsColorsYellow,
-} from '#components'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -61,7 +54,7 @@ onUnmounted(() => {
 
 <template>
 	<ClientOnly>
-		<div class="h-[250vh]">
+		<div class="h-[100vh]">
 			<img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" />
 
 			<header>
@@ -85,7 +78,8 @@ onUnmounted(() => {
 			</header>
 
 			<div class="relative top-[1250px] w-[1200px] mx-auto">
-				<div class="absolute top-0 left-[10%]">
+				<RoadMap />
+				<!-- <div class="absolute top-0 left-[10%]">
 					<CardBasic
 						:background="BackgroundsColorsBlue"
 						:icon="SvgWeb"
@@ -152,7 +146,7 @@ onUnmounted(() => {
 							</p>
 						</template>
 					</CardBasic>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</ClientOnly>
