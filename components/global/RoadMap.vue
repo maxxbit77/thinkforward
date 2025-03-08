@@ -1,12 +1,15 @@
 <script setup>
+import { useIntersectionObserver } from '~/composables/useIntersectionObserver'
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const { setElementRef, inView } = useIntersectionObserver(0.3)
+
 const cards = [
-	{
-		title: 'Emisión de orden',
-	},
+	{ title: 'Emisión de orden' },
 	{ title: 'Preparación', description: 'Lavado y Preparación del transporte para recibir el producto' },
 	{ title: 'Coordinación', description: 'Comunicación con la compañía emisora del producto' },
-	{ title: 'Recogida', description: 'Preparación del transporte para recibir el producto' },
-	{ title: 'Monitoreo', description: 'Controlamos en todo momento por donde se encuentra tu producto' },
+	{ title: 'Recogida', description: 'Preparación del transporte para recibir el producto del cliente' },
+	{ title: 'Monitoreo', description: 'Controlamos en todo momento por donde se encuentra tu producto vía GPS' },
 	{
 		title: 'Entrega',
 		description: 'Comunicaciones con la empresa receptora para la coordinación de descarga del producto',
@@ -17,39 +20,20 @@ const cards = [
 	},
 ]
 
-const images = []
-
 const cardRefs = ref([])
-
-const inView = ref([])
 const truckOpacity = ref(0)
 
-const isInView = (index) => inView.value[index] === true
-console.log('view', isInView)
-const observer = new IntersectionObserver(
-	(entries) => {
-		entries.forEach((entry, index) => {
-			inView.value[index] = entry.isIntersecting
-		})
-	},
-	{ threshold: 0.5 }
-) // 50% de la tarjeta visible
-
-console.log('observer', observer)
 const handleScroll = () => {
 	const scrollPosition = window.scrollY
 
-	// 🔹 Control de la opacidad del título
-	const fadeStart = 400 // A partir de qué scroll empieza a desvanecerse
-	const fadeEnd = 600 // Hasta qué punto el título se vuelve completamente transparente
+	// 🔹 Control de la opacidad del componente
+	const fadeStart = 100 // A partir de qué scroll empieza a desvanecerse
+	const fadeEnd = 300 // Hasta qué punto el título se vuelve completamente transparente
 	truckOpacity.value = 0 + Math.min(Math.max((scrollPosition - fadeStart) / (fadeEnd - fadeStart), 0), 1)
 }
 
 onMounted(() => {
 	window.addEventListener('scroll', handleScroll)
-	cardRefs.value.forEach((card) => {
-		if (card) observer.observe(card)
-	})
 })
 
 onUnmounted(() => {
@@ -60,30 +44,31 @@ onUnmounted(() => {
 <template>
 	<div :style="{ opacity: truckOpacity }" class="relative top-[1400px] left-[200px]">
 		<div class="absolute top-[-700px] left-[-100px] text-customDark text-5xl text-center">
-			Controlamos todo el flujo de tu producto
+			Road Map de tu producto
 		</div>
 
-		<div class="absolute top-[-470px] left-[-70px] flex flex-col space-y-32 z-20">
+		<!-- images -->
+		<div class="absolute top-[-440px] left-[-70px] flex flex-col space-y-32 z-20">
 			<div class="h-32 w-44 absolute top-[-40px] left-[150px]">
 				<img src="public/images/hero/start.png" alt="wash-machine" />
 			</div>
 			<div class="size-44">
-				<img src="public/images/hero/truck-wash.png" alt="wash-machine" class="-rotate-[50deg]" />
+				<img src="public/images/hero/truck-wash.png" alt="wash-machine" />
 			</div>
 			<div class="size-44">
-				<img src="public/images/hero/coordination.png" alt="wash-machine" class="-rotate-[90deg]" />
+				<img src="public/images/hero/coordination.png" alt="man-working" />
 			</div>
 			<div class="size-44">
-				<img src="public/images/hero/industry.png" alt="industry" class="-rotate-[60deg]" />
+				<img src="public/images/hero/industry.png" alt="industry" />
 			</div>
 			<div class="size-44">
-				<img src="public/images/hero/gps.png" alt="industry" class="-rotate-[60deg]" />
+				<img src="public/images/hero/gps.png" alt="gps" />
 			</div>
 			<div class="size-44">
-				<img src="public/images/hero/industry.png" alt="industry" class="-rotate-[60deg]" />
+				<img src="public/images/hero/industry.png" alt="industry" />
 			</div>
 			<div class="size-44">
-				<img src="public/images/hero/report.png" alt="industry" class="-rotate-[90deg]" />
+				<img src="public/images/hero/report.png" alt="report" />
 			</div>
 		</div>
 
@@ -97,18 +82,31 @@ onUnmounted(() => {
 			</div>
 		</div>
 
-		<!-- right side of the road -->
-		<div class="relative top-[-500px] left-[300px] flex flex-col space-y-44">
-			<div v-for="(card, index) in cards" :key="index" class="w-64 bg-slate-800 rounded-xl py-2 px-6 relative">
-				<div class="size-8 bg-slate-800 rotate-45 absolute top-1/2 -translate-y-1/2 -left-4" />
-				<div class="">
-					<div class="text-2xl">{{ card.title }}</div>
-					<p class="text-gray-400">
-						{{ card.description }}
-					</p>
+		<!-- cards -->
+		<div class="relative top-[-500px] left-[300px] flex flex-col space-y-40">
+			<div
+				v-for="(card, index) in cards"
+				:key="index"
+				:ref="(el) => setElementRef(el, index)"
+				class="w-64 rounded-xl py-4 pl-8 relative transform opacity-0 transition-all duration-700 bg-zinc-900"
+				:class="{
+					'-translate-x-30 opacity-100': inView[index],
+					'translate-x-full opacity-0': !inView[index],
+				}"
+			>
+				<div class="size-8 bg-zinc-900 rotate-45 absolute top-1/2 -translate-y-1/2 -left-2 z-0" />
+				<div class="grid grid-cols-12 gap-2">
+					<div class="col-span-8">
+						<div class="text-2xl">{{ card.title }}</div>
+						<p class="text-gray-400 text-sm">{{ card.description }}</p>
+					</div>
+					<div class="col-span-4 flex justify-center items-center border-l border-dashed border-white px-2">
+						<span class="border border-white rounded-full px-4 py-2">
+							{{ index + 1 }}
+						</span>
+					</div>
 				</div>
 			</div>
-			<!-- card 1 -->
 		</div>
 	</div>
 </template>
@@ -124,7 +122,6 @@ onUnmounted(() => {
 	transform: translateX(-50%);
 }
 
-/* Imagen centrada */
 .fixed-center {
 	width: 150px;
 	position: fixed;

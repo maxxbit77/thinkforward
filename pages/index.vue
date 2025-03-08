@@ -5,7 +5,6 @@
 			<NavBar />
 		</nav>
 
-		<!--  scroll component -->
 		<header>
 			<Hero />
 		</header>
@@ -51,17 +50,3 @@
 		</main>
 	</div>
 </template>
-
-<style scoped>
-.fade-mask-top {
-	-webkit-mask-image: linear-gradient(to bottom, transparent, white 40%, white 80%, transparent);
-	mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent);
-}
-
-/* .fade-mask {
-	-webkit-mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent),
-		linear-gradient(to top, transparent, white 20%, white 80%, transparent);
-	mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent),
-		linear-gradient(to top, transparent, white 20%, white 80%, transparent);
-} */
-</style>

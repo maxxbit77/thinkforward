@@ -79,73 +79,75 @@ onUnmounted(() => {
 
 			<div>
 				<RoadMap />
-				<!-- <div class="absolute top-0 left-[10%]">
-					<CardBasic
-						:background="BackgroundsColorsBlue"
-						:icon="SvgWeb"
-						iconClass="text-sky-500"
-						customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500 size-[400px]"
-					>
-						<template #title>
-							<h3>{{ $t('presentation.card-1.title') }}</h3>
-						</template>
-						<template #text>
-							<p>
-								{{ $t('presentation.card-1.description') }}
-							</p>
-						</template>
-					</CardBasic>
-				</div>
-				<div class="absolute top-[300px] right-[10%]">
-					<CardBasic
-						:background="BackgroundsColorsGreen"
-						:icon="SvgProcess"
-						iconClass="text-green-500"
-						customClass="border-green-500 shadow-xl shadow-green-500 size-[400px]"
-					>
-						<template #title>
-							<h3>{{ $t('presentation.card-2.title') }}</h3>
-						</template>
-						<template #text>
-							<p>
-								{{ $t('presentation.card-2.description') }}
-							</p>
-						</template>
-					</CardBasic>
-				</div>
-				<div class="absolute top-[600px] left-[10%]">
-					<CardBasic
-						:background="BackgroundsColorsYellow"
-						:icon="SvgSolutions"
-						iconClass="text-yellow-500"
-						customClass="border-yellow-500 shadow-xl shadow-yellow-500 size-[400px]"
-					>
-						<template #title>
-							<h3>{{ $t('presentation.card-3.title') }}</h3>
-						</template>
-						<template #text>
-							<p>
-								{{ $t('presentation.card-3.description') }}
-							</p>
-						</template>
-					</CardBasic>
-				</div>
-				<div class="absolute top-[900px] right-[10%]">
-					<CardBasic
-						:background="BackgroundsColorsRose"
-						:icon="SvgCollab"
-						iconClass="text-rose-500"
-						customClass="border-rose-500 shadow-xl shadow-rose-500 size-[400px]"
-					>
-						<template #title>
-							<h3>{{ $t('presentation.card-4.title') }}</h3>
-						</template>
-						<template #text>
-							<p>
-								{{ $t('presentation.card-4.description') }}
-							</p>
-						</template>
-					</CardBasic>
+				<!-- <div class="relative top-[1200px] max-w-7xl mx-auto">
+					<div class="absolute top-0 left-[10%]">
+						<CardBasic
+							:background="BackgroundsColorsBlue"
+							:icon="SvgWeb"
+							iconClass="text-sky-500"
+							customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500 size-[400px]"
+						>
+							<template #title>
+								<h3>{{ $t('presentation.card-1.title') }}</h3>
+							</template>
+							<template #text>
+								<p>
+									{{ $t('presentation.card-1.description') }}
+								</p>
+							</template>
+						</CardBasic>
+					</div>
+					<div class="absolute top-[300px] right-[10%]">
+						<CardBasic
+							:background="BackgroundsColorsGreen"
+							:icon="SvgProcess"
+							iconClass="text-green-500"
+							customClass="border-green-500 shadow-xl shadow-green-500 size-[400px]"
+						>
+							<template #title>
+								<h3>{{ $t('presentation.card-2.title') }}</h3>
+							</template>
+							<template #text>
+								<p>
+									{{ $t('presentation.card-2.description') }}
+								</p>
+							</template>
+						</CardBasic>
+					</div>
+					<div class="absolute top-[600px] left-[10%]">
+						<CardBasic
+							:background="BackgroundsColorsYellow"
+							:icon="SvgSolutions"
+							iconClass="text-yellow-500"
+							customClass="border-yellow-500 shadow-xl shadow-yellow-500 size-[400px]"
+						>
+							<template #title>
+								<h3>{{ $t('presentation.card-3.title') }}</h3>
+							</template>
+							<template #text>
+								<p>
+									{{ $t('presentation.card-3.description') }}
+								</p>
+							</template>
+						</CardBasic>
+					</div>
+					<div class="absolute top-[900px] right-[10%]">
+						<CardBasic
+							:background="BackgroundsColorsRose"
+							:icon="SvgCollab"
+							iconClass="text-rose-500"
+							customClass="border-rose-500 shadow-xl shadow-rose-500 size-[400px]"
+						>
+							<template #title>
+								<h3>{{ $t('presentation.card-4.title') }}</h3>
+							</template>
+							<template #text>
+								<p>
+									{{ $t('presentation.card-4.description') }}
+								</p>
+							</template>
+						</CardBasic>
+					</div>
 				</div> -->
 			</div>
 		</div>
