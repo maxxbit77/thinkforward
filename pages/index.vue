@@ -10,7 +10,7 @@
 			<Hero />
 		</header>
 
-		<main class="relative top-0 bg-customLight dark:bg-customDark">
+		<main class="relative top-[1800px] bg-customLight dark:bg-customDark z-20">
 			<div
 				class="h-[400px] w-full bg-customLight dark:bg-customDark absolute top-[-300px] z-10 fade-mask-top"
 			></div>

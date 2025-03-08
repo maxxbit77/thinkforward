@@ -95,7 +95,6 @@ const lactics = computed(() => ({
 						class="relative rounded-full border-2 border-slate-400/10 dark:shadow-none shadow flex flex-col items-center justify-center h-32 w-32 overflow-hidden"
 					>
 						<img :src="oil.image" :alt="oil.imageAlt" class="rounded-full custom-blur z-20" />
-						<BackgroundsColorsGreen class="absolute h-44 z-10" />
 					</div>
 					<h3 class="text-4xl text-green-500">
 						{{ oil.title }}
@@ -111,7 +110,6 @@ const lactics = computed(() => ({
 						class="relative rounded-full border-2 border-slate-400/10 dark:shadow-none shadow flex flex-col items-center justify-center h-32 w-32 overflow-hidden"
 					>
 						<img :src="chocolate.image" :alt="chocolate.imageAlt" class="rounded-full custom-blur z-20" />
-						<BackgroundsColorsGreen class="absolute h-44 z-10" />
 					</div>
 					<h3 class="text-4xl text-amber-900">
 						{{ chocolate.title }}
@@ -143,7 +141,6 @@ const lactics = computed(() => ({
 						class="relative rounded-full border-2 border-slate-400/10 dark:shadow-none shadow flex flex-col items-center justify-center h-32 w-32 overflow-hidden"
 					>
 						<img :src="lactics.image" :alt="lactics.imageAlt" class="rounded-full custom-blur z-20" />
-						<BackgroundsColorsGreen class="absolute h-44 z-10" />
 					</div>
 					<h3 class="text-4xl dark:text-gray-200 text-gray-400">
 						{{ lactics.title }}
