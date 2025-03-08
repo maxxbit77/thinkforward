@@ -78,8 +78,8 @@ onUnmounted(() => {
 			</header>
 
 			<div>
-				<!-- <RoadMap /> -->
-				<div class="relative top-[1200px] max-w-7xl mx-auto">
+				<RoadMap />
+				<!-- <div class="relative top-[1200px] max-w-7xl mx-auto">
 					<div class="absolute top-0 left-[10%]">
 						<CardBasic
 							:background="BackgroundsColorsBlue"
@@ -148,7 +148,7 @@ onUnmounted(() => {
 							</template>
 						</CardBasic>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</ClientOnly>

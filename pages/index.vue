@@ -5,7 +5,6 @@
 			<NavBar />
 		</nav>
 
-		<!--  scroll component -->
 		<header>
 			<Hero />
 		</header>
