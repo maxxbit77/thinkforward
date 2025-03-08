@@ -77,7 +77,7 @@ onUnmounted(() => {
 				</div>
 			</header>
 
-			<div class="relative top-[1250px] w-[1200px] mx-auto">
+			<div>
 				<RoadMap />
 				<!-- <div class="absolute top-0 left-[10%]">
 					<CardBasic
