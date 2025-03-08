@@ -12,7 +12,7 @@ const inView = ref([])
 const truckOpacity = ref(0)
 
 const isInView = (index) => inView.value[index] === true
-
+console.log('view', isInView)
 const observer = new IntersectionObserver(
 	(entries) => {
 		entries.forEach((entry, index) => {
@@ -22,6 +22,7 @@ const observer = new IntersectionObserver(
 	{ threshold: 0.5 }
 ) // 50% de la tarjeta visible
 
+console.log('observer', observer)
 const handleScroll = () => {
 	const scrollPosition = window.scrollY
 

@@ -1,17 +1,53 @@
 <script setup>
-const images = import.meta.glob('@/public/logos/*.svg', { eager: true })
+const images = import.meta.glob('@/public/images/companies/*.png', { eager: true })
 const imagePaths = Object.values(images).map((module) => module.default)
+
+const carouselImages = [...imagePaths, ...imagePaths]
 </script>
 
 <template>
-	<div
-		class="relative bg-gray-500/10 dark:bg-slate-800/10 w-full h-[300px] rounded-xl border border-gray-300 max-w-7xl mx-auto overflow-hidden"
-	>
-		<BackgroundsColorsBlue class="absolute -top-20 left-5 z-1" />
-		<BackgroundsColorsBlue class="absolute -top-32 right-0 z-1 rotate-45" />
-
-		<div class="flex justify-center items-center h-full gap-8 backdrop-blur-2xl">
-			<img v-for="(image, index) in imagePaths" :key="index" :src="image" class="size-44" />
+	<div class="carousel-container">
+		<div class="carousel-track">
+			<img v-for="(image, index) in carouselImages" :key="index" :src="image" class="carousel-item" />
 		</div>
 	</div>
 </template>
+
+<style scoped>
+.carousel-container {
+	position: relative;
+	width: 100%;
+	max-width: 1280px;
+	overflow: hidden;
+	background: rgba(107, 114, 128, 0.1);
+	border-radius: 12px;
+	border: 1px solid rgba(107, 114, 128, 0.3);
+	margin: auto;
+	height: 200px;
+	display: flex;
+	align-items: center;
+}
+
+.carousel-track {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	white-space: nowrap;
+	animation: scroll 15s linear infinite;
+}
+
+.carousel-item {
+	height: 80px;
+
+	object-fit: cover;
+}
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+</style>
