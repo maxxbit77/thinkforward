@@ -19,6 +19,9 @@
 			</section>
 
 			<!-- Products -->
+
+			<Test />
+			<!-- Products -->
 			<section class="mt-44" id="products">
 				<SectionProducts />
 			</section>

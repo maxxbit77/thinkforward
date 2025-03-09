@@ -55,7 +55,7 @@ onUnmounted(() => {
 <template>
 	<ClientOnly>
 		<div class="h-[100vh]">
-			<img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" />
+			<!-- <img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" /> -->
 
 			<header>
 				<div :style="{ opacity: titleOpacity }">
@@ -78,7 +78,7 @@ onUnmounted(() => {
 			</header>
 
 			<div>
-				<RoadMap />
+				<!-- <RoadMap /> -->
 				<!-- <div class="relative top-[1200px] max-w-7xl mx-auto">
 					<div class="absolute top-0 left-[10%]">
 						<CardBasic

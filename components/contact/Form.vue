@@ -32,8 +32,8 @@ const handleSubmit = async () => {
 		formData.append('email', form.email)
 		formData.append('company', form.company)
 		formData.append('message', form.subject)
-		formData.append('_captcha', 'false') // Desactiva el captcha
-		formData.append('_template', 'table') // Opcional: Formato del email
+		formData.append('_captcha', 'false')
+		formData.append('_template', 'table')
 
 		await fetch('https://formsubmit.co/thinkforward.dev.services@gmail.com', {
 			method: 'POST',
