@@ -46,4 +46,18 @@ export default defineNuxtConfig({
 		lazy: true,
 		langDir: 'locales/',
 	},
+	runtimeConfig: {
+		public: {
+			gtag: {
+				id: 'G-QKVVF5H3H9', // Reemplaza con tu ID de seguimiento
+				config: {
+					anonymize_ip: true, // Opcional: anonimiza las IPs
+					send_page_view: true,
+					linker: {
+						domains: ['maxxbit.es', 'thinkforward.maxxbit.es'], // Añadir el subdominio aquí
+					},
+				},
+			},
+		},
+	},
 })
