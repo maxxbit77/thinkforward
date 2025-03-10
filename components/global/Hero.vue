@@ -1,6 +1,12 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-
+import {
+	BackgroundsColorsBlue,
+	BackgroundsColorsGreen,
+	BackgroundsColorsRose,
+	BackgroundsColorsYellow,
+} from '#components'
+import { SvgCollab, SvgProcess, SvgSolutions, SvgWeb } from '#components'
 const { t } = useI18n()
 
 const images = import.meta.glob('@/public/frames/truck-going/*.webp', { eager: true })
@@ -37,8 +43,8 @@ const handleScroll = () => {
 	}
 
 	// 🔹 Control de la opacidad del título
-	const fadeStart = 1 // A partir de qué scroll empieza a desvanecerse
-	const fadeEnd = 300 // Hasta qué punto el título se vuelve completamente transparente
+	const fadeStart = 150 // A partir de qué scroll empieza a desvanecerse
+	const fadeEnd = 400 // Hasta qué punto el título se vuelve completamente transparente
 	titleOpacity.value = 1 - Math.min(Math.max((scrollPosition - fadeStart) / (fadeEnd - fadeStart), 0), 1)
 }
 
@@ -58,18 +64,18 @@ onUnmounted(() => {
 			<img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" />
 
 			<header>
-				<div :style="{ opacity: titleOpacity }">
+				<div :style="{ opacity: titleOpacity }" class="relative">
 					<div
-						class="w-full h-[1800px] absolute top-[-300px] left-1/2 -translate-x-1/2 text-center transition-opacity duration-200 custom-blur overflow-hidden fade-mask-top"
+						class="w-full h-[1600px] absolute left-1/2 -translate-x-1/2 fade-mask-side bg-customLight dark:bg-slate-950"
 					>
 						<BackgroundsColorsBlueHero
-							class="animate-[spin_20s_linear_infinite] size-[2000px] absolute top-[-200px] left-[-100px]"
+							class="animate-[spin_15s_linear_infinite] h-[2000px] w-[2000px] absolute top-[-500px] left-[-150px]"
 						/>
 					</div>
 					<div
-						class="absolute top-[400px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
+						class="absolute top-[300px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
 					>
-						<h1 class="text-7xl text-customDark">{{ $t('hero.title') }}</h1>
+						<h1 class="text-7xl dark:text-customLight font-bold">{{ $t('hero.title') }}</h1>
 						<h2 class="text-2xl">{{ $t('hero.subtitle') }}</h2>
 						<p class="text-gray-300">{{ $t('hero.description') }}</p>
 						<Cta />
@@ -78,8 +84,8 @@ onUnmounted(() => {
 			</header>
 
 			<div>
-				<RoadMap />
-				<!-- <div class="relative top-[1200px] max-w-7xl mx-auto">
+				<!-- <RoadMap /> -->
+				<div class="relative top-[1200px] max-w-7xl mx-auto">
 					<div class="absolute top-0 left-[10%]">
 						<CardBasic
 							:background="BackgroundsColorsBlue"
@@ -148,7 +154,7 @@ onUnmounted(() => {
 							</template>
 						</CardBasic>
 					</div>
-				</div> -->
+				</div>
 			</div>
 		</div>
 	</ClientOnly>

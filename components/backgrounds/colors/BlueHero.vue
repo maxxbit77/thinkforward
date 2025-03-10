@@ -21,8 +21,8 @@
 				<stop stop-color="#031D6C"></stop>
 				<stop offset="1" stop-color="#1646D5" stop-opacity=".01"></stop>
 			</radialGradient>
-			<radialGradient
-				id="piphoneil_paint1_radial"
+			<!-- <radialGradient
+				id="piphoneil_paint1_radial1"
 				cx="0"
 				cy="0"
 				r="1"
@@ -31,7 +31,7 @@
 			>
 				<stop stop-color="#1646D5"></stop>
 				<stop offset="1" stop-color="#0033cc" stop-opacity=".01"></stop>
-			</radialGradient>
+			</radialGradient> -->
 		</defs>
 	</svg>
 </template>
