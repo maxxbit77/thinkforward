@@ -4,6 +4,7 @@ import { useToast } from '@/components/ui/toast/use-toast'
 import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-vue-next'
 import { ref, reactive } from 'vue'
+import emailjs from 'emailjs-com'
 
 const { t } = useI18n()
 const { toast } = useToast()
@@ -27,22 +28,23 @@ const handleSubmit = async () => {
 	isLoading.value = true
 
 	try {
-		const formData = new FormData()
-		formData.append('name', form.name)
-		formData.append('email', form.email)
-		formData.append('company', form.company)
-		formData.append('message', form.subject)
-		formData.append('_captcha', 'false')
-		formData.append('_template', 'table')
+		const response = await emailjs.send(
+			'service_snr17m1', // Reemplázalo con tu Service ID
+			'template_lzw013f', // Reemplázalo con tu Template ID
+			{
+				user_name: form.name,
+				user_email: form.email,
+				user_company: form.company,
+				message: form.subject,
+			},
+			'mIPbhv2d0zmu2Jbcr' // Reemplázalo con tu Public Key
+		)
 
-		await fetch('https://formsubmit.co/thinkforward.dev.services@gmail.com', {
-			method: 'POST',
-			body: formData,
-		})
-
+		console.log('Correo enviado:', response)
 		toast({ description: t('toast.messageSent') })
 		clearForm()
 	} catch (error) {
+		console.error('Error enviando correo:', error)
 		toast({ description: t('toast.error') })
 	} finally {
 		isLoading.value = false
@@ -136,40 +138,3 @@ const handleSubmit = async () => {
 		</div>
 	</ClientOnly>
 </template>
-
-<style scoped>
-label {
-	position: absolute;
-	left: 12px;
-	top: 50%;
-	transform: translateY(-50%);
-	transition: all 0.2s ease-in-out;
-	color: gray;
-	font-size: 14px;
-	background-color: transparent;
-	padding: 0 4px;
-}
-
-input:focus + label,
-input:not(:placeholder-shown) + label,
-textarea:focus + label,
-textarea:not(:placeholder-shown) + label {
-	top: -8px;
-	left: -2px;
-	font-size: 12px;
-	color: #0ea5e9;
-	background-color: transparent;
-	padding-left: 4px;
-	padding-right: 4px;
-	border-radius: 5px;
-	z-index: 10;
-}
-
-input:-webkit-autofill,
-textarea:-webkit-autofill {
-	-webkit-text-fill-color: white !important;
-	transition: background-color 5000s ease-in-out 0s !important;
-	background-color: transparent !important;
-	appearance: none !important;
-}
-</style>
