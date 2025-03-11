@@ -25,15 +25,15 @@ watch(() => route.query.section, scrollToSection)
 			<Hero />
 		</header>
 
-		<div class="h-[400px] w-full bg-customLight dark:bg-customDark relative top-[2100px] z-10 fade-mask-top" />
+		<!-- <div class="h-[400px] w-full bg-customLight dark:bg-customDark relative top-[2100px] z-10 fade-mask-top" /> -->
 
-		<main class="relative top-[1800px] bg-customLight dark:bg-customDark z-20 px-4 xl:px-0">
+		<main class="bg-customLight dark:bg-customDark z-20 px-4 xl:px-0">
 			<!-- Intro -->
-			<section class="relative top-[-2000px]">
+			<section class="">
 				<SectionIntro />
 			</section>
 			<!-- Services -->
-			<section class="pt-24" id="services">
+			<section class="mt-44" id="services">
 				<SectionServices />
 			</section>
 

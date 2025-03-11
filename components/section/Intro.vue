@@ -9,12 +9,11 @@ import {
 } from '#components'
 const { t } = useI18n()
 
-// cards
 const cards = computed(() => [
 	{
-		title: t('presentation.card-1.title'), // 🔹 Usa `t(...)` en lugar de `$t(...)`
+		title: t('presentation.card-1.title'),
 		text: t('presentation.card-1.description'),
-		customClass: 'border-sky-500  z-20 shadow-xl shadow-blue-500 size-[400px] absolute top-0 left-[20%]',
+		customClass: 'border-sky-500  z-20 shadow-xl shadow-blue-500  h-[400px] ',
 		iconClass: 'text-sky-500',
 		background: BackgroundsColorsBlue,
 		icon: SvgWeb,
@@ -23,7 +22,7 @@ const cards = computed(() => [
 		title: t('presentation.card-2.title'),
 		text: t('presentation.card-2.description'),
 		iconClass: 'text-green-500',
-		customClass: 'border-green-500 shadow-xl shadow-green-500 size-[400px] absolute top-[410px] right-[20%]',
+		customClass: 'border-green-500 shadow-xl shadow-green-500  h-[400px] ',
 		background: BackgroundsColorsGreen,
 		icon: SvgSolutions,
 	},
@@ -31,7 +30,7 @@ const cards = computed(() => [
 		title: t('presentation.card-3.title'),
 		text: t('presentation.card-3.description'),
 		iconClass: 'text-yellow-500',
-		customClass: 'border-yellow-500 shadow-xl shadow-yellow-500 size-[400px] absolute top-[820px] left-[20%]',
+		customClass: 'border-yellow-500 shadow-xl shadow-yellow-500  h-[400px] ',
 		background: BackgroundsColorsYellow,
 		icon: SvgProcess,
 	},
@@ -39,14 +38,14 @@ const cards = computed(() => [
 		title: t('presentation.card-4.title'),
 		text: t('presentation.card-4.description'),
 		iconClass: 'text-rose-500',
-		customClass: 'border-rose-500 shadow-xl shadow-rose-500 size-[400px] absolute top-[1240px] right-[20%]',
+		customClass: 'border-rose-500 shadow-xl shadow-rose-500  h-[400px] ',
 		background: BackgroundsColorsRose,
 		icon: SvgCollab,
 	},
 ])
 </script>
 <template>
-	<div class="">
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
 		<div v-for="(card, index) in cards" :key="index">
 			<CardBasic
 				:background="card.background"
@@ -57,9 +56,7 @@ const cards = computed(() => [
 				<template #title>
 					{{ card.title }}
 				</template>
-				<template #text>
-					{{ card.text }}
-				</template>
+				<template #text> </template>
 			</CardBasic>
 		</div>
 	</div>

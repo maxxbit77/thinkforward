@@ -54,7 +54,7 @@ export default {
 					4: 'hsl(var(--chart-4))',
 					5: 'hsl(var(--chart-5))',
 				},
-				customPrimary: '#0ea5e9',
+				customPrimary: '#1447e6',
 				customSecondary: '#4f46e5',
 				customDark: '#020617',
 				customLight: '#e5e7eb',

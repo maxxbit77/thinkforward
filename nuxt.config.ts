@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 		head: {
 			title: 'ThinkForward',
 			meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
-			link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+			link: [{ rel: 'icon', type: 'image/png', href: '/TF-star.png' }],
 		},
 	},
 
@@ -31,4 +31,6 @@ export default defineNuxtConfig({
 			},
 		},
 	},
+
+	compatibilityDate: '2025-03-11',
 })
