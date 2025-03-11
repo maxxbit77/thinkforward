@@ -12,6 +12,8 @@ const { t } = useI18n()
 			<div class="flex justify-center">
 				{{ t('footer.text') }}
 			</div>
+
+			<a href="/policy-and-privacy" class="text-xs underline"> Politicas de privacidad </a>
 		</div>
 	</ClientOnly>
 </template>

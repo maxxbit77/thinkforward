@@ -169,5 +169,14 @@
 	},
 	"cta": {
 		"text": "Kontakt"
+	},
+	"cookies": {
+		"title": "Wykorzystanie plików cookie",
+		"description": "Ta strona internetowa używa plików cookie w celu poprawy komfortu przeglądania i analizy ruchu. Niektóre pliki cookie są niezbędne do działania strony, inne pomagają nam ulepszać i dostosowywać treści. Aby uzyskać więcej informacji, zapoznaj się z naszymi",
+		"button": {
+			"accept": "Akceptuj",
+			"cancel": "Anuluj"
+		},
+		"policy": "Polityką prywatności"
 	}
 }

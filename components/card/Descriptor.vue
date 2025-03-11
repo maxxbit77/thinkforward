@@ -6,10 +6,8 @@ defineProps({
 })
 </script>
 <template>
-	<div
-		class="w-full h-full custom-blur border border-gray-500 relative rounded-lg text-center flex flex-col justify-start items-center space-y-4 p-4 overflow-hidden"
-	>
-		<div class="absolute z-10 text-left px-4">
+	<div class="w-full custom-blur border border-gray-500 relative rounded-lg text-center p-4 overflow-hidden">
+		<div class="z-10 text-left px-4">
 			<div class="text-3xl mb-2">
 				<slot name="title" />
 			</div>

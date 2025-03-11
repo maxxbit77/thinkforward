@@ -23,9 +23,10 @@ useHead({
 })
 </script>
 <template>
-	<div class="bg-white dark:bg-slate-950 w-screen">
+	<div class="bg-white dark:bg-slate-950 w-screen overflow-hidden">
 		<NuxtPage />
 		<Toaster />
 		<FloatWhatsApp />
+		<CookieModal />
 	</div>
 </template>

@@ -51,14 +51,14 @@ watch(
 </script>
 
 <template>
-	<div class="relative overflow-hidden">
+	<div class="relative overflow-hidden min-h-44">
 		<div
 			ref="counterRef"
-			class="h-full bg-gray-500/10 backdrop-blur-xl dark:bg-slate-800/10 border-2 border-slate-900 dark:border-gray-500 rounded-2xl flex flex-col justify-center text-center items-center"
+			class="p-2 h-full bg-gray-500/10 backdrop-blur-xl dark:bg-slate-800/10 border-2 border-slate-900 dark:border-gray-500 rounded-2xl flex flex-col justify-center text-center items-center"
 		>
-			<div class="relative text-3xl text-slate-900 dark:text-white z-20">
+			<div class="relative text-xl xl:text-3xl text-slate-900 dark:text-white z-20">
 				<slot />
-				<p class="text-6xl font-bold">+{{ number }}</p>
+				<p class="text-4xl md:text-5xl xl:text-6xl font-bold">+{{ number }}</p>
 			</div>
 		</div>
 		<div class="absolute -top-20 z-1">

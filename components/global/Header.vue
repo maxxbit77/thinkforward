@@ -1,14 +1,14 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
 const logoRef = ref(null)
 const changeLogoColor = ref(false)
 
 const handleScroll = () => {
-	const scroll = logoRef.value.getBoundingClientRect()
-	if (scroll.top <= 25) {
-		changeLogoColor.value = true
-	} else {
-		changeLogoColor.value = false
-	}
+	if (!logoRef.value) return
+
+	const scroll = logoRef.value.$el.getBoundingClientRect()
+	changeLogoColor.value = scroll.top <= 25
 }
 
 onMounted(() => {
@@ -22,15 +22,16 @@ onUnmounted(() => {
 
 <template>
 	<div class="relative">
-		<header class="circle-background">
-			<div ref="logoRef"></div>
+		<header>
+			<img class="circle-background" src="public/TF-star.png" alt="" />
 		</header>
-		<NuxtLink to="#home">
+		<NuxtLink to="/?section=home">
 			<LogoThinkforward
-				class="logo-slide dark:text-customLight text-customDark"
+				ref="logoRef"
+				class="logo-slide text-customPrimary"
 				:class="{
-					'text-white transition-colors ': !changeLogoColor,
-					'text-slate-950 transition-colors ': changeLogoColor,
+					'text-blue-600 transition-colors': !changeLogoColor,
+					'text-black transition-colors': changeLogoColor,
 				}"
 			/>
 		</NuxtLink>
@@ -39,7 +40,6 @@ onUnmounted(() => {
 
 <style scoped>
 .circle-background {
-	background: linear-gradient(40deg, #0d0d0d, #14027c 70%);
 	width: 400px;
 	height: 400px;
 	border-radius: 1000px;
@@ -48,7 +48,7 @@ onUnmounted(() => {
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 50;
-	margin-top: -260px;
+	margin-top: -160px;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -57,9 +57,9 @@ onUnmounted(() => {
 
 .logo-slide {
 	position: fixed;
-	width: 280px;
-	top: 24px;
-	left: 50%;
+	width: 270px;
+	top: 25px;
+	left: 49%;
 	transform: translateX(-50%);
 	z-index: 80;
 	animation: slideIn 1500ms ease-out;
@@ -82,7 +82,7 @@ onUnmounted(() => {
 	}
 	to {
 		transform: translate3d(-50%, 0, 0);
-		opacity: 1;
+		opacity: 0.6;
 	}
 }
 </style>

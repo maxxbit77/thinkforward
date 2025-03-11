@@ -5,12 +5,12 @@ const { t } = useI18n()
 
 <template>
 	<div>
-		<NuxtLink to="#contact">
+		<NuxtLink to="/?section=contact">
 			<button
-				class="border-animated px-8 py-4 hover:bg-customSecondary bg-customPrimary text-xl transition-colors"
+				class="px-4 py-2 hover:bg-customLight hover:text-customDark bg-customPrimary text-customLight text-xl rounded-xl transition-all"
 			>
 				{{ t('cta.text') }}
-				<span class="border-overlay"></span>
+				<span class=""></span>
 			</button>
 		</NuxtLink>
 	</div>

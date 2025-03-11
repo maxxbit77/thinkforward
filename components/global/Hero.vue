@@ -1,14 +1,7 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
-import {
-	BackgroundsColorsBlue,
-	BackgroundsColorsGreen,
-	BackgroundsColorsRose,
-	BackgroundsColorsYellow,
-} from '#components'
-import { SvgCollab, SvgProcess, SvgSolutions, SvgWeb } from '#components'
-const { t } = useI18n()
+const isDark = ref(false)
 
+// Detectar el modo del sistema al montar el componente
 const images = import.meta.glob('@/public/frames/truck-going/*.webp', { eager: true })
 const imagePaths = Object.values(images).map((module) => module.default)
 
@@ -22,35 +15,38 @@ const preloadImages = () => {
 	imagePaths.forEach((src) => {
 		const img = new Image()
 		img.src = src
-		img.onload = () => loadedImages.value.add(src) // Marca la imagen como cargada
+		img.onload = () => loadedImages.value.add(src)
 	})
 }
 
 const handleScroll = () => {
 	const scrollPosition = window.scrollY
-	const maxScroll = document.documentElement.scrollHeight - window.innerHeight * 2
-	const scrollFraction = scrollPosition / maxScroll
+	// const maxScroll = document.documentElement.scrollHeight - window.innerHeight * 2
+	// const scrollFraction = scrollPosition / maxScroll
 
-	const frame = Math.floor(scrollFraction * imagePaths.length)
+	// const frame = Math.floor(scrollFraction * imagePaths.length)
 
-	// Ocultar imágenes si se llega al final del scroll
-	isMounted.value = scrollPosition < maxScroll
+	// isMounted.value = scrollPosition < maxScroll
 
-	// Solo cambia la imagen si está precargada
-	if (currentFrame.value !== frame && loadedImages.value.has(imagePaths[frame])) {
-		currentImage.value = imagePaths[frame]
-		currentFrame.value = frame
-	}
+	// if (currentFrame.value !== frame && loadedImages.value.has(imagePaths[frame])) {
+	// 	currentImage.value = imagePaths[frame]
+	// 	currentFrame.value = frame
+	// }
 
-	// 🔹 Control de la opacidad del título
-	const fadeStart = 150 // A partir de qué scroll empieza a desvanecerse
-	const fadeEnd = 400 // Hasta qué punto el título se vuelve completamente transparente
+	const fadeStart = 150
+	const fadeEnd = 400
 	titleOpacity.value = 1 - Math.min(Math.max((scrollPosition - fadeStart) / (fadeEnd - fadeStart), 0), 1)
 }
 
 onMounted(() => {
-	preloadImages() // Precargar imágenes al montar el componente
-	window.addEventListener('scroll', handleScroll)
+	// preloadImages()
+	if (window) {
+		window.addEventListener('scroll', handleScroll)
+	}
+	console.log(window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+	isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+	console.log(isDark.value)
 })
 
 onUnmounted(() => {
@@ -60,8 +56,8 @@ onUnmounted(() => {
 
 <template>
 	<ClientOnly>
-		<div class="h-[100vh]">
-			<img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" />
+		<div class="h-[650px] bg-customLight dark:bg-customDark">
+			<!-- <img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" /> -->
 
 			<header>
 				<div :style="{ opacity: titleOpacity }" class="relative">
@@ -69,93 +65,36 @@ onUnmounted(() => {
 						class="w-full h-[1600px] absolute left-1/2 -translate-x-1/2 fade-mask-side bg-customLight dark:bg-slate-950"
 					>
 						<BackgroundsColorsBlueHero
-							class="animate-[spin_15s_linear_infinite] h-[2000px] w-[2000px] absolute top-[-500px] left-[-150px]"
+							class="animate-[spin_15s_linear_infinite] h-[1500px] w-[1500px] absolute top-[-500px] left-[-150px]"
 						/>
 					</div>
 					<div
-						class="absolute top-[300px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
+						class="absolute top-[350px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
 					>
-						<h1 class="text-7xl dark:text-customLight font-bold">{{ $t('hero.title') }}</h1>
-						<h2 class="text-2xl">{{ $t('hero.subtitle') }}</h2>
-						<p class="text-gray-300">{{ $t('hero.description') }}</p>
+						<AnimationsTextWriter
+							:textsPrimary="['Transporte y Logística', 'Envíos a toda Europa']"
+							:textsSecondary="['Nacional e Internacional', 'Rápidos y Eficientes']"
+							:textSpeed="100"
+							:delay="1500"
+							tagPrimary="h1"
+							tagSecondary="h3"
+							customClassPrimary=""
+							customClassSecondary=""
+						/>
+
+						<!-- <h1>{{ $t('hero.title') }}</h1>
+						<h3>{{ $t('hero.subtitle') }}</h3>
+						<p class="text-gray-300">{{ $t('hero.description') }}</p> -->
 						<Cta />
+					</div>
+					<div class="hidden md:block" :class="isDark ? 'text-dark' : 'text-white'">
+						<SvgStar class="size-24 absolute top-56 left-44 rotate-12" />
+						<SvgStar class="size-6 absolute top-[800px] left-24 rotate-45" />
+						<SvgStar class="size-8 absolute top-64 right-44" />
+						<SvgStar class="size-14 absolute top-[1000px] right-24 rotate-45" />
 					</div>
 				</div>
 			</header>
-
-			<div>
-				<!-- <RoadMap /> -->
-				<div class="relative top-[1200px] max-w-7xl mx-auto">
-					<div class="absolute top-0 left-[10%]">
-						<CardBasic
-							:background="BackgroundsColorsBlue"
-							:icon="SvgWeb"
-							iconClass="text-sky-500"
-							customClass="border-sky-500 absolute z-20 shadow-xl shadow-blue-500 size-[400px]"
-						>
-							<template #title>
-								<h3>{{ $t('presentation.card-1.title') }}</h3>
-							</template>
-							<template #text>
-								<p>
-									{{ $t('presentation.card-1.description') }}
-								</p>
-							</template>
-						</CardBasic>
-					</div>
-					<div class="absolute top-[300px] right-[10%]">
-						<CardBasic
-							:background="BackgroundsColorsGreen"
-							:icon="SvgProcess"
-							iconClass="text-green-500"
-							customClass="border-green-500 shadow-xl shadow-green-500 size-[400px]"
-						>
-							<template #title>
-								<h3>{{ $t('presentation.card-2.title') }}</h3>
-							</template>
-							<template #text>
-								<p>
-									{{ $t('presentation.card-2.description') }}
-								</p>
-							</template>
-						</CardBasic>
-					</div>
-					<div class="absolute top-[600px] left-[10%]">
-						<CardBasic
-							:background="BackgroundsColorsYellow"
-							:icon="SvgSolutions"
-							iconClass="text-yellow-500"
-							customClass="border-yellow-500 shadow-xl shadow-yellow-500 size-[400px]"
-						>
-							<template #title>
-								<h3>{{ $t('presentation.card-3.title') }}</h3>
-							</template>
-							<template #text>
-								<p>
-									{{ $t('presentation.card-3.description') }}
-								</p>
-							</template>
-						</CardBasic>
-					</div>
-					<div class="absolute top-[900px] right-[10%]">
-						<CardBasic
-							:background="BackgroundsColorsRose"
-							:icon="SvgCollab"
-							iconClass="text-rose-500"
-							customClass="border-rose-500 shadow-xl shadow-rose-500 size-[400px]"
-						>
-							<template #title>
-								<h3>{{ $t('presentation.card-4.title') }}</h3>
-							</template>
-							<template #text>
-								<p>
-									{{ $t('presentation.card-4.description') }}
-								</p>
-							</template>
-						</CardBasic>
-					</div>
-				</div>
-			</div>
 		</div>
 	</ClientOnly>
 </template>

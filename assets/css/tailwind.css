@@ -74,6 +74,27 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	h1 {
+		@apply text-4xl  lg:text-5xl xl:text-6xl font-bold text-customDark dark:text-customLight;
+	}
+	h2 {
+		@apply text-3xl  lg:text-4xl xl:text-5xl font-bold text-customDark dark:text-customLight;
+	}
+	h3 {
+		@apply text-2xl  lg:text-3xl xl:text-4xl text-customDark dark:text-customLight;
+	}
+	h4 {
+		@apply text-xl  lg:text-2xl xl:text-3xl text-customDark dark:text-customLight;
+	}
+	h5 {
+		@apply text-lg  lg:text-xl xl:text-2xl text-customDark dark:text-customLight;
+	}
+	h6 {
+		@apply lg:text-lg xl:text-xl text-customDark dark:text-customLight;
+	}
+	p {
+		@apply text-xs md:text-sm  text-customDark dark:text-customLight;
+	}
 }
 
 html {

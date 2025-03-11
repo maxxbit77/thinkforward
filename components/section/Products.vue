@@ -53,10 +53,10 @@ const lactics = computed(() => ({
 	<ClientOnly>
 		<div class="max-w-7xl mx-auto">
 			<div class="mb-12 text-center text-customDark dark:text-customLight">
-				<h3 class="text-4xl">{{ t('products.title') }}</h3>
+				<h2>{{ t('products.title') }}</h2>
 				<p>{{ t('products.description') }}</p>
 			</div>
-			<div class="grid grid-cols-3 gap-24">
+			<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-24">
 				<!-- wine -->
 				<div class="flex flex-col justify-start items-center text-center space-y-4">
 					<div
@@ -65,7 +65,7 @@ const lactics = computed(() => ({
 						<img :src="wine.image" :alt="wine.imageAlt" class="rounded-full custom-blur z-20" />
 						<BackgroundsColorsRose class="absolute h-44 z-10" />
 					</div>
-					<h3 class="text-4xl text-rose-500">
+					<h3 class="!text-rose-500">
 						{{ wine.title }}
 					</h3>
 					<p class="dark:text-customLight text-customDark">
@@ -81,7 +81,7 @@ const lactics = computed(() => ({
 						<img :src="juice.image" :alt="juice.imageAlt" class="rounded-full custom-blur z-20" />
 						<BackgroundsColorsYellow class="absolute h-64 z-10" />
 					</div>
-					<h3 class="text-4xl text-orange-500">
+					<h3 class="!text-orange-500">
 						{{ juice.title }}
 					</h3>
 					<p class="dark:text-customLight text-customDark">
@@ -96,7 +96,7 @@ const lactics = computed(() => ({
 					>
 						<img :src="oil.image" :alt="oil.imageAlt" class="rounded-full custom-blur z-20" />
 					</div>
-					<h3 class="text-4xl text-green-500">
+					<h3 class="!text-green-500">
 						{{ oil.title }}
 					</h3>
 					<p class="dark:text-customLight text-customDark">
@@ -111,7 +111,7 @@ const lactics = computed(() => ({
 					>
 						<img :src="chocolate.image" :alt="chocolate.imageAlt" class="rounded-full custom-blur z-20" />
 					</div>
-					<h3 class="text-4xl text-amber-900">
+					<h3 class="!text-amber-900">
 						{{ chocolate.title }}
 					</h3>
 					<p class="dark:text-customLight text-customDark">
@@ -127,7 +127,7 @@ const lactics = computed(() => ({
 						<img :src="glucose.image" :alt="glucose.imageAlt" class="rounded-full custom-blur z-20" />
 						<BackgroundsColorsGray class="absolute h-44 z-10" />
 					</div>
-					<h3 class="text-4xl text-amber-400">
+					<h3 class="!text-amber-400">
 						{{ glucose.title }}
 					</h3>
 					<p class="dark:text-customLight text-customDark">
@@ -142,7 +142,7 @@ const lactics = computed(() => ({
 					>
 						<img :src="lactics.image" :alt="lactics.imageAlt" class="rounded-full custom-blur z-20" />
 					</div>
-					<h3 class="text-4xl dark:text-gray-200 text-gray-400">
+					<h3 class="dark:text-gray-200 text-gray-400">
 						{{ lactics.title }}
 					</h3>
 					<p class="dark:text-customLight text-customDark">
