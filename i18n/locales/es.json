@@ -120,7 +120,7 @@
 		"info": {
 			"title": "Ponte en contacto con nosotros",
 			"schedule": "Nuestro horario es: Lunes - Sábados de 8:00 a 18:00 (CET)",
-			"visitUs": "Visítanos en redes sociales",
+			"visitUs": "Visítanos en redes",
 			"icons": {
 				"sendEmail": "Enviar correo electrónico"
 			},
@@ -169,5 +169,14 @@
 	},
 	"cta": {
 		"text": "Agendar una llamada"
+	},
+	"cookies": {
+		"title": "Uso de Cookies",
+		"description": "Este sitio web utiliza cookies para mejorar tu experiencia de navegación y analizar el tráfico. Algunas cookies son necesarias para el funcionamiento del sitio, mientras que otras nos ayudan a mejorar y personalizar el contenido.Para más información puedes ver nuestras",
+		"button": {
+			"accept": "Aceptar",
+			"cancel": "Cancelar"
+		},
+		"policy": "Políticas de privacidad"
 	}
 }

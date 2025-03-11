@@ -1,12 +1,12 @@
 <script setup></script>
 <template>
 	<ClientOnly>
-		<div class="max-w-7xl mx-auto h-[400px] border border-gray-400 rounded-xl relative">
-			<div class="grid grid-cols-3 rounded-xl h-full p-2 overflow-hidden">
-				<div class="col-span-2">
+		<div class="max-w-7xl mx-auto xl:border border-gray-400 rounded-xl relative p-4">
+			<div class="grid grid-cols-12 rounded-xl">
+				<div class="col-span-12 xl:col-span-8">
 					<ContactInfo />
 				</div>
-				<div class="z-10">
+				<div class="col-span-12 xl:absolute lg:-top-[42px] lg:right-8 z-10 xl:mb-0 mt-8 xl:mt-0">
 					<ContactForm />
 				</div>
 			</div>

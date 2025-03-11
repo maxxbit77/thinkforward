@@ -1,6 +1,15 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
+import { useI18n } from '#imports'
+import { useRoute, useRouter } from 'vue-router'
+
 const { t } = useI18n()
+const localePath = useLocalePath()
+const router = useRouter()
+
+// Función para cambiar la sección sin recargar la página
+const navigateToSection = (section) => {
+	router.push({ path: localePath('index'), query: { section } })
+}
 </script>
 
 <template>
@@ -10,17 +19,25 @@ const { t } = useI18n()
 			<div class="max-w-7xl grid grid-cols-3 items-center mx-auto">
 				<div class="flex justify-between items-center h-full">
 					<div class="flex space-x-6">
-						<NuxtLink to="#home">
+						<button @click="navigateToSection('home')">
 							{{ t('menu.home') }}
-						</NuxtLink>
-						<NuxtLink to="#services">{{ t('menu.services') }}</NuxtLink>
-						<NuxtLink to="#products">{{ t('menu.products') }}</NuxtLink>
+						</button>
+						<button @click="navigateToSection('services')">
+							{{ t('menu.services') }}
+						</button>
+						<button @click="navigateToSection('products')">
+							{{ t('menu.products') }}
+						</button>
 					</div>
 				</div>
 				<div />
 				<div class="flex justify-end items-center h-full space-x-6">
-					<NuxtLink to="#contact">{{ t('menu.contact') }}</NuxtLink>
-					<NuxtLink to="#home">{{ t('menu.about') }}</NuxtLink>
+					<button @click="navigateToSection('contact')">
+						{{ t('menu.contact') }}
+					</button>
+					<button @click="navigateToSection('about')">
+						{{ t('menu.about') }}
+					</button>
 					<ButtonLang />
 					<ButtonToggleDarkMode />
 				</div>

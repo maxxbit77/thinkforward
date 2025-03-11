@@ -55,9 +55,9 @@ const handleSubmit = async () => {
 <template>
 	<ClientOnly>
 		<div
-			class="w-[400px] p-12 shadow-md rounded-lg border border-gray-500 h-[500px] absolute -top-[50px] custom-blur flex flex-col justify-center"
+			class="p-8 shadow-md rounded-lg border border-gray-500 h-[500px] max-w-[700px] mx-auto flex flex-col justify-center custom-blur"
 		>
-			<h4 class="text-customDark text-4xl mb-8 text-center dark:text-customLight">
+			<h4 class="text-customDark text-4xl mb-8 text-center dark:text-customLight text-nowrap">
 				{{ t('contact.message.title') }}
 			</h4>
 
@@ -138,3 +138,40 @@ const handleSubmit = async () => {
 		</div>
 	</ClientOnly>
 </template>
+
+<style scoped>
+label {
+	position: absolute;
+	left: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 0.2s ease-in-out;
+	color: gray;
+	font-size: 14px;
+	background-color: transparent;
+	padding: 0 4px;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+	top: -8px;
+	left: -2px;
+	font-size: 12px;
+	color: #0ea5e9;
+	background-color: transparent;
+	padding-left: 4px;
+	padding-right: 4px;
+	border-radius: 5px;
+	z-index: 10;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+	-webkit-text-fill-color: white !important;
+	transition: background-color 5000s ease-in-out 0s !important;
+	background-color: transparent !important;
+	appearance: none !important;
+}
+</style>

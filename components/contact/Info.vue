@@ -53,18 +53,15 @@ const copyPhoneToClipBoard = () => {
 
 <template>
 	<ClientOnly>
-		<div class="relative backdrop-blur-2xl bg-gray-500/10 dark:bg-slate-800/10">
-			<div class="absolute z-1 -right-72">
-				<BackgroundsColorsBlue />
-			</div>
-			<div class="absolute z-10 w-full flex flex-col space-y-10">
+		<div class="mb-4 rounded-xl">
+			<div class="w-full flex flex-col space-y-10">
 				<!-- title -->
 				<div class="text-center">
 					<h4 class="text-4xl">{{ t('contact.info.title') }}</h4>
 				</div>
 
 				<!-- contact -->
-				<div class="flex justify-center items-center space-x-14">
+				<div class="flex justify-center items-center space-x-4 md:space-x-8 xl:space-x-14">
 					<div class="text-center flex flex-col justify-center items-center space-y-2">
 						<TooltipProvider :delayDuration="50">
 							<Tooltip>
@@ -77,7 +74,9 @@ const copyPhoneToClipBoard = () => {
 									<p>{{ t('contact.info.tooltip.copyEmail') }}</p>
 								</TooltipContent>
 							</Tooltip>
-							<p class="text-md font-bold text-gray-500 dark:text-customLight">{{ company.email }}</p>
+							<p class="hidden md:block text-md font-bold text-gray-500 dark:text-customLight">
+								{{ company.email }}
+							</p>
 						</TooltipProvider>
 					</div>
 
@@ -100,7 +99,7 @@ const copyPhoneToClipBoard = () => {
 								</TooltipContent>
 							</Tooltip>
 						</TooltipProvider>
-						<p class="text-md font-bold text-gray-500 dark:text-customLight">
+						<p class="hidden md:block text-md font-bold text-gray-500 dark:text-customLight">
 							{{ t('contact.info.icons.sendEmail') }}
 						</p>
 					</div>
@@ -119,7 +118,7 @@ const copyPhoneToClipBoard = () => {
 								</TooltipContent>
 							</Tooltip>
 						</TooltipProvider>
-						<p class="text-md font-bold text-gray-500 dark:text-customLight">
+						<p class="hidden md:block text-md font-bold text-gray-500 dark:text-customLight">
 							{{ company.whatsapp }}
 						</p>
 					</div>
@@ -138,13 +137,13 @@ const copyPhoneToClipBoard = () => {
 								</TooltipContent>
 							</Tooltip>
 						</TooltipProvider>
-						<p class="text-md font-bold text-gray-500 dark:text-customLight">
+						<p class="hidden md:block text-md font-bold text-gray-500 dark:text-customLight">
 							{{ company.phone }}
 						</p>
 					</div>
 				</div>
 				<!-- Separator -->
-				<div class="w-2/3 mx-auto my-8">
+				<div class="w-full md:max-w-[700px] mx-auto my-8">
 					<UiSeparator :label="separatorTxt.text" />
 				</div>
 				<!-- Socials -->

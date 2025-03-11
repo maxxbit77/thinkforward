@@ -27,5 +27,6 @@ useHead({
 		<NuxtPage />
 		<Toaster />
 		<FloatWhatsApp />
+		<CookieModal />
 	</div>
 </template>
