@@ -2,6 +2,9 @@
 import { DialogContent, DialogDescription, DialogOverlay, DialogPortal, DialogRoot, DialogTitle } from 'radix-vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
+
+const cookies = useCookie('cookies')
+
 const openModal = ref<boolean>(false)
 
 const translations = computed(() => ({
@@ -12,21 +15,14 @@ const translations = computed(() => ({
 	cancel: t('cookies.button.cancel'),
 }))
 
-const getCookie = (name: string): string | null => {
-	const value = `; ${document.cookie}`
-	const parts = value.split(`; ${name}=`)
-	if (parts.length === 2) return parts.pop()?.split(';').shift() || null
-	return null
-}
-
 onMounted(() => {
-	if (!getCookie('cookiesAccepted')) {
+	if (!cookies.value) {
 		openModal.value = true
 	}
 })
 
 const acceptCookies = () => {
-	document.cookie = 'cookiesAccepted=true; path=/; max-age=' + 60 * 60 * 24 * 365 // Expira en 1 año
+	cookies.value = '*'
 
 	openModal.value = false
 }
@@ -59,15 +55,15 @@ const cancelCookies = () => {
 						<div class="mt-4 md:mt-0 flex justify-center md:justify-end space-x-3">
 							<button
 								@click="cancelCookies"
-								class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 outline-none"
+								class="px-4 py-2 bg-customLight text-customDark rounded-lg hover:bg-gray-400 outline-none"
 							>
-								{{ translations.accept }}
+								{{ translations.cancel }}
 							</button>
 							<button
 								@click="acceptCookies"
-								class="px-4 py-2 bg-customPrimary text-white rounded-lg hover:bg-sky-600 outline-none"
+								class="px-4 py-2 bg-customLight text-customDark rounded-lg hover:bg-gray-400 outline-none"
 							>
-								{{ translations.cancel }}
+								{{ translations.accept }}
 							</button>
 						</div>
 					</div>

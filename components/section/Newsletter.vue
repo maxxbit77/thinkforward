@@ -27,12 +27,12 @@ const subscribe = () => {
 
 <template>
 	<ClientOnly>
-		<div class="w-2/3 mx-auto">
+		<div class="max-w-[700px] mx-auto">
 			<div class="mb-4 text-center text-customDark dark:text-customLight">
 				<h3 class="text-4xl">{{ t('newsLetter.title') }}</h3>
 				<p>{{ t('newsLetter.description') }}</p>
 			</div>
-			<form @submit.prevent="subscribe" class="w-[400px] mx-auto">
+			<form @submit.prevent="subscribe" class="w-full mx-auto">
 				<div class="relative mb-4">
 					<input
 						id="emailSuscriber"

@@ -13,7 +13,7 @@ const defaultClass = [' custom-blur  rounded-2xl border-2 text-center overflow-h
 
 <template>
 	<div :class="[defaultClass, customClass]">
-		<div class="flex flex-col justify-center items-center h-full z-20 absolute top-0 left-0 px-4">
+		<div class="flex flex-col justify-center items-center h-full z-20 absolute top-0 left-0 px-8">
 			<div>
 				<component v-if="icon" class="size-20" :class="[iconClass]" :is="icon" />
 				<img v-if="imageSrc" :src="imageSrc" :alt="imageAlt" class="h-24 my-4" />
@@ -21,9 +21,9 @@ const defaultClass = [' custom-blur  rounded-2xl border-2 text-center overflow-h
 			<p class="text-4xl font-bold text-customDark dark:text-customLight">
 				<slot name="title" />
 			</p>
-			<p class="text-xl text-customDark dark:text-slate-800">
+			<h6 class="!dark:text-customDark">
 				<slot name="text" />
-			</p>
+			</h6>
 		</div>
 		<div class="absolute top-[-400px] left-[-300px] z-0 rotate-90">
 			<component v-if="background" :is="background" class="size-[1000px]" />
