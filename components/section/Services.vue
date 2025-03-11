@@ -14,7 +14,7 @@ const { t } = useI18n()
 		<div class="bg-customLight dark:bg-customDark">
 			<div class="relative max-w-7xl mx-auto">
 				<div class="mb-12 text-center text-customDark dark:text-customLight">
-					<h3 class="text-4xl">{{ $t('services.title') }}</h3>
+					<h2>{{ $t('services.title') }}</h2>
 					<p>{{ $t('services.description') }}</p>
 				</div>
 				<div class="space-y-8">

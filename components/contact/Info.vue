@@ -28,6 +28,7 @@ const separatorTxt = computed(() => ({
 const openWhatsApp = () => {
 	window.open(`https://wa.me/${company.phone}`, '_blank')
 }
+
 function openToast() {
 	toast({
 		description: t('toast.copiedClipBoard'),
@@ -57,7 +58,7 @@ const copyPhoneToClipBoard = () => {
 			<div class="w-full flex flex-col space-y-10">
 				<!-- title -->
 				<div class="text-center">
-					<h4 class="text-4xl">{{ t('contact.info.title') }}</h4>
+					<h3>{{ t('contact.info.title') }}</h3>
 				</div>
 
 				<!-- contact -->
@@ -147,9 +148,9 @@ const copyPhoneToClipBoard = () => {
 					<UiSeparator :label="separatorTxt.text" />
 				</div>
 				<!-- Socials -->
-				<h4 class="text-4xl text-center">
+				<h3 class="text-center">
 					{{ t('contact.info.visitUs') }}
-				</h4>
+				</h3>
 				<div class="flex justify-center items-center space-x-4">
 					<a href="https://www.linkedin.com/company/thinkforward.es/" class="cursor-pointer" target="_blank">
 						<TooltipProvider :delayDuration="50">

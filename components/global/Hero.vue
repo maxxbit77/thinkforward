@@ -111,9 +111,20 @@ onUnmounted(() => {
 					<div
 						class="absolute top-[300px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
 					>
-						<h1>{{ $t('hero.title') }}</h1>
-						<h2 class="text-2xl">{{ $t('hero.subtitle') }}</h2>
-						<p class="text-gray-300">{{ $t('hero.description') }}</p>
+						<AnimationsTextWriter
+							:textsPrimary="['Transporte y Logística', 'Envíos a toda Europa']"
+							:textsSecondary="['Nacional e Internacional', 'Rápidos y Eficientes']"
+							:textSpeed="100"
+							:delay="1500"
+							tagPrimary="h1"
+							tagSecondary="h3"
+							customClassPrimary=""
+							customClassSecondary=""
+						/>
+
+						<!-- <h1>{{ $t('hero.title') }}</h1>
+						<h3>{{ $t('hero.subtitle') }}</h3>
+						<p class="text-gray-300">{{ $t('hero.description') }}</p> -->
 						<Cta />
 					</div>
 				</div>

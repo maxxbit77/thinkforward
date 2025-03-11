@@ -57,7 +57,7 @@ const handleSubmit = async () => {
 		<div
 			class="p-8 shadow-md rounded-lg border border-gray-500 h-[500px] max-w-[700px] mx-auto flex flex-col justify-center custom-blur"
 		>
-			<h4 class="text-customDark text-4xl mb-8 text-center dark:text-customLight text-nowrap">
+			<h4 class="text-customDark mb-8 text-center dark:text-customLight text-nowrap">
 				{{ t('contact.message.title') }}
 			</h4>
 
