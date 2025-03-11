@@ -33,7 +33,7 @@ const carouselImages = [...imagePaths, ...imagePaths]
 	align-items: center;
 	gap: 2rem;
 	white-space: nowrap;
-	animation: scroll 15s linear infinite;
+	animation: scroll 5s linear infinite;
 }
 
 .carousel-item {

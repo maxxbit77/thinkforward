@@ -25,10 +25,13 @@ watch(() => route.query.section, scrollToSection)
 			<Hero />
 		</header>
 
+		<div class="h-[400px] w-full bg-customLight dark:bg-customDark relative top-[2100px] z-10 fade-mask-top" />
+
 		<main class="relative top-[1800px] bg-customLight dark:bg-customDark z-20 px-4 xl:px-0">
-			<div
-				class="h-[400px] w-full bg-customLight dark:bg-customDark absolute top-[-300px] z-10 fade-mask-top"
-			></div>
+			<!-- Intro -->
+			<section class="relative top-[-2000px]">
+				<SectionIntro />
+			</section>
 			<!-- Services -->
 			<section class="pt-24" id="services">
 				<SectionServices />
@@ -45,7 +48,7 @@ watch(() => route.query.section, scrollToSection)
 			</section>
 
 			<!-- Companies -->
-			<section class="mt-44" id="partners">
+			<section class="mt-44 mx-[-20px]" id="companies">
 				<SectionCompanies />
 			</section>
 
@@ -54,7 +57,7 @@ watch(() => route.query.section, scrollToSection)
 				<SectionContact />
 			</section>
 
-			<!-- Contact -->
+			<!-- Newsletter -->
 			<section class="mt-44" id="suscribe">
 				<SectionNewsletter />
 			</section>
