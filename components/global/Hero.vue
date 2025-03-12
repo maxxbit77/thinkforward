@@ -72,8 +72,12 @@ onUnmounted(() => {
 						class="absolute top-[350px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
 					>
 						<AnimationsTextWriter
-							:textsPrimary="['Transporte y Logística', 'Envíos a toda Europa']"
-							:textsSecondary="['Nacional e Internacional', 'Rápidos y Eficientes']"
+							:textsPrimary="['Transporte y Logística', 'Envíos a toda Europa', 'No te la juegues']"
+							:textsSecondary="[
+								'Nacional e Internacional',
+								'Rápidos y Eficientes',
+								'Elije la mano ganadora',
+							]"
 							:textSpeed="100"
 							:delay="1500"
 							tagPrimary="h1"
