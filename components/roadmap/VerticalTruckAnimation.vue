@@ -27,8 +27,8 @@ const handleScroll = () => {
 	const scrollPosition = window.scrollY
 
 	// 🔹 Control de la opacidad del componente
-	const fadeStart = 100 // A partir de qué scroll empieza a desvanecerse
-	const fadeEnd = 300 // Hasta qué punto el título se vuelve completamente transparente
+	const fadeStart = 2000 // A partir de qué scroll empieza a desvanecerse
+	const fadeEnd = 3000 // Hasta qué punto el título se vuelve completamente transparente
 	truckOpacity.value = 0 + Math.min(Math.max((scrollPosition - fadeStart) / (fadeEnd - fadeStart), 0), 1)
 }
 
@@ -42,7 +42,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-	<div :style="{ opacity: truckOpacity }" class="relative top-[1400px] left-[200px]">
+	<div :style="{ opacity: truckOpacity }" class="relative top-0 left-[200px]">
 		<div class="absolute top-[-700px] left-[-100px] text-customDark text-5xl text-center">
 			Road Map de tu producto
 		</div>
