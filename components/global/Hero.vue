@@ -66,7 +66,7 @@ onUnmounted(() => {
 					/>
 				</div>
 				<div
-					class="absolute top-[350px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4"
+					class="absolute top-[350px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4 w-full px-8"
 				>
 					<AnimationsTextWriter
 						:textsPrimary="['Transporte y Logística', 'Envíos a toda Europa', 'No te la juegues']"
@@ -88,7 +88,9 @@ onUnmounted(() => {
 					<SvgStar class="shining size-5 absolute top-56 left-44 rotate-12" />
 					<SvgStar class="shining size-6 absolute top-[800px] left-24 rotate-45" />
 					<SvgStar class="shining size-8 absolute top-64 right-44" />
-					<SvgStar class="shining size-4 absolute top-[1000px] right-24 rotate-45" />
+					<SvgStar class="shining size-4 absolute top-[1000px] right-64 rotate-45" />
+					<SvgStar class="shining size-4 absolute top-[200px] right-64 rotate-45" />
+					<SvgStar class="shining size-4 absolute top-[1000px] right-64 rotate-45" />
 				</div>
 			</div>
 		</div>
