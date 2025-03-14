@@ -21,9 +21,22 @@ useHead({
 		},
 	],
 })
+
+const route = useRoute()
+
+const scrollToSection = () => {
+	const section = route.query.section
+	if (section) {
+		document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+	}
+}
+
+onMounted(scrollToSection)
+watch(() => route.query.section, scrollToSection)
 </script>
 <template>
 	<div class="bg-white dark:bg-slate-950 w-screen overflow-hidden">
+		<MenuNavBar />
 		<NuxtPage />
 		<Toaster />
 		<FloatWhatsApp />

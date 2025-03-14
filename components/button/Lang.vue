@@ -1,7 +1,9 @@
 <script setup>
 import { useI18n, useSwitchLocalePath, useRouter } from '#imports'
+import { ref, computed, onMounted } from 'vue'
+import { DropdownMenuRoot, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from 'radix-vue'
 
-const { locale, locales, setLocale } = useI18n()
+const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 const router = useRouter()
 
@@ -9,14 +11,13 @@ const availableLocales = computed(() => locales.value)
 const selectedLocale = ref(locale.value)
 
 const flags = {
-	en: '🇬🇧',
-	es: '🇪🇸',
-	de: '🇩🇪',
-	pl: '🇵🇱',
+	en: 'circle-flags:en',
+	es: 'circle-flags:es',
+	de: 'circle-flags:de',
+	pl: 'circle-flags:pl',
 }
 
-const changeLanguage = (event) => {
-	const newLocale = event.target.value
+const changeLanguage = async (newLocale) => {
 	if (newLocale === locale.value) return
 
 	localStorage.setItem('selectedLocale', newLocale)
@@ -24,30 +25,36 @@ const changeLanguage = (event) => {
 
 	const newPath = switchLocalePath(newLocale)
 	if (newPath) {
-		router.push(newPath)
+		await router.push(newPath)
 	}
 }
 
 onMounted(() => {
-	const savedLocale = localStorage.getItem('selectedLocale') || 'en'
-	if (savedLocale !== locale.value) {
-		setLocale(savedLocale)
-		selectedLocale.value = savedLocale
-
-		const newPath = switchLocalePath(savedLocale)
-		if (newPath) {
-			router.replace(newPath)
-		}
+	const savedLocale = localStorage.getItem('selectedLocale')
+	if (savedLocale && savedLocale !== locale.value) {
+		changeLanguage(savedLocale)
 	}
 })
 </script>
 
 <template>
-	<div class="relative">
-		<select v-model="selectedLocale" @change="changeLanguage" class="p-2 bg-transparent cursor-pointer">
-			<option v-for="loc in availableLocales" :key="loc.code" :value="loc.code">
-				{{ flags[loc.code] }} {{ loc.code.toUpperCase() }}
-			</option>
-		</select>
-	</div>
+	<div></div>
+	<DropdownMenuRoot>
+		<DropdownMenuTrigger class="flex items-center gap-2 p-2 rounded-md cursor-pointer border border-gray-600">
+			<Icon :name="flags[selectedLocale]" class="size-4" />
+			<span>{{ selectedLocale.toUpperCase() }}</span>
+			<Icon name="material-symbols:arrow-drop-down-rounded" class="size-4" />
+		</DropdownMenuTrigger>
+		<DropdownMenuContent class="bg-customLight dark:bg-customDark border border-gray-600 rounded-md shadow-md p-2">
+			<DropdownMenuItem
+				v-for="loc in availableLocales"
+				:key="loc.code"
+				@click="changeLanguage(loc.code)"
+				class="flex items-center gap-2 cursor-pointer text-customDark dark:text-customLight"
+			>
+				<Icon :name="flags[loc.code]" class="size-4" />
+				<span>{{ loc.code.toUpperCase() }}</span>
+			</DropdownMenuItem>
+		</DropdownMenuContent>
+	</DropdownMenuRoot>
 </template>

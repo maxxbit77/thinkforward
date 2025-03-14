@@ -1,5 +1,3 @@
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
-
 export function useIntersectionObserver(threshold = 0.3) {
 	const elements = ref<HTMLElement[]>([])
 	const inView = ref<boolean[]>([])

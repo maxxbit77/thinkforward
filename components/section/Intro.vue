@@ -78,6 +78,7 @@ const card4 = computed(() => ({
 }))
 </script>
 <template>
+	<!-- <RoadmapVerticalTruckAnimation /> -->
 	<div class="flex justify-center">
 		<div class="rotate-[-25deg] w-[300px]">
 			<CardBasic
