@@ -5,7 +5,7 @@ import { onMounted, watch } from 'vue'
 
 <template>
 	<div>
-		<header>
+		<header id="home">
 			<Hero />
 		</header>
 
@@ -46,9 +46,5 @@ import { onMounted, watch } from 'vue'
 				<SectionNewsletter />
 			</section>
 		</main>
-		<!-- Footer -->
-		<footer class="mt-24">
-			<SectionFooter />
-		</footer>
 	</div>
 </template>

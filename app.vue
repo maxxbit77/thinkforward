@@ -37,9 +37,32 @@ watch(() => route.query.section, scrollToSection)
 <template>
 	<div class="bg-white dark:bg-slate-950 w-screen overflow-hidden">
 		<MenuNavBar />
-		<NuxtPage />
+		<Transition name="page">
+			<NuxtPage />
+		</Transition>
 		<Toaster />
 		<FloatWhatsApp />
 		<CookieModal />
+		<footer class="mt-24">
+			<SectionFooter />
+		</footer>
 	</div>
 </template>
+
+<style>
+/* Página entra con opacidad y subiendo */
+.page-enter-active,
+.page-leave-active {
+	transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.page-enter-from {
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+.page-leave-to {
+	opacity: 0;
+	transform: translateY(-20px);
+}
+</style>

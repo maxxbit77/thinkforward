@@ -1,7 +1,9 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 const isDark = ref(false)
 
-// Detectar el modo del sistema al montar el componente
 const images = import.meta.glob('@/public/frames/truck-going/*.webp', { eager: true })
 const imagePaths = Object.values(images).map((module) => module.default)
 
@@ -82,7 +84,9 @@ onUnmounted(() => {
 					<!-- <h1>{{ $t('hero.title') }}</h1>
 						<h3>{{ $t('hero.subtitle') }}</h3>
 						<p class="text-gray-300">{{ $t('hero.description') }}</p> -->
-					<Cta />
+					<Cta>
+						{{ t('hero.cta') }}
+					</Cta>
 				</div>
 				<div class="hidden md:block" :class="isDark ? 'text-dark' : 'text-white'">
 					<SvgStar class="shining size-5 absolute top-56 left-44 rotate-12" />
