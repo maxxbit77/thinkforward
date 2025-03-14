@@ -2,12 +2,11 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useIntersectionObserver } from '~/composables/useIntersectionObserver'
 
-// Configuración del IntersectionObserver
 const { setElementRef, inView } = useIntersectionObserver(0.3)
 
 const roadmapRef = ref(null)
 const lineHeight = ref(500) // Altura inicial de la línea central
-const maxHeight = ref(0) // Máxima altura de la línea
+const maxHeight = ref(2000) // Máxima altura de la línea
 
 const sections = ref([
 	{ title: 'Inicio', description: 'Descripción del inicio' },
@@ -46,7 +45,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-	<div>
+	<div class="h-[2000px]">
 		<div class="text-center text-4xl mt-24">The ultimate Road Map</div>
 		<div ref="roadmapRef" class="relative max-w-4xl mx-auto py-20">
 			<!-- Línea central -->
@@ -59,19 +58,19 @@ onUnmounted(() => {
 			<div v-for="(section, index) in sections" :key="index" class="relative flex items-center my-32">
 				<!-- Punto -->
 				<div
-					class="absolute left-[567px] rounded-full transform -translate-x-1/2 transition-all duration-500 bg-slate-950 pb-1"
+					class="absolute left-1/2 rounded-full transform -translate-x-1/2 transition-all duration-500 bg-slate-950 pb-1"
 					:class="{
 						'opacity-100 scale-100': isPointVisible(index).value,
 						'opacity-0 scale-50': !isPointVisible(index).value,
 					}"
 					:style="{ top: index * 100 + 'px' }"
 				>
-					<TestLogo class="text-white h-[200px]" />
+					<img src="/public/TF-star.png" alt="star" class="size-8" />
 				</div>
 
 				<!-- Tarjeta -->
 				<div
-					class="w-64 p-4 bg-white rounded-lg shadow-lg"
+					class="w-64 p-4 bg-slate-800 rounded-lg shadow-lg"
 					:class="[
 						'opacity-0 translate-y-10 transition-all duration-700 ease-in-out',
 						index % 2 === 0 ? 'ml-10' : 'mr-10',
@@ -85,7 +84,3 @@ onUnmounted(() => {
 		</div>
 	</div>
 </template>
-
-<style scoped>
-/* Ajustes opcionales */
-</style>
