@@ -6,7 +6,6 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 const router = useRouter()
 
-// Función para cambiar la sección sin recargar la página
 const navigateToSection = (section) => {
 	router.push({ path: localePath('index'), query: { section } })
 }
@@ -14,9 +13,12 @@ const navigateToSection = (section) => {
 
 <template>
 	<div>
-		<Header />
-		<div class="fixed top-0 left-0 w-full custom-blur p-4 z-40 text-slate-950 dark:text-customLight h-20">
-			<div class="max-w-7xl grid grid-cols-3 items-center mx-auto">
+		<LogoCircle />
+		<div class="fixed top-0 left-0 w-full custom-blur p-4 z-40 text-customDark dark:text-customLight h-20">
+			<div class="lg:hidden flex justify-end items-center">
+				<MenuMobile />
+			</div>
+			<div class="hidden lg:grid grid-cols-3 items-center mx-auto max-w-7xl">
 				<div class="flex justify-between items-center h-full">
 					<div class="flex space-x-6">
 						<button @click="navigateToSection('home')">
@@ -35,9 +37,9 @@ const navigateToSection = (section) => {
 					<button @click="navigateToSection('contact')">
 						{{ t('menu.contact') }}
 					</button>
-					<button @click="navigateToSection('about')">
+					<NuxtLink to="/about-us" class="text-nowrap">
 						{{ t('menu.about') }}
-					</button>
+					</NuxtLink>
 					<ButtonLang />
 					<ButtonToggleDarkMode />
 				</div>

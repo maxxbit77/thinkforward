@@ -93,7 +93,7 @@
 		@apply lg:text-lg xl:text-xl text-customDark dark:text-customLight;
 	}
 	p {
-		@apply text-xs md:text-sm  text-customDark dark:text-customLight;
+		@apply text-customDark dark:text-customLight;
 	}
 }
 

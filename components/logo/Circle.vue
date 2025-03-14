@@ -22,9 +22,10 @@ onUnmounted(() => {
 
 <template>
 	<div class="relative">
-		<header>
-			<img class="circle-background" src="public/TF-star.png" alt="" />
-		</header>
+		<div class="hidden xl:block">
+			<img class="circle-background" src="public/star.png" alt="" />
+		</div>
+
 		<NuxtLink to="/?section=home">
 			<LogoThinkforward
 				ref="logoRef"
@@ -61,7 +62,7 @@ onUnmounted(() => {
 	top: 25px;
 	left: 49%;
 	transform: translateX(-50%);
-	z-index: 80;
+	z-index: 60;
 	animation: slideIn 1500ms ease-out;
 }
 

@@ -10,7 +10,6 @@ const { t } = useI18n()
 				class="px-4 py-2 hover:bg-customLight hover:text-customDark bg-customPrimary text-customLight text-xl rounded-xl transition-all"
 			>
 				{{ t('cta.text') }}
-				<span class=""></span>
 			</button>
 		</NuxtLink>
 	</div>
