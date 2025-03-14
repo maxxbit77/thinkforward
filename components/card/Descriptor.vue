@@ -6,11 +6,13 @@ defineProps({
 })
 </script>
 <template>
-	<div class="w-full custom-blur border border-gray-500 relative rounded-lg text-center p-4 overflow-hidden">
-		<div class="z-10 text-left px-4">
-			<div class="text-3xl mb-2">
+	<div
+		class="w-full h-full custom-blur border border-gray-500 relative rounded-lg text-center p-2 overflow-hidden flex-grow"
+	>
+		<div class="z-10 text-left">
+			<h3 class="mb-2">
 				<slot name="title" />
-			</div>
+			</h3>
 			<div class="dark:text-gray-300/80 text-customDark text-lg">
 				<slot name="description" />
 			</div>

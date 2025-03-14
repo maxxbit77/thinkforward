@@ -2,18 +2,14 @@
 const isDark = ref(false)
 
 onMounted(() => {
-	// Obtener la preferencia del usuario desde localStorage
 	const savedTheme = localStorage.getItem('theme')
 
 	if (savedTheme) {
-		// Aplicar el tema guardado
 		isDark.value = savedTheme === 'dark'
 	} else {
-		// Si no hay preferencia guardada, usar la del sistema
 		isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
 	}
 
-	// Aplicar la clase en el HTML
 	document.documentElement.classList.toggle('dark', isDark.value)
 })
 
@@ -21,7 +17,6 @@ const toggleDarkMode = () => {
 	isDark.value = !isDark.value
 	document.documentElement.classList.toggle('dark', isDark.value)
 
-	// Guardar la preferencia en localStorage
 	localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
 }
 </script>

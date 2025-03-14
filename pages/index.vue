@@ -42,14 +42,13 @@ import { onMounted, watch } from 'vue'
 			</section>
 
 			<!-- Newsletter -->
-			<section class="mt-44" id="suscribe">
+			<section class="mt-24" id="suscribe">
 				<SectionNewsletter />
 			</section>
-
-			<!-- Footer -->
-			<footer class="mt-44">
-				<SectionFooter />
-			</footer>
 		</main>
+		<!-- Footer -->
+		<footer class="mt-24">
+			<SectionFooter />
+		</footer>
 	</div>
 </template>

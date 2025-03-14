@@ -24,8 +24,7 @@ const { t } = useI18n()
 							src="/images/services/logistic-1200x600.png"
 							alt="imagen-map"
 							class="col-span-12 md:col-span-6 xl:col-span-9"
-						>
-						</CardBorderImage>
+						/>
 						<CardDescriptor
 							class="col-span-12 md:col-span-6 xl:col-span-3"
 							:background="BackgroundsColorsBlue"
@@ -36,34 +35,29 @@ const { t } = useI18n()
 					</div>
 
 					<!-- middle section -->
-					<div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
-						<CardBorderImage
-							src="/images/services/wash-400x600.png"
-							alt="imagen-map"
-							class="col-span-1 hidden xl:block"
-							titlePosition="top"
-						>
-						</CardBorderImage>
-						<div class="flex xl:grid xl:row-2 gap-4">
-							<CardDescriptor :background="BackgroundsColorsBlue">
-								<template #title>{{ $t('services.service.wash.title') }} </template>
-								<template #description>{{ $t('services.service.wash.description') }}</template>
-							</CardDescriptor>
-							<CardDescriptor :background="BackgroundsColorsRose">
-								<template #title>
-									{{ $t('services.service.equipment.title') }}
-								</template>
-								<template #description>
-									{{ $t('services.service.equipment.description') }}
-								</template>
-							</CardDescriptor>
+					<div class="grid grid-cols-12 gap-2">
+						<div class="col-span-3 hidden lg:block">
+							<CardBorderImage src="/images/services/wash-400x600.png" alt="imagen-map" />
 						</div>
-						<CardBorderImage
-							src="/images/services/equipment.png"
-							alt="imagen-map"
-							class="col-span-1 hidden xl:block"
-						>
-						</CardBorderImage>
+						<div class="flex col-span-12 lg:col-span-6">
+							<div class="grid grid-cols-12 gap-4">
+								<CardDescriptor :background="BackgroundsColorsBlue" class="col-span-12 md:col-span-6">
+									<template #title>{{ $t('services.service.wash.title') }} </template>
+									<template #description>{{ $t('services.service.wash.description') }}</template>
+								</CardDescriptor>
+								<CardDescriptor :background="BackgroundsColorsRose" class="col-span-12 md:col-span-6">
+									<template #title>
+										{{ $t('services.service.equipment.title') }}
+									</template>
+									<template #description>
+										{{ $t('services.service.equipment.description') }}
+									</template>
+								</CardDescriptor>
+							</div>
+						</div>
+						<div class="col-span-3 hidden lg:block">
+							<CardBorderImage src="/images/services/equipment.png" alt="imagen-map" />
+						</div>
 					</div>
 
 					<!-- bottom section -->
