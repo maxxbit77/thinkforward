@@ -2,85 +2,178 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useIntersectionObserver } from '~/composables/useIntersectionObserver'
 
-const { setElementRef, inView } = useIntersectionObserver(0.3)
-
+const { inView } = useIntersectionObserver(0.3)
 const roadmapRef = ref(null)
-const lineHeight = ref(500) // Altura inicial de la línea central
-const maxHeight = ref(2000) // Máxima altura de la línea
+const scrollProgress = ref(0)
 
 const sections = ref([
-	{ title: 'Inicio', description: 'Descripción del inicio' },
-	{ title: 'Fase 1', description: 'Explicación de la fase 1' },
-	{ title: 'Fase 2', description: 'Detalles de la fase 2' },
-	{ title: 'Fase 3', description: 'Lo que ocurre en la fase 3' },
+	{ title: 'Emisión de orden' },
+	{ title: 'Preparación', description: 'Lavado y Preparación del transporte para recibir el producto', image: '' },
+	{ title: 'Coordinación', description: 'Comunicación con la compañía emisora del producto', image: '' },
+	{ title: 'Recogida', description: 'Preparación del transporte para recibir el producto del cliente', image: '' },
+	{
+		title: 'Monitoreo',
+		description: 'Controlamos en todo momento por donde se encuentra tu producto vía GPS',
+		image: '',
+	},
+	{
+		title: 'Entrega',
+		description: 'Comunicaciones con la empresa receptora para la coordinación de descarga del producto',
+		image: '',
+	},
+	{
+		title: 'Emisión informe',
+		description: 'Una vez concluida la entrega, se procede a la emisión del informe y factura',
+		image: '',
+	},
 ])
 
-const updateLineHeight = () => {
+const updateScrollProgress = () => {
 	if (!roadmapRef.value) return
-
 	const rect = roadmapRef.value.getBoundingClientRect()
 	const viewportHeight = window.innerHeight
 	const scrollY = window.scrollY
-	const startScroll = rect.top + scrollY - viewportHeight * 0.3 // Punto donde empieza a crecer
+	const startScroll = rect.top + scrollY - viewportHeight * 0.8
 	const scrolled = scrollY - startScroll
-
-	if (inView.value && scrolled > 0) {
-		// Hacer crecer la línea progresivamente sin pasarse del tamaño máximo
-		lineHeight.value = Math.min(scrolled, maxHeight.value)
-	}
+	scrollProgress.value = Math.min(Math.max(scrolled / (roadmapRef.value.scrollHeight || 3000), 0), 1)
 }
 
-// Función para determinar si un punto debe mostrarse
-const isPointVisible = (index) => computed(() => lineHeight.value > index * 300)
+const isPointVisible = (index) => computed(() => scrollProgress.value * sections.value.length > index)
 
 onMounted(() => {
-	// Obtener altura máxima de la línea al montar el componente
-	maxHeight.value = roadmapRef.value?.scrollHeight || 1200
-	window.addEventListener('scroll', updateLineHeight)
+	window.addEventListener('scroll', updateScrollProgress)
 })
 
 onUnmounted(() => {
-	window.removeEventListener('scroll', updateLineHeight)
+	window.removeEventListener('scroll', updateScrollProgress)
 })
 </script>
-
 <template>
-	<div class="h-[2000px]">
-		<div class="text-center text-4xl mt-24">The ultimate Road Map</div>
+	<div class="h-[1500px]">
+		<div class="text-center text-4xl my-44">The ultimate Road Map</div>
 		<div ref="roadmapRef" class="relative max-w-4xl mx-auto py-20">
-			<!-- Línea central -->
-			<div
-				class="absolute left-1/2 w-1 bg-gray-400 transition-all duration-300 min-h-32"
-				:style="{ height: lineHeight + 'px' }"
-			></div>
+			<!-- Línea con 8 curvas -->
+			<svg class="roadmap-line" viewBox="0 0 400 1800" preserveAspectRatio="none">
+				<path
+					d="
+					M 100 0 
+					Q 500 150, 200 300 
+					Q -100 450, 200 600 
+					Q 500 750, 200 900 
+					Q -100 1050, 200 1200 
+					Q 500 1350, 200 1500 
+					Q -100 1650, 200 1800"
+					stroke="white"
+					stroke-width="14"
+					fill="transparent"
+					stroke-dasharray="1800"
+					:stroke-dashoffset="1800 - scrollProgress * 2400"
+				/>
+			</svg>
 
 			<!-- Puntos y tarjetas -->
-			<div v-for="(section, index) in sections" :key="index" class="relative flex items-center my-32">
-				<!-- Punto -->
-				<div
-					class="absolute left-1/2 rounded-full transform -translate-x-1/2 transition-all duration-500 bg-slate-950 pb-1"
-					:class="{
-						'opacity-100 scale-100': isPointVisible(index).value,
-						'opacity-0 scale-50': !isPointVisible(index).value,
-					}"
-					:style="{ top: index * 100 + 'px' }"
-				>
-					<img src="/public/TF-star.png" alt="star" class="size-8" />
-				</div>
-
+			<div
+				v-for="(section, index) in sections"
+				:key="index"
+				class="roadmap-item"
+				:style="{ top: index * 220 + 'px' }"
+			>
 				<!-- Tarjeta -->
 				<div
-					class="w-64 p-4 bg-slate-800 rounded-lg shadow-lg"
-					:class="[
-						'opacity-0 translate-y-10 transition-all duration-700 ease-in-out',
-						index % 2 === 0 ? 'ml-10' : 'mr-10',
-						{ 'opacity-100 translate-y-0': isPointVisible(index).value },
-					]"
+					class="roadmap-card"
+					:class="{
+						'left-card': index % 2 === 0,
+						'right-card': index % 2 !== 0,
+						'opacity-100 translate-y-0': isPointVisible(index).value,
+						'opacity-0 translate-y-20': !isPointVisible(index).value,
+					}"
 				>
-					<h3 class="text-lg font-bold">{{ section.title }}</h3>
-					<p class="text-gray-600">{{ section.description }}</p>
+					<figure>
+						<img src="https://picsum.photos/id/287/250/300" alt="Mountains" />
+						<div class="h-full flex justify-center items-end">
+							<h4
+								class="flex items-center px-4 ease-in-out transition-opacity h-24 w-full bg-slate-950/50"
+							>
+								{{ section.title }}
+							</h4>
+						</div>
+						<figcaption>
+							<h4>{{ section.title }}</h4>
+							<p>{{ section.description }}</p>
+						</figcaption>
+					</figure>
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
+
+<style>
+.roadmap-line {
+	position: absolute;
+	left: 50%;
+	top: 20;
+	transform: translateX(-50%);
+	width: 400px;
+	height: 1500px;
+}
+
+.roadmap-point.visible {
+	opacity: 1;
+	scale: 1;
+}
+
+.roadmap-card {
+	position: absolute;
+	top: -100px;
+	width: 250px;
+	padding: 12px;
+	color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: all 0.8s ease-in-out;
+}
+
+.left-card {
+	left: calc(50% - 450px);
+}
+.right-card {
+	right: calc(50% - 450px);
+}
+
+.roadmap-item {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	height: 160px;
+}
+
+figure {
+	display: grid;
+	border-radius: 1rem;
+	overflow: hidden;
+	cursor: pointer;
+}
+figure > * {
+	grid-area: 1/1;
+	transition: 0.4s;
+}
+figure figcaption {
+	display: grid;
+	align-items: end;
+	font-family: sans-serif;
+	color: white;
+	padding: 0.75rem;
+	background: var(--c, #0009);
+	clip-path: inset(0 var(--_i, 100%) 0 0);
+
+	margin: -1px;
+}
+figure:hover figcaption {
+	--_i: 0%;
+}
+figure:hover img {
+	transform: scale(1.2);
+}
+</style>

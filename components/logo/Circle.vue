@@ -22,14 +22,10 @@ onUnmounted(() => {
 
 <template>
 	<div class="relative">
-		<div class="hidden xl:block">
-			<img class="circle-background" src="public/star.png" alt="" />
-		</div>
-
 		<NuxtLink to="/?section=home">
 			<LogoThinkforward
 				ref="logoRef"
-				class="logo-slide text-customPrimary"
+				class="logo-slide text-customLight"
 				:class="{
 					'text-blue-600 transition-colors': !changeLogoColor,
 					'text-black transition-colors': changeLogoColor,
@@ -40,22 +36,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.circle-background {
-	width: 400px;
-	height: 400px;
-	border-radius: 1000px;
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 50;
-	margin-top: -160px;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	animation: slideInDown 1500ms ease-out;
-}
-
 .logo-slide {
 	position: fixed;
 	width: 270px;

@@ -56,23 +56,23 @@ onUnmounted(() => {
 
 <template>
 	<ClientOnly>
-		<div class="h-[650px] bg-customLight dark:bg-customDark">
+		<div class="h-[850px] bg-customLight dark:bg-customDark">
 			<!-- <img v-if="isMounted" :src="currentImage" class="fixed h-[100vh] w-screen object-cover z-0" /> -->
 
 			<div :style="{ opacity: titleOpacity }" class="relative">
-				<div
+				<!-- <div
 					class="w-full h-[1600px] absolute left-1/2 -translate-x-1/2 fade-mask-side bg-customLight dark:bg-slate-950"
 				>
 					<BackgroundsColorsBlueHero
 						class="animate-[spin_15s_linear_infinite] h-[1500px] w-[1500px] absolute top-[-500px] left-[-150px]"
 					/>
-				</div>
+				</div> -->
 				<div
 					class="absolute top-[350px] left-1/2 -translate-x-1/2 text-center flex flex-col justify-center items-center space-y-4 w-full px-8"
 				>
 					<AnimationsTextWriter
-						:textsPrimary="['Transporte y Logística', 'Envíos a toda Europa', 'No te la juegues']"
-						:textsSecondary="['Nacional e Internacional', 'Rápidos y Eficientes', 'Elije la mano ganadora']"
+						:textsPrimary="['Transporte y Logística', 'Envíos a toda Europa']"
+						:textsSecondary="['Nacional e Internacional', 'Rápidos y Eficientes']"
 						:textSpeed="100"
 						:delay="1500"
 						tagPrimary="h1"
@@ -81,9 +81,6 @@ onUnmounted(() => {
 						customClassSecondary=""
 					/>
 
-					<!-- <h1>{{ $t('hero.title') }}</h1>
-						<h3>{{ $t('hero.subtitle') }}</h3>
-						<p class="text-gray-300">{{ $t('hero.description') }}</p> -->
 					<Cta>
 						{{ t('hero.cta') }}
 					</Cta>

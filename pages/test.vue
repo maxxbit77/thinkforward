@@ -4,6 +4,8 @@
 		<RoadmapHorizontalTruckAnimation />
 		<RoadmapVerticalLine />
 
-		<RoadmapVerticalTruckAnimation />
+		<div class="mt-64">
+			<RoadmapVerticalTruckAnimation />
+		</div>
 	</div>
 </template>

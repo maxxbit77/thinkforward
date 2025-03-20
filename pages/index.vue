@@ -5,15 +5,14 @@ import { onMounted, watch } from 'vue'
 
 <template>
 	<div>
-		<header id="home">
-			<Hero />
-		</header>
-
 		<!-- <div class="h-[400px] w-full bg-customLight dark:bg-customDark relative top-[2100px] z-10 fade-mask-top" /> -->
 
 		<main class="bg-customLight dark:bg-customDark z-20 px-4 xl:px-0">
+			<header id="home">
+				<Hero />
+			</header>
 			<!-- Intro -->
-			<section class="">
+			<section class="mt-44">
 				<SectionIntro />
 			</section>
 			<!-- Services -->

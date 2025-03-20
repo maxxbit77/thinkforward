@@ -35,11 +35,14 @@ onMounted(scrollToSection)
 watch(() => route.query.section, scrollToSection)
 </script>
 <template>
-	<div class="bg-white dark:bg-slate-950 w-screen overflow-hidden">
+	<div class="bg-customLight dark:bg-customDark w-screen overflow-hidden">
 		<MenuNavBar />
-		<Transition name="page">
-			<NuxtPage />
+		<Transition name="page" mode="out-in">
+			<div :key="route.fullPath">
+				<NuxtPage />
+			</div>
 		</Transition>
+
 		<Toaster />
 		<FloatWhatsApp />
 		<CookieModal />

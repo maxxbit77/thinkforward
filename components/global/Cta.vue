@@ -4,7 +4,7 @@
 	<div>
 		<NuxtLink to="/?section=contact">
 			<button
-				class="px-4 py-2 hover:bg-customLight hover:text-customDark bg-customPrimary text-customLight text-xl rounded-xl transition-all"
+				class="px-4 py-2 hover:bg-customLight hover:text-customDark custom-blur text-xl rounded-xl transition-all"
 			>
 				<slot />
 			</button>

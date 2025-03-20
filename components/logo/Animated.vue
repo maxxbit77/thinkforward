@@ -1,13 +1,4 @@
-<script setup>
-import { ref, onMounted } from 'vue'
-import { gsap } from 'gsap'
-
-const svgRef = ref(null)
-
-onMounted(() => {
-	gsap.fromTo(svgRef.value, { x: '-100%' }, { x: '0%', duration: 1.5, ease: 'power2.out' })
-})
-</script>
+<script setup></script>
 
 <template>
 	<svg ref="svgRef" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 47.5" role="img" class="fill-current">
@@ -16,10 +7,3 @@ onMounted(() => {
 		></path>
 	</svg>
 </template>
-
-<style scoped>
-svg {
-	width: 100%;
-	height: auto;
-}
-</style>
