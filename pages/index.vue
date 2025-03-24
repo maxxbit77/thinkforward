@@ -16,7 +16,7 @@ import { onMounted, watch } from 'vue'
 				<SectionIntro />
 			</section>
 			<!-- Services -->
-			<section class="mt-44" id="services">
+			<section class="mt-64" id="services">
 				<SectionServices />
 			</section>
 
