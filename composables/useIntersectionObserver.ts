@@ -10,7 +10,7 @@ export function useIntersectionObserver(threshold = 0.3) {
 	onMounted(async () => {
 		if (!process.client) return
 
-		await nextTick() // Esperamos a que Vue renderice
+		await nextTick()
 
 		observer = new IntersectionObserver(
 			(entries) => {
